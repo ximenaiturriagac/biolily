@@ -93,6 +93,7 @@ export default function Hero() {
                   </div>
                   <p className="text-sm">Imagen / Video</p>
                 </div>
+              </div>
             </div>
 
             {/* Floating stat */}
