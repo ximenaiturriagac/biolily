@@ -96,8 +96,7 @@ export default function Eficiencia() {
         <div className="flex items-start gap-3 p-5 rounded-2xl bg-amber-900/30 border border-amber-700/40 max-w-4xl mx-auto">
           <TriangleAlert size={18} className="text-amber-400 mt-0.5 shrink-0" />
           <p className="text-amber-200 text-sm leading-relaxed">
-            Los valores presentados son estimados sujetos a condiciones operativas, escala de
-            implementación y metodología de cálculo.
+            Los valores presentados son estimados sujetos a condiciones de cada sitio de implementación.
           </p>
         </div>
       </div>
