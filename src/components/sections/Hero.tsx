@@ -93,11 +93,6 @@ export default function Hero() {
                   </div>
                   <p className="text-sm">Imagen / Video</p>
                 </div>
-              </div>
-              <div className="relative z-10 px-4 py-3 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10">
-                <p className="text-white text-sm font-medium">Fito-colmenas en Valle de Bravo</p>
-                <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>
-              </div>
             </div>
 
             {/* Floating stat */}
