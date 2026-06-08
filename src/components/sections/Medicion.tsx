@@ -1,7 +1,7 @@
 import { Activity } from "lucide-react";
 
 const indicators = [
-  { num: "7+", label: "indicadores de calidad del agua" },
+  { num: "1", label: "7+ Indicadores de calidad del agua" },
   { num: "2", label: "Biomasa cosechada" },
   { num: "3", label: "Beneficio volumétrico generado" },
   { num: "4", label: "Cobertura implementada" },
