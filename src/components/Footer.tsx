@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Link2, Mail, MapPin } from "lucide-react";
 
 const footerLinks = [
@@ -18,12 +19,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              {/* TODO: Reemplazar con logo oficial */}
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-blue-500 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-bold text-2xl tracking-tight">Biolily</span>
+            <div>
+              <Image
+                src="/logo-vertical-biolily.svg"
+                alt="Biolily"
+                width={140}
+                height={80}
+                className="h-16 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-green-300 text-sm font-medium italic">
               "Tecnología ambiental inspirada en la naturaleza."

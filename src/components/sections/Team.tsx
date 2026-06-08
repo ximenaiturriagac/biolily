@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GraduationCap, Briefcase, Microscope, Leaf } from "lucide-react";
 
 const team = [
@@ -14,6 +15,7 @@ const team = [
     ],
     gradient: "from-green-700 to-emerald-600",
     initials: "EC",
+    photo: "/eduardo-caballero.jpeg",
   },
   {
     name: "Dr. Jorge Alberto Ramírez Zierold",
@@ -28,6 +30,7 @@ const team = [
     ],
     gradient: "from-blue-700 to-cyan-600",
     initials: "JR",
+    photo: "/jorge-ramirez.jpg",
   },
 ];
 
@@ -45,18 +48,27 @@ export default function Team() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {team.map(({ name, role, company, bio, highlights, gradient, initials }) => (
+          {team.map(({ name, role, company, bio, highlights, gradient, initials, photo }) => (
             <div
               key={name}
               className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className={`h-32 bg-gradient-to-br ${gradient} relative`}>
-                {/* TODO: Reemplazar con fotografía oficial del equipo */}
                 <div className="absolute bottom-0 left-8 translate-y-1/2">
-                  <div
-                    className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${gradient} border-4 border-white shadow-lg flex items-center justify-center`}
-                  >
-                    <span className="text-white font-bold text-2xl">{initials}</span>
+                  <div className="w-20 h-20 rounded-2xl border-4 border-white shadow-lg overflow-hidden">
+                    {photo ? (
+                      <Image
+                        src={photo}
+                        alt={name}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+                        <span className="text-white font-bold text-2xl">{initials}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Waves,
   Sprout,
@@ -67,11 +68,20 @@ export default function FitoColmenas() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo-principal-fitocolmenas.svg"
+              alt="Fito-colmenas"
+              width={260}
+              height={80}
+              className="h-16 w-auto"
+            />
+          </div>
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
             Nuestra Tecnología
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Fito-colmenas: biorremediación flotante,{" "}
+            Biorremediación flotante,{" "}
             <span className="text-green-700">controlada y escalable</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
