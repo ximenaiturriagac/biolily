@@ -22,7 +22,7 @@ const steps = [
   },
   {
     icon: Layers,
-    title: "Implementación de Fito-colmenas",
+    title: "Implementación de nuestra tecnología",
     copy: "Instalamos los módulos flotantes y establecemos el esquema de operación y mantenimiento.",
   },
   {
@@ -48,7 +48,7 @@ const steps = [
   {
     icon: Leaf,
     title: "Restauración ecológica",
-    copy: "El ecosistema recupera su equilibrio a largo plazo, generando beneficios ambientales sostenibles.",
+    copy: "El ecosistema recupera su equilibrio a largo plazo, generando beneficios ambientales y sociales sostenibles.",
   },
 ];
 
