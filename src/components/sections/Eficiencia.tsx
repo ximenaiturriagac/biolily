@@ -13,18 +13,18 @@ const metrics = [
   },
   {
     value: "15,700–40,300 m³/año",
-    label: "Beneficio volumétrico por Fito-colmena (validado por BlueRisk)",
+    label: "Beneficio volumétrico por Fito-colmena",
     color: "from-blue-500 to-indigo-600",
   },
 ];
 
 const benefits = [
-  "Módulos adaptables",
   "Monitoreo continuo",
-  "Trazabilidad",
-  "Water Stewardship",
-  "Restauración de largo plazo",
-  "Reportes verificables",
+  "Validación VWBA2.0 por BlueRisk",
+  "Inclusión social y gobernanza",
+  "Economía circular",
+  "Restauración garantizada",
+  "Beneficio volumétrico comprobable",
 ];
 
 export default function Eficiencia() {
