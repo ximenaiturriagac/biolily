@@ -5,7 +5,7 @@ const indicators = [
   { num: "2", label: "Biomasa cosechada" },
   { num: "3", label: "Beneficio volumétrico generado" },
   { num: "4", label: "Cobertura implementada" },
-  { num: "5", label: "Participación comunitaria" },
+  { num: "5", label: "Participación comunitaria y gobernanza" },
   { num: "6", label: "Cumplimiento operativo" },
   { num: "7", label: "Seguimiento de metas del proyecto" },
 ];
@@ -24,8 +24,8 @@ export default function Medicion() {
               Lo que no se mide, no se puede escalar
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Cada proyecto desarrollado por Biolily incorpora un esquema de monitoreo y
-              seguimiento que permite evaluar el desempeño ambiental de la tecnología y documentar
+              Cada proyecto desarrollado por Biolily incorpora un esquema de monitoreo, mantenimiento y
+              acompañamiento que permite evaluar el desempeño ambiental de la tecnología y documentar
               sus resultados.
             </p>
             <p className="text-gray-500 text-base leading-relaxed">
