@@ -15,15 +15,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Biolily | Tecnología ambiental para restauración hídrica",
+  title: "Biolily | Restauración hídrica y soluciones basadas en la naturaleza",
   description:
-    "Biolily desarrolla Fito-colmenas, una tecnología de biorremediación flotante para restaurar cuerpos de agua afectados por eutrofización.",
+    "Biolily diseña, implementa y monitorea proyectos de restauración hídrica mediante Fito-colmenas®, una tecnología patentada que genera beneficios ambientales y volumétricos medibles.",
   keywords:
-    "Biolily, Fito-colmenas, restauración hídrica, biorremediación, eutrofización, tecnología ambiental, Valle de Bravo, lirio acuático",
+    "Biolily, Fito-colmenas, restauración hídrica, water stewardship, beneficios volumétricos, soluciones basadas en la naturaleza, eutrofización, lirio acuático, calidad del agua, BlueRisk, Valle de Bravo",
   openGraph: {
-    title: "Biolily | Tecnología ambiental para restauración hídrica",
+    title: "Biolily | Restauración hídrica y soluciones basadas en la naturaleza",
     description:
-      "Soluciones basadas en la naturaleza para restaurar cuerpos de agua afectados por eutrofización.",
+      "Biolily diseña, implementa y monitorea proyectos de restauración hídrica mediante Fito-colmenas®, una tecnología patentada que genera beneficios ambientales y volumétricos medibles.",
     type: "website",
   },
 };
