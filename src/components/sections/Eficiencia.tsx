@@ -42,10 +42,10 @@ export default function Eficiencia() {
             Resultados
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
-            Eficiencia ambiental respaldada por monitoreo científico
+            Eficiencia ambiental comprobable
           </h2>
           <p className="text-green-300 text-lg font-medium mb-6">
-            Resultados respaldados por evidencia
+            Resultados respaldados por evidencia científica
           </p>
           <p className="text-gray-300 text-base leading-relaxed max-w-3xl mx-auto">
             Las Fito-colmenas fueron diseñadas para maximizar la captura y extracción de nutrientes
