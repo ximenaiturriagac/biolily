@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -34,27 +34,20 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-3 group">
-          {/* TODO: Reemplazar con logo oficial de Biolily */}
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-700 to-blue-600 flex items-center justify-center shadow">
-            <span className="text-white font-bold text-lg leading-none">B</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span
-              className={`font-bold text-xl tracking-tight transition-colors ${
-                scrolled ? "text-green-900" : "text-white"
-              }`}
-            >
-              Biolily
-            </span>
-            <span
-              className={`text-xs font-medium tracking-widest uppercase transition-colors ${
-                scrolled ? "text-green-600" : "text-green-200"
-              }`}
-            >
-              Tecnología Ambiental
-            </span>
-          </div>
+        <a
+          href="#inicio"
+          className={`flex items-center px-3 py-1.5 rounded-xl transition-all ${
+            scrolled ? "" : "bg-white/20 backdrop-blur-sm"
+          }`}
+        >
+          <Image
+            src="/logo-horizontal-biolily.svg"
+            alt="Biolily"
+            width={160}
+            height={48}
+            className="h-9 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop links */}
