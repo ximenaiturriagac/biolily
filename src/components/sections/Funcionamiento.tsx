@@ -11,12 +11,12 @@ const steps = [
     number: 2,
     icon: Beaker,
     title: "Absorción de nutrientes",
-    desc: "El sistema captura nitrógeno y fósforo presentes en el ecosistema, reduciendo las concentraciones que alimentan la eutrofización.",
+    desc: "El sistema captura nitrógeno, fósforo y otros contaminantes presentes en el ecosistema, reduciendo las concentraciones que alimentan la eutrofización.",
   },
   {
     number: 3,
     icon: TrendingUp,
-    title: "Crecimiento acelerado",
+    title: "Hasta 5 veces más eficiente",
     desc: "La biomasa vegetal se desarrolla dentro de un entorno controlado, maximizando la captación de nutrientes por unidad de área.",
   },
   {
@@ -28,14 +28,14 @@ const steps = [
   {
     number: 5,
     icon: ArrowDown,
-    title: "Extracción real de nutrientes",
-    desc: "Los nutrientes salen físicamente del ecosistema mediante la cosecha, logrando una remoción efectiva y cuantificable.",
+    title: "Extracción real de contaminantes",
+    desc: "Los nutrientes y contaminantes salen físicamente del ecosistema mediante la cosecha, logrando una remoción efectiva y cuantificable.",
   },
   {
     number: 6,
     icon: Activity,
     title: "Monitoreo",
-    desc: "Los resultados son cuantificados y reportados mediante indicadores de calidad del agua y biomasa cosechada.",
+    desc: "Los resultados son cuantificados y reportados mediante indicadores de calidad del agua y alineados con estándares internacionales (VWBA2.0).",
   },
 ];
 
