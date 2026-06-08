@@ -22,7 +22,7 @@ const steps = [
   },
   {
     icon: Layers,
-    title: "Implementación de nuestra tecnología",
+    title: "Implementación de la tecnología",
     copy: "Instalamos los módulos flotantes y establecemos el esquema de operación y mantenimiento.",
   },
   {
