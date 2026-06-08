@@ -5,12 +5,14 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#fito-colmenas", label: "Fito-colmenas" },
+  { href: "#biolily", label: "Biolily" },
+  { href: "#vision", label: "Fito-colmenas" },
+  { href: "#medicion", label: "Medición" },
+  { href: "#validacion", label: "Validación" },
   { href: "#impacto", label: "Impacto" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#reconocimientos", label: "Reconocimientos" },
   { href: "#equipo", label: "Equipo" },
-  { href: "#medios", label: "Medios" },
+  { href: "#reconocimientos", label: "Reconocimientos" },
+  { href: "#notas", label: "Notas" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -51,12 +53,12 @@ export default function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all hover:bg-green-50 hover:text-green-700 ${
+                className={`px-2.5 py-2 rounded-lg text-xs font-medium transition-all hover:bg-green-50 hover:text-green-700 ${
                   scrolled ? "text-gray-700" : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -67,7 +69,7 @@ export default function Navbar() {
           <li>
             <a
               href="#contacto"
-              className="ml-2 px-5 py-2.5 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-sm hover:shadow-md"
+              className="ml-2 px-4 py-2.5 bg-green-700 hover:bg-green-800 text-white text-xs font-semibold rounded-full transition-all shadow-sm hover:shadow-md"
             >
               Contáctanos
             </a>

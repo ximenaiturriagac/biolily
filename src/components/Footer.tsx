@@ -1,15 +1,18 @@
 import Image from "next/image";
-import { Link2, Mail, MapPin } from "lucide-react";
+import { Mail, Link2 } from "lucide-react";
 
 const footerLinks = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#fito-colmenas", label: "Fito-colmenas" },
+  { href: "#biolily", label: "Biolily" },
+  { href: "#vision", label: "Fito-colmenas" },
+  { href: "#medicion", label: "Medición" },
+  { href: "#validacion", label: "Validación" },
   { href: "#impacto", label: "Impacto" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#reconocimientos", label: "Reconocimientos" },
   { href: "#equipo", label: "Equipo" },
-  { href: "#medios", label: "Medios" },
+  { href: "#reconocimientos", label: "Reconocimientos" },
+  { href: "#notas", label: "Notas" },
   { href: "#contacto", label: "Contacto" },
+  { href: "#privacidad", label: "Avisos de privacidad" },
 ];
 
 export default function Footer() {
@@ -29,16 +32,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-green-300 text-sm font-medium italic">
-              "Tecnología ambiental inspirada en la naturaleza."
+              &ldquo;Tecnología ambiental inspirada en la naturaleza.&rdquo;
             </p>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Desarrollamos, implementamos y operamos Fito-colmenas para restaurar
-              cuerpos de agua afectados por eutrofización.
-            </p>
-            <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <MapPin size={14} className="text-green-400 shrink-0" />
-              <span>Valle de Bravo, Estado de México</span>
-            </div>
           </div>
 
           {/* Links */}
@@ -66,7 +61,6 @@ export default function Footer() {
               Contacto
             </h4>
             <div className="space-y-3">
-              {/* TODO: Reemplazar con correo oficial */}
               <a
                 href="mailto:contacto@biolily.com"
                 className="flex items-center gap-2 text-gray-400 text-sm hover:text-green-300 transition-colors"
@@ -81,12 +75,12 @@ export default function Footer() {
                 className="flex items-center gap-2 text-gray-400 text-sm hover:text-green-300 transition-colors"
               >
                 <Link2 size={14} className="text-green-400 shrink-0" />
-                Fito-colmenas by Biolily
+                LinkedIn
               </a>
             </div>
             <div className="mt-6 p-4 rounded-xl bg-green-900/30 border border-green-800/50">
               <p className="text-green-300 text-xs italic leading-relaxed">
-                "Confiamos en la infinita sabiduría de la naturaleza."
+                &ldquo;Confiamos en la infinita sabiduría de la naturaleza.&rdquo;
               </p>
             </div>
           </div>
@@ -94,10 +88,10 @@ export default function Footer() {
 
         <div className="border-t border-green-900/50 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-xs">
-            © {new Date().getFullYear()} Biolily. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Biolily. Todos los derechos reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            Tecnología ambiental · Valle de Bravo · México
+            Tecnología ambiental &middot; Valle de Bravo &middot; México
           </p>
         </div>
       </div>
