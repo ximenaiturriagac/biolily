@@ -1,4 +1,7 @@
+"use client";
 import { ExternalLink, ArrowRight } from "lucide-react";
+import { useLang } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
 const LinkedInLogo = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -10,6 +13,9 @@ const LinkedInLogo = () => (
 );
 
 export default function LinkedInBanner() {
+  const { lang } = useLang();
+  const t = translations[lang].linkedinBanner;
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,13 +26,10 @@ export default function LinkedInBanner() {
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
                 <LinkedInLogo />
-                <span className="text-sm font-semibold uppercase tracking-widest text-blue-300">LinkedIn</span>
+                <span className="text-sm font-semibold uppercase tracking-widest text-blue-300">{t.label}</span>
               </div>
-              <h3 className="font-display text-2xl font-bold mb-3">Síguenos en LinkedIn</h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Conoce nuestros avances, proyectos, reconocimientos y actualizaciones sobre
-                tecnología ambiental, restauración hídrica y soluciones basadas en la naturaleza.
-              </p>
+              <h3 className="font-display text-2xl font-bold mb-3">{t.heading}</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.desc}</p>
               <a
                 href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
                 target="_blank"
@@ -36,30 +39,23 @@ export default function LinkedInBanner() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7.5 9.5H5V18H7.5V9.5ZM6.25 8.25C5.56 8.25 5 7.69 5 7C5 6.31 5.56 5.75 6.25 5.75C6.94 5.75 7.5 6.31 7.5 7C7.5 7.69 6.94 8.25 6.25 8.25ZM19 18H16.5V13.5C16.5 12.4 15.6 11.5 14.5 11.5C13.4 11.5 12.5 12.4 12.5 13.5V18H10V9.5H12.5V10.8C13.2 9.9 14.3 9.3 15.5 9.3C17.4 9.3 19 10.9 19 12.8V18Z" />
                 </svg>
-                Biolily
+                {t.cta}
                 <ExternalLink size={14} />
               </a>
             </div>
 
-
             {/* Right: Contact CTA */}
             <div className="border-t border-white/20 lg:border-t-0 lg:border-l lg:pl-10 pt-8 lg:pt-0 text-center lg:text-left">
               <span className="text-sm font-semibold uppercase tracking-widest text-green-400 block mb-3">
-                ¿Listo para actuar?
+                {t.ctaRight}
               </span>
-              <h3 className="font-display text-2xl font-bold mb-3">
-                Convirtamos una visión en un proyecto de restauración hídrica
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Ya sea que busques generar beneficios ambientales y volumétricos, fortalecer una
-                estrategia de Water Stewardship o impulsar la recuperación de un ecosistema acuático, 
-                conversemos sobre cómo diseñar una solución respaldada por la ciencia, monitoreo y resultados verificables.
-              </p>
+              <h3 className="font-display text-2xl font-bold mb-3">{t.headingRight}</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.descRight}</p>
               <a
                 href="/contacto"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25"
               >
-                Contáctanos
+                {t.ctaContact}
                 <ArrowRight size={16} />
               </a>
             </div>

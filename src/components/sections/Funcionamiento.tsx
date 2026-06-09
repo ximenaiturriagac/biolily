@@ -4,21 +4,19 @@ import {
   Waves, Beaker, TrendingUp, Scissors, ArrowDown, Activity,
   ChevronLeft, ChevronRight,
 } from "lucide-react";
+import { useLang } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const steps = [
-  { number: 1, icon: Waves, title: "Captación natural", desc: "Las raíces del lirio acuático interactúan directamente con la columna de agua, iniciando el proceso de absorción." },
-  { number: 2, icon: Beaker, title: "Absorción de nutrientes", desc: "El sistema captura nitrógeno, fósforo y otros contaminantes presentes en el ecosistema, reduciendo las concentraciones que alimentan la eutrofización." },
-  { number: 3, icon: TrendingUp, title: "Hasta 5 veces más eficiente", desc: "La biomasa vegetal se desarrolla dentro de un entorno controlado, maximizando la captación de nutrientes por unidad de área." },
-  { number: 4, icon: Scissors, title: "Cosecha", desc: "La biomasa es retirada periódicamente del sistema de forma controlada y programada." },
-  { number: 5, icon: ArrowDown, title: "Extracción real de contaminantes", desc: "Los nutrientes y contaminantes salen físicamente del ecosistema mediante la cosecha, logrando una remoción efectiva y cuantificable." },
-  { number: 6, icon: Activity, title: "Monitoreo", desc: "Los resultados son cuantificados y reportados mediante indicadores de calidad del agua y alineados con estándares internacionales (VWBA2.0)." },
-];
-
+const icons = [Waves, Beaker, TrendingUp, Scissors, ArrowDown, Activity];
 const PER_SLIDE = 3;
-const SLIDES = Math.ceil(steps.length / PER_SLIDE);
+const SLIDES = 2;
 
 export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean }) {
   const [slide, setSlide] = useState(0);
+  const { lang } = useLang();
+  const t = translations[lang].funcionamiento;
+
+  const steps = t.steps.map((s, i) => ({ ...s, number: i + 1, icon: icons[i] }));
 
   const prev = () => setSlide((s) => (s - 1 + SLIDES) % SLIDES);
   const next = () => setSlide((s) => (s + 1) % SLIDES);
@@ -29,19 +27,17 @@ export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean })
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
-            Proceso
+            {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            ¿Cómo funcionan?
+            {t.heading}
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed text-justify">
-            Cada Fito-colmena sigue un ciclo continuo de captación, absorción, cosecha y monitoreo
-            para convertir procesos naturales en resultados medibles.
+            {t.desc}
           </p>
         </div>
 
         {asGrid ? (
-          /* Grid layout — all 6 steps at once */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {steps.map((step) => {
               const Icon = step.icon;
@@ -62,7 +58,6 @@ export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean })
             })}
           </div>
         ) : (
-          /* Slider layout — 3 cards per slide */
           <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[240px]">
               {visible.map((step) => {
@@ -84,7 +79,7 @@ export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean })
               })}
             </div>
             <div className="flex items-center justify-center gap-6 mt-8">
-              <button onClick={prev} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label="Anterior">
+              <button onClick={prev} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label={t.prev}>
                 <ChevronLeft size={18} className="text-gray-600" />
               </button>
               <div className="flex gap-2">
@@ -92,7 +87,7 @@ export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean })
                   <button key={i} onClick={() => setSlide(i)} className={`h-2 rounded-full transition-all ${i === slide ? "bg-green-600 w-6" : "bg-gray-300 w-2"}`} aria-label={`Slide ${i + 1}`} />
                 ))}
               </div>
-              <button onClick={next} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label="Siguiente">
+              <button onClick={next} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label={t.next}>
                 <ChevronRight size={18} className="text-gray-600" />
               </button>
             </div>

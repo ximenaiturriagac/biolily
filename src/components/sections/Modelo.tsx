@@ -1,3 +1,4 @@
+"use client";
 import {
   Search,
   Lightbulb,
@@ -8,71 +9,33 @@ import {
   FileText,
   Leaf,
 } from "lucide-react";
+import { useLang } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const steps = [
-  {
-    icon: Search,
-    title: "Diagnóstico del ecosistema",
-    copy: "Evaluamos el estado del cuerpo de agua, identificamos presiones y definimos metas de restauración.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Diseño de la solución",
-    copy: "Diseñamos el esquema de implementación adaptado a las condiciones físicas, ecológicas y operativas del sitio.",
-  },
-  {
-    icon: Layers,
-    title: "Implementación de la tecnología",
-    copy: "Instalamos los módulos flotantes y establecemos el esquema de operación y mantenimiento.",
-  },
-  {
-    icon: Activity,
-    title: "Monitoreo científico",
-    copy: "Medimos indicadores de calidad del agua, biomasa y cobertura de manera continua.",
-  },
-  {
-    icon: BarChart2,
-    title: "Medición de indicadores",
-    copy: "Cuantificamos nitrógeno, fósforo y otros parámetros para documentar el desempeño del sistema.",
-  },
-  {
-    icon: Droplets,
-    title: "Beneficios volumétricos",
-    copy: "Calculamos los beneficios volumétricos generados, verificables bajo metodologías reconocidas.",
-  },
-  {
-    icon: FileText,
-    title: "Reportes de impacto",
-    copy: "Generamos reportes periódicos de desempeño para empresas, gobiernos y organizaciones aliadas.",
-  },
-  {
-    icon: Leaf,
-    title: "Restauración ecológica",
-    copy: "El ecosistema recupera su equilibrio a largo plazo, generando beneficios ambientales y sociales sostenibles.",
-  },
-];
+const icons = [Search, Lightbulb, Layers, Activity, BarChart2, Droplets, FileText, Leaf];
 
 export default function Modelo() {
+  const { lang } = useLang();
+  const t = translations[lang].modelo;
+
   return (
     <section id="modelo" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
-            Proceso
+            {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            De la restauración ecológica a los resultados medibles
+            {t.heading}
           </h2>
           <p className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed text-justify">
-            En Biolily no solo implementamos tecnología. Diseñamos proyectos integrales de
-            restauración hídrica que permiten medir y demostrar resultados a lo largo del tiempo.
+            {t.desc}
           </p>
         </div>
 
-        {/* Desktop: full grid */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
+          {t.steps.map((step, idx) => {
+            const Icon = icons[idx];
             return (
               <div
                 key={step.title}
@@ -87,30 +50,29 @@ export default function Modelo() {
                   </div>
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm mb-2">{step.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed text-justify">{step.copy}</p>
+                <p className="text-gray-500 text-xs leading-relaxed text-justify">{step.desc}</p>
               </div>
             );
           })}
         </div>
 
-        {/* Mobile: vertical timeline */}
         <div className="md:hidden space-y-0">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+          {t.steps.map((step, index) => {
+            const Icon = icons[index];
             return (
               <div key={step.title} className="relative flex gap-4">
                 <div className="flex flex-col items-center">
                   <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
                     {index + 1}
                   </div>
-                  {index < steps.length - 1 && <div className="w-0.5 flex-1 bg-green-200 my-1" />}
+                  {index < t.steps.length - 1 && <div className="w-0.5 flex-1 bg-green-200 my-1" />}
                 </div>
                 <div className="pb-6 pt-1 flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <Icon size={16} className="text-green-700 shrink-0" />
                     <h3 className="font-semibold text-gray-900 text-sm">{step.title}</h3>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed text-justify">{step.copy}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed text-justify">{step.desc}</p>
                 </div>
               </div>
             );
