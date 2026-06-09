@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Tecnologia from "@/components/sections/Tecnologia";
 import Funcionamiento from "@/components/sections/Funcionamiento";
 import Eficiencia from "@/components/sections/Eficiencia";
+
+export const metadata: Metadata = {
+  title: "Fito-colmenas® | Tecnología de restauración hídrica — Biolily",
+  description:
+    "Conoce las Fito-colmenas®, tecnología patentada de Biolily para la restauración hídrica mediante el control del lirio acuático. Modular, flotante, medible y validada científicamente.",
+  openGraph: {
+    title: "Fito-colmenas® | Tecnología de restauración hídrica — Biolily",
+    description:
+      "Conoce las Fito-colmenas®, tecnología patentada de Biolily para la restauración hídrica mediante el control del lirio acuático. Modular, flotante, medible y validada científicamente.",
+    type: "website",
+  },
+};
 
 export default function TecnologiasPage() {
   return (

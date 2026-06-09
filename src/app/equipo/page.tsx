@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Team from "@/components/sections/Team";
+
+export const metadata: Metadata = {
+  title: "Equipo | Biolily",
+  description:
+    "Conoce al equipo de Biolily: expertos en restauración hídrica, tecnología ambiental, ciencias del agua y Water Stewardship comprometidos con la recuperación de ecosistemas acuáticos.",
+  openGraph: {
+    title: "Equipo | Biolily",
+    description:
+      "Conoce al equipo de Biolily: expertos en restauración hídrica, tecnología ambiental, ciencias del agua y Water Stewardship comprometidos con la recuperación de ecosistemas acuáticos.",
+    type: "website",
+  },
+};
 
 export default function EquipoPage() {
   return (
