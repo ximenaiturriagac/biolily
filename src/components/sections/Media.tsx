@@ -132,7 +132,7 @@ export default function Media() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 9.5H5V18H7.5V9.5ZM6.25 8.25C5.56 8.25 5 7.69 5 7C5 6.31 5.56 5.75 6.25 5.75C6.94 5.75 7.5 6.31 7.5 7C7.5 7.69 6.94 8.25 6.25 8.25ZM19 18H16.5V13.5C16.5 12.4 15.6 11.5 14.5 11.5C13.4 11.5 12.5 12.4 12.5 13.5V18H10V9.5H12.5V10.8C13.2 9.9 14.3 9.3 15.5 9.3C17.4 9.3 19 10.9 19 12.8V18Z"/>
             </svg>
-            Ver LinkedIn de Fito-colmenas by Biolily
+            Biolily
             <ExternalLink size={14} />
           </a>
         </div>
