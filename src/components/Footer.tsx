@@ -2,17 +2,16 @@ import Image from "next/image";
 import { Mail, Link2 } from "lucide-react";
 
 const footerLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#biolily", label: "Biolily" },
-  { href: "#vision", label: "Fito-colmenas" },
-  { href: "#medicion", label: "Medición" },
-  { href: "#validacion", label: "Validación" },
-  { href: "#impacto", label: "Impacto" },
-  { href: "#equipo", label: "Equipo" },
-  { href: "#reconocimientos", label: "Reconocimientos" },
-  { href: "#notas", label: "Notas" },
-  { href: "#contacto", label: "Contacto" },
-  { href: "#privacidad", label: "Avisos de privacidad" },
+  { href: "/", label: "Inicio" },
+  { href: "/biolily", label: "Biolily" },
+  { href: "/tecnologias", label: "Nuestras Tecnologías" },
+  { href: "/monitoreo", label: "Monitoreo" },
+  { href: "/respaldo", label: "Respaldo" },
+  { href: "/impacto", label: "Impacto" },
+  { href: "/aliados", label: "Aliados" },
+  { href: "/equipo", label: "Equipo" },
+  { href: "/reconocimientos", label: "Reconocimientos y menciones" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Footer() {

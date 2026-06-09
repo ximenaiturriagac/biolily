@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -48,7 +48,6 @@ export default function Hero() {
           <div className="flex flex-col gap-6">
             {/* Image */}
             <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-800/40 to-blue-900/40 border border-white/10 relative">
-              {/* TODO: Replace src with /render-completo.png once uploaded to public/ */}
               <Image
                 src="/render-completo.png"
                 alt="Fito-colmenas en Valle de Bravo"
@@ -73,14 +72,14 @@ export default function Hero() {
             {/* CTAs below image */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="#tecnologia"
+                href="/tecnologias"
                 className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25 hover:scale-105 text-sm"
               >
                 Conoce nuestra tecnología
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#impacto"
+                href="/impacto"
                 className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-full transition-all backdrop-blur-sm text-sm"
               >
                 Ver resultados e impacto
@@ -90,17 +89,6 @@ export default function Hero() {
 
         </div>
       </div>
-
-      {/* Scroll indicator → QuienesSomos */}
-      <a
-        href="#biolily"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors"
-      >
-        <span className="text-xs uppercase tracking-widest">Explorar</span>
-        <ChevronDown size={20} className="animate-bounce" />
-      </a>
-
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }
