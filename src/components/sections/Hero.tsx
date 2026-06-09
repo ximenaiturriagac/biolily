@@ -35,7 +35,7 @@ export default function Hero() {
           {/* Right: image + CTAs */}
           <div className="flex flex-col gap-6">
             {/* Image */}
-            <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-800/40 to-blue-900/40 border border-white/10 relative">
+            <div className="rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-green-800/40 to-blue-900/40 border border-white/10 relative">
               <Image
                 src="/render-completo.png"
                 alt="Tecnologia patentada en operacion"

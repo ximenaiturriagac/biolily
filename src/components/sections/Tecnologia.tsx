@@ -56,7 +56,7 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
           </div>
 
           {/* Right: render image */}
-          <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-100 to-teal-100 border border-green-200 relative">
+          <div className="rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-green-100 to-teal-100 border border-green-200 relative">
             <Image
               src="/render-fito-colmena.png"
               alt="Módulo Fito-colmena"
