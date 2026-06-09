@@ -41,8 +41,6 @@ export default function LinkedInBanner() {
               </a>
             </div>
 
-            {/* Divider */}
-            <div className="hidden lg:block w-px bg-white/20 absolute left-1/2 top-10 bottom-10" aria-hidden />
 
             {/* Right: Contact CTA */}
             <div className="border-t border-white/20 lg:border-t-0 lg:border-l lg:pl-10 pt-8 lg:pt-0 text-center lg:text-left">

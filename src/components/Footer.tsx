@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, Download, FileText, ExternalLink } from "lucide-react";
+import { ChevronDown, Download, FileText, ExternalLink, Mail } from "lucide-react";
 
 const navLinks = [
   { href: "/#inicio", label: "Inicio" },
@@ -80,9 +80,16 @@ export default function Footer() {
             </a>
             <a
               href="mailto:ad.biolily@gmail.com"
-              className="mt-3 text-gray-400 text-sm hover:text-green-300 transition-colors"
+              className="mt-3 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
             >
-              ad.biolily@gmail.com
+              <div className="w-6 h-6 flex items-center justify-center">
+                <Mail size={20} className="text-green-400" />
+              </div>
+              <div>
+                <p className="text-white text-sm font-semibold leading-tight">ad.biolily@gmail.com</p>
+                <p className="text-gray-400 text-xs mt-0.5">Correo electrónico</p>
+              </div>
+              <ExternalLink size={14} className="text-gray-500 group-hover:text-gray-300 transition-colors ml-auto" />
             </a>
           </div>
         </div>

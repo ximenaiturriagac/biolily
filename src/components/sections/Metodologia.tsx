@@ -1,33 +1,45 @@
+import { Leaf, Droplets, BarChart2, Microscope, FileText } from "lucide-react";
+
 const components = [
   {
     title: "Nature Based Solutions",
     desc: "Adoptamos los principios de Soluciones Basadas en la Naturaleza para diseñar tecnologías que ayudan al planeta a ser más eficiente.",
-    badge: "NbS",
+    Icon: Leaf,
     color: "bg-green-600",
+    iconBg: "bg-green-50",
+    iconColor: "text-green-600",
   },
   {
     title: "Water Stewardship",
     desc: "Generamos beneficios volumétricos verificables alineados con estándares internacionales de gestión responsable del agua.",
-    badge: "WS",
+    Icon: Droplets,
     color: "bg-blue-600",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-600",
   },
   {
     title: "VWBA 2.0",
     desc: "Aplicamos metodologías reconocidas para el cálculo y verificación de beneficios volumétricos de agua en proyectos de restauración.",
-    badge: "V2",
+    Icon: BarChart2,
     color: "bg-teal-600",
+    iconBg: "bg-teal-50",
+    iconColor: "text-teal-600",
   },
   {
     title: "Monitoreo científico",
     desc: "Cada proyecto incluye un protocolo de monitoreo con indicadores definidos, mediciones periódicas y análisis de resultados.",
-    badge: "MC",
+    Icon: Microscope,
     color: "bg-violet-600",
+    iconBg: "bg-violet-50",
+    iconColor: "text-violet-600",
   },
   {
     title: "Reportes de desempeño",
     desc: "Generamos reportes periódicos que documentan avances, resultados y cumplimiento de metas para cada parte interesada.",
-    badge: "RD",
+    Icon: FileText,
     color: "bg-amber-600",
+    iconBg: "bg-amber-50",
+    iconColor: "text-amber-600",
   },
 ];
 
@@ -49,18 +61,22 @@ export default function Metodologia() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {components.slice(0, 3).map(({ title, desc, badge, color }) => (
+          {components.slice(0, 3).map(({ title, desc, Icon, iconBg, iconColor }) => (
             <div key={title} className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all group">
-              <div className={`w-10 h-10 rounded-xl ${color} text-white flex items-center justify-center font-bold text-sm mb-4`}>{badge}</div>
+              <div className={`w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
+                <Icon size={20} className={iconColor} />
+              </div>
               <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
             </div>
           ))}
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          {components.slice(3).map(({ title, desc, badge, color }) => (
+          {components.slice(3).map(({ title, desc, Icon, iconBg, iconColor }) => (
             <div key={title} className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all group w-full sm:w-80 lg:w-96">
-              <div className={`w-10 h-10 rounded-xl ${color} text-white flex items-center justify-center font-bold text-sm mb-4`}>{badge}</div>
+              <div className={`w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
+                <Icon size={20} className={iconColor} />
+              </div>
               <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
             </div>

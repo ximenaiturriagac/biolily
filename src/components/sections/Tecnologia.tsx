@@ -4,7 +4,7 @@ const features = ["Modular", "Flotante", "Controlada", "Medible", "Escalable", "
 
 export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
   return (
-    <section id="tecnologia" className="py-24 bg-white">
+    <section id="tecnologias" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-4">
@@ -22,7 +22,7 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             Fito-colmenas
           </h2>
-          <p className="text-gray-500 text-lg text-center">
+          <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto">
             Tecnología patentada para la restauración hídrica
           </p>
         </div>
