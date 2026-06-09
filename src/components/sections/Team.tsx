@@ -19,7 +19,7 @@ const team = [
   },
   {
     name: "Dr. Jorge Alberto Ramírez Zierold",
-    role: "Director Científico",
+    role: "Cofundador y Director Científico",
     company: "Asesor científico · Fito-colmenas",
     bio: "Jorge Alberto Ramírez Zierold es Doctor en Ciencias y especialista vinculado al estudio de sistemas acuáticos, calidad del agua y limnología. Su experiencia científica ha sido clave para fortalecer el fundamento técnico de las Fito-colmenas, el monitoreo de cuerpos de agua y la interpretación de indicadores ambientales.",
     highlights: [
