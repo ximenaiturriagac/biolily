@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/monitoreo", label: "Monitoreo" },
   { href: "/respaldo", label: "Validación" },
   { href: "/impacto", label: "Impacto" },
-  { href: "/aliados", label: "Aliados" },
+  { href: "/aliados", label: "Únete" },
   { href: "/equipo", label: "Equipo" },
   { href: "/reconocimientos", label: "Reconocimientos y menciones" },
   { href: "/contacto", label: "Contacto" },
