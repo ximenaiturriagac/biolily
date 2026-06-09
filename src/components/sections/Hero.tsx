@@ -33,9 +33,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
-              En Biolily diseñamos, implementamos y monitoreamos proyectos de restauración hídrica
-              que generan beneficios ambientales y volumétricos medibles para empresas, gobiernos
-              y organizaciones comprometidas con el futuro del agua.
+              En Biolily diseñamos e implementamos proyectos de restauración hídirca que generan 
+              beneficios ambientales y volumétricos medibles mediante soluciones basadas en la 
+              naturaleza, monitoreo científico y colaboración multisectorial.
             </p>
 
             <p className="text-gray-400 text-base leading-relaxed text-justify">
