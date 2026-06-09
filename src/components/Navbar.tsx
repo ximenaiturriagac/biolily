@@ -49,7 +49,7 @@ export default function Navbar() {
       </div>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
+        <a href="/" className="flex items-center shrink-0">
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
@@ -58,7 +58,7 @@ export default function Navbar() {
             className="h-12 w-auto"
             priority
           />
-        </Link>
+        </a>
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-0.5">
