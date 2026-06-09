@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -48,4 +49,9 @@ body {
 /* Smooth section transitions */
 section {
   scroll-margin-top: 80px;
+}
+
+/* Justify body text globally */
+p {
+  text-align: justify;
 }
