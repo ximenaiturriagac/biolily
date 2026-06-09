@@ -24,7 +24,7 @@ const benefits = [
   "Inclusión social y gobernanza",
   "Economía circular",
   "Restauración garantizada",
-  "Beneficio volumétrico comprobable",
+  "Beneficios volumétricos comprobables",
 ];
 
 export default function Eficiencia() {
