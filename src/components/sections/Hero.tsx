@@ -37,11 +37,6 @@ export default function Hero() {
               beneficios ambientales y volumétricos medibles mediante soluciones basadas en la 
               naturaleza, monitoreo científico y colaboración multisectorial.
             </p>
-
-            <p className="text-gray-400 text-base leading-relaxed text-justify">
-              Combinamos innovación ambiental, monitoreo científico y soluciones basadas en la
-              naturaleza para transformar desafíos hídricos en resultados verificables.
-            </p>
           </div>
 
           {/* Right: image + CTAs */}
