@@ -14,42 +14,29 @@ import LinkedInBanner from "@/components/LinkedInBanner";
 export default function Home() {
   return (
     <>
-      {/* #inicio */}
       <Hero />
 
-      {/* #biolily */}
-      <div id="biolily">
+      <div>
         <QuienesSomos />
         <Vision />
         <Modelo />
       </div>
 
-      {/* #tecnologias — intro only; full detail at /tecnologias */}
-      <div id="tecnologias">
-        <Tecnologia />
-      </div>
+      <Tecnologia />
 
-      {/* #monitoreo */}
       <div id="monitoreo">
         <Medicion />
         <Metodologia />
       </div>
 
-      {/* #validacion */}
       <Validacion />
 
-      {/* #impacto */}
       <ImpactoSection />
 
-      {/* #unete — Aliados only; Equipo is at /equipo */}
-      <div id="unete">
-        <Allies />
-      </div>
+      <Allies />
 
-      {/* #reconocimientos */}
       <Reconocimientos />
 
-      {/* LinkedIn banner */}
       <LinkedInBanner />
     </>
   );

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -57,12 +58,12 @@ export default function Hero() {
                 Conoce nuestra tecnología
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
+              <Link
                 href="/#impacto"
                 className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-full transition-all backdrop-blur-sm text-sm"
               >
                 Ver resultados e impacto
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
@@ -28,7 +29,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
@@ -37,7 +38,7 @@ export default function Navbar() {
             className="h-14 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-0.5">
@@ -51,10 +52,10 @@ export default function Navbar() {
 
           {/* Dropdown: Nuestras Tecnologías */}
           <li className="relative group">
-            <a href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all whitespace-nowrap">
+            <Link href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all whitespace-nowrap">
               Nuestras Tecnologías
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
-            </a>
+            </Link>
             <div className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[180px] z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
               {tecLinks.map((link) => (
                 <a
@@ -111,13 +112,13 @@ export default function Navbar() {
             {/* Mobile dropdown: Nuestras Tecnologías */}
             <li>
               <div className="flex items-center">
-                <a
+                <Link
                   href="/#tecnologias"
                   onClick={() => setMenuOpen(false)}
                   className="flex-1 px-4 py-3 text-gray-700 text-sm font-medium rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors"
                 >
                   Nuestras Tecnologías
-                </a>
+                </Link>
                 <button
                   onClick={() => setTechOpen(!techOpen)}
                   className="px-3 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-colors"
