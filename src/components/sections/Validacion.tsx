@@ -10,7 +10,7 @@ const institutions = [
   },
   {
     badge: "UN",
-    name: "UNAM",
+    name: "Universidad Nacional Autónoma de México",
     logo: "/logo-unam.png",
     color: "bg-indigo-700",
     desc: "La UNAM ha contribuido al desarrollo técnico y científico del proyecto mediante monitoreo, análisis de calidad del agua y evaluación de indicadores ambientales, fortaleciendo el rigor metodológico de las Fito-colmenas.",
