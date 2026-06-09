@@ -61,7 +61,7 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
               src="/render-fito-colmena.png"
               alt="Módulo Fito-colmena"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </div>

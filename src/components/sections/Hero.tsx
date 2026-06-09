@@ -40,7 +40,7 @@ export default function Hero() {
                 src="/render-completo.png"
                 alt="Tecnologia patentada en operacion"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
               <div className="hidden lg:block absolute bottom-18 left-3 max-w-[160px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
