@@ -44,7 +44,6 @@ export default function Hero() {
                 priority
               />
               <div className="hidden lg:block absolute bottom-3 left-3 max-w-[180px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
-                <p className="text-white text-xs font-medium">Fito-colmenas en Valle de Bravo</p>
                 <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>
               </div>
             </div>
