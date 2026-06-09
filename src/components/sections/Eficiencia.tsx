@@ -22,7 +22,7 @@ export default function Eficiencia() {
       className="py-24 bg-gradient-to-br from-[#0f2a0f] via-[#1a3a2a] to-[#0d2235] relative overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-400 block mb-3">
             Resultados
           </span>
