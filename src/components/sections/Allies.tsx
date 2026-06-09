@@ -70,7 +70,7 @@ export default function Allies() {
             </p>
             <div className="p-6 rounded-2xl bg-gradient-to-br from-green-50 to-blue-50 border border-green-200">
               <p className="text-gray-700 text-sm leading-relaxed italic">
-                "Construyamos juntos soluciones para restaurar nuestros cuerpos de agua."
+                "El futuro del agua se contruye a través de la colaboración."
               </p>
             </div>
             <div className="mt-6">
