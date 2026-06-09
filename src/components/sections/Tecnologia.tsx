@@ -1,45 +1,40 @@
+"use client";
 import Image from "next/image";
+import { useLang } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const features = ["Modular", "Flotante", "Controlada", "Medible", "Escalable", "Patentada"];
+export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
+  const { lang } = useLang();
+  const t = translations[lang].tecnologia;
 
-export default function Tecnologia() {
   return (
-    <section id="tecnologia" className="py-24 bg-white">
+    <section id="tecnologias" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-4">
-            Nuestra Tecnología
+            {t.eyebrow}
           </span>
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center items-center mb-6">
             <Image
               src="/logo-principal-fitocolmenas.svg"
               alt="Fito-colmenas"
-              width={220}
-              height={80}
-              className="h-16 w-auto"
+              width={323}
+              height={97}
+              className="h-[91px] w-auto mx-auto block"
             />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            Fito-colmenas<sup className="text-green-600 text-2xl">®</sup>
-          </h2>
-          <p className="text-gray-500 text-lg">
-            Tecnología patentada para la restauración hídrica
+          <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto">
+            {t.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
-          {/* Left: text */}
           <div>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Las Fito-colmenas son un sistema modular flotante diseñado para aprovechar la
-              capacidad natural del lirio acuático para absorber nutrientes presentes en cuerpos
-              de agua afectados por procesos de eutrofización. A diferencia del crecimiento
-              descontrolado del lirio, las Fito-colmenas permiten contener, acelerar, monitorear
-              y cosechar la biomasa vegetal de manera controlada, convirtiendo un problema
-              ambiental en una herramienta de restauración.
+            <p className="text-gray-600 text-lg leading-relaxed mb-8 text-justify">
+              {t.desc}
             </p>
-            <div className="grid grid-cols-3 gap-3">
-              {features.map((f) => (
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {t.features.map((f) => (
                 <div
                   key={f}
                   className="px-4 py-3 rounded-xl bg-green-50 border border-green-100 text-center"
@@ -48,18 +43,23 @@ export default function Tecnologia() {
                 </div>
               ))}
             </div>
+            {showCTA && (
+              <a
+                href="/tecnologias"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
+              >
+                {t.cta}
+              </a>
+            )}
           </div>
 
-          {/* Right: visual placeholder */}
-          <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-100 to-teal-100 border border-green-200 flex items-center justify-center relative">
-            {/* TODO: Replace with real image or 3D render of Fito-colmenas module */}
-            <div className="text-center text-green-400">
-              <div className="w-20 h-20 rounded-full border-2 border-green-300 flex items-center justify-center mx-auto mb-3">
-                <div className="w-10 h-10 rounded-full bg-green-200" />
-              </div>
-              <p className="text-sm font-medium text-green-600">Imagen / Render</p>
-              <p className="text-xs text-green-500">Módulo Fito-colmena</p>
-            </div>
+          <div className="rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-green-100 to-teal-100 border border-green-200 relative">
+            <Image
+              src="/render-fito-colmena.png"
+              alt="Módulo Fito-colmena"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
       </div>

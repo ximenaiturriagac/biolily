@@ -1,102 +1,116 @@
 "use client";
-import { useState } from "react";
-import { Send, Shield } from "lucide-react";
+import { useState, useRef } from "react";
+import { Send, Shield, Paperclip, X, AlertCircle } from "lucide-react";
+import { useLang } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const interestOptions = [
-  { value: "proyecto", label: "Proyecto" },
-  { value: "alianza", label: "Alianza" },
-  { value: "gobierno", label: "Gobierno" },
-  { value: "empresa", label: "Empresa" },
-  { value: "investigacion", label: "Investigación" },
-  { value: "prensa", label: "Prensa" },
-  { value: "otro", label: "Otro" },
-];
-
-const reportTypeOptions = [
-  { value: "etica", label: "Ética e integridad" },
-  { value: "conflicto", label: "Conflicto de interés" },
-  { value: "informacion", label: "Uso indebido de información" },
-  { value: "trato", label: "Trato inadecuado" },
-  { value: "incumplimiento", label: "Incumplimiento" },
-  { value: "otro", label: "Otro" },
-];
-
-const relationOptions = [
-  { value: "colaborador", label: "Colaborador" },
-  { value: "proveedor", label: "Proveedor" },
-  { value: "aliado", label: "Aliado" },
-  { value: "comunidad", label: "Comunidad" },
-  { value: "otro", label: "Otro" },
-];
+const MAX_FILE_MB = 5;
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
+const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
+const INTEGRITY_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_INTEGRITY_TEMPLATE ?? "";
 
 export default function Contact() {
+  const { lang } = useLang();
+  const t = translations[lang].contact;
+
   const [form, setForm] = useState({
-    name: "",
-    org: "",
-    cargo: "",
-    email: "",
-    phone: "",
-    interest: "",
-    message: "",
+    name: "", org: "", cargo: "", email: "", phone: "", interest: "", message: "",
   });
   const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const [reportForm, setReportForm] = useState({
-    reportType: "",
-    relation: "",
-    description: "",
-    additionalInfo: "",
-    contactEmail: "",
-    anonymous: false,
+    reportType: "", relation: "", description: "", additionalInfo: "", contactEmail: "",
   });
+  const [reportFiles, setReportFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState("");
   const [reportSent, setReportSent] = useState(false);
+  const [reportError, setReportError] = useState(false);
+  const [reportSending, setReportSending] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Conectar con Formspree, Resend, EmailJS, Supabase, Airtable o backend propio
-    setSent(true);
-  };
-
-  const handleReportChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const target = e.target as HTMLInputElement;
-    if (target.type === "checkbox") {
-      setReportForm({ ...reportForm, [target.name]: target.checked });
-    } else {
-      setReportForm({ ...reportForm, [target.name]: target.value });
+    setSending(true);
+    setSendError(false);
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(SERVICE_ID, CONTACT_TEMPLATE, {
+        name: form.name, org: form.org, cargo: form.cargo,
+        email: form.email, phone: form.phone,
+        interest: form.interest, message: form.message,
+      }, PUBLIC_KEY);
+      setSent(true);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
     }
   };
 
-  const handleReportSubmit = (e: React.FormEvent) => {
+  const handleReportChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setReportForm({ ...reportForm, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+    const newFiles = Array.from(e.target.files);
+    const oversized = newFiles.filter((f) => f.size > MAX_FILE_MB * 1024 * 1024);
+    if (oversized.length > 0) {
+      setFileError(`${t.fileTooBig} ${oversized.map((f) => f.name).join(", ")}`);
+      return;
+    }
+    setFileError("");
+    setReportFiles((prev) => [...prev, ...newFiles]);
+  };
+
+  const removeFile = (index: number) => {
+    setReportFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleReportSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Conectar canal de integridad con servicio backend o formulario cifrado
-    setReportSent(true);
+    setReportSending(true);
+    setReportError(false);
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(SERVICE_ID, INTEGRITY_TEMPLATE, {
+        reportType: reportForm.reportType,
+        relation: reportForm.relation,
+        description: reportForm.description,
+        additionalInfo: reportForm.additionalInfo,
+        contactEmail: reportForm.contactEmail || "No proporcionado",
+        attachments: reportFiles.map((f) => f.name).join(", ") || "Ninguno",
+      }, PUBLIC_KEY);
+      setReportSent(true);
+    } catch {
+      setReportError(true);
+    } finally {
+      setReportSending(false);
+    }
   };
 
   return (
     <section id="contacto" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
         {/* ── Main contact form ── */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
-              Contacto
+              {t.eyebrow}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Exploremos oportunidades para{" "}
-              <span className="text-green-700">restaurar el agua</span>
+              {t.heading1}{" "}
+              <span className="text-green-700">{t.heading2}</span>
             </h2>
-            <p className="text-gray-500 leading-relaxed">
-              Si tu organización busca generar beneficios ambientales y volumétricos medibles
-              mediante soluciones basadas en la naturaleza, nos encantaría conversar.
-            </p>
+            <p className="text-gray-500 leading-relaxed">{t.desc}</p>
           </div>
 
           {sent ? (
@@ -105,12 +119,8 @@ export default function Contact() {
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
                   <Send size={24} className="text-green-600" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-green-800 mb-2">
-                  Mensaje enviado
-                </h3>
-                <p className="text-green-700 text-sm">
-                  Gracias por contactar a Biolily. Nos comunicaremos contigo a la brevedad.
-                </p>
+                <h3 className="font-display text-2xl font-bold text-green-800 mb-2">{t.successTitle}</h3>
+                <p className="text-green-700 text-sm">{t.successDesc}</p>
               </div>
             </div>
           ) : (
@@ -118,32 +128,32 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="max-w-3xl mx-auto bg-white rounded-3xl p-8 shadow-sm border border-gray-100 space-y-5"
             >
+              {sendError && (
+                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                  <AlertCircle size={16} className="shrink-0" />
+                  {t.errorMsg}{" "}
+                  <a href="mailto:ad.biolily@gmail.com" className="underline font-medium">ad.biolily@gmail.com</a>.
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Nombre <span className="text-red-400">*</span>
+                    {t.name} <span className="text-red-400">{t.required}</span>
                   </label>
                   <input
-                    type="text"
-                    name="name"
-                    required
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Tu nombre completo"
+                    type="text" name="name" required value={form.name} onChange={handleChange}
+                    placeholder={t.namePlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Organización <span className="text-red-400">*</span>
+                    {t.org} <span className="text-red-400">{t.required}</span>
                   </label>
                   <input
-                    type="text"
-                    name="org"
-                    required
-                    value={form.org}
-                    onChange={handleChange}
-                    placeholder="Empresa u organización"
+                    type="text" name="org" required value={form.org} onChange={handleChange}
+                    placeholder={t.orgPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm"
                   />
                 </div>
@@ -151,27 +161,20 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Cargo</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.cargo}</label>
                   <input
-                    type="text"
-                    name="cargo"
-                    value={form.cargo}
-                    onChange={handleChange}
-                    placeholder="Tu cargo o rol"
+                    type="text" name="cargo" value={form.cargo} onChange={handleChange}
+                    placeholder={t.cargoPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Correo electrónico <span className="text-red-400">*</span>
+                    {t.email} <span className="text-red-400">{t.required}</span>
                   </label>
                   <input
-                    type="email"
-                    name="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="tu@correo.com"
+                    type="email" name="email" required value={form.email} onChange={handleChange}
+                    placeholder={t.emailPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm"
                   />
                 </div>
@@ -179,34 +182,24 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Teléfono
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.phone}</label>
                   <input
-                    type="tel"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+52 (000) 000-0000"
+                    type="tel" name="phone" value={form.phone} onChange={handleChange}
+                    placeholder={t.phonePlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Tipo de interés <span className="text-red-400">*</span>
+                    {t.interest} <span className="text-red-400">{t.required}</span>
                   </label>
                   <select
-                    name="interest"
-                    required
-                    value={form.interest}
-                    onChange={handleChange}
+                    name="interest" required value={form.interest} onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm bg-white"
                   >
-                    <option value="">Selecciona una opción</option>
-                    {interestOptions.map(({ value, label }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
+                    <option value="">{t.interestPlaceholder}</option>
+                    {t.interests.map(({ value, label }) => (
+                      <option key={value} value={value}>{label}</option>
                     ))}
                   </select>
                 </div>
@@ -214,25 +207,22 @@ export default function Contact() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Mensaje <span className="text-red-400">*</span>
+                  {t.message} <span className="text-red-400">{t.required}</span>
                 </label>
                 <textarea
-                  name="message"
-                  required
-                  rows={5}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Cuéntanos sobre tu proyecto, cuerpo de agua, necesidad o pregunta..."
+                  name="message" required rows={5} value={form.message} onChange={handleChange}
+                  placeholder={t.messagePlaceholder}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-100 outline-none transition-all text-sm resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
+                disabled={sending}
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-green-700 hover:bg-green-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
               >
                 <Send size={16} />
-                Enviar mensaje
+                {sending ? t.sending : t.send}
               </button>
             </form>
           )}
@@ -246,24 +236,13 @@ export default function Contact() {
                 <Shield size={20} className="text-white" />
               </div>
               <div>
-                <p className="text-white font-bold text-lg leading-tight">
-                  Canal de integridad y confianza
-                </p>
-                <p className="text-gray-400 text-xs">Voz con Valor Biolily</p>
+                <p className="text-white font-bold text-lg leading-tight">{t.integrityTitle}</p>
+                <p className="text-gray-400 text-xs">{t.integritySubtitle}</p>
               </div>
             </div>
 
-            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-              En Biolily creemos que la confianza, la transparencia y el respeto son fundamentales
-              para construir proyectos de restauración hídrica de largo plazo. Este canal está
-              disponible para colaboradores, aliados, proveedores, comunidades y cualquier persona
-              que desee reportar de buena fe una inquietud relacionada con ética, integridad,
-              posibles conflictos de interés, uso indebido de información, trato inadecuado,
-              incumplimientos o situaciones que puedan afectar la confianza en nuestros proyectos.
-            </p>
-            <p className="text-gray-400 text-xs mb-8 italic">
-              Los reportes serán tratados con seriedad, confidencialidad y respeto.
-            </p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-3">{t.integrityDesc}</p>
+            <p className="text-gray-400 text-xs mb-8 italic">{t.integrityNote}</p>
 
             {reportSent ? (
               <div className="flex items-center justify-center p-10 rounded-2xl bg-white/5 border border-white/10 text-center">
@@ -271,115 +250,122 @@ export default function Contact() {
                   <div className="w-12 h-12 rounded-full bg-green-900/50 flex items-center justify-center mx-auto mb-3">
                     <Shield size={20} className="text-green-400" />
                   </div>
-                  <p className="text-white font-semibold mb-1">Reporte enviado</p>
-                  <p className="text-gray-400 text-xs">
-                    Gracias por comunicarte con nosotros. Tu reporte ha sido recibido.
-                  </p>
+                  <p className="text-white font-semibold mb-1">{t.reportSuccessTitle}</p>
+                  <p className="text-gray-400 text-xs">{t.reportSuccessDesc}</p>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleReportSubmit} className="space-y-4">
+                {reportError && (
+                  <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-900/40 border border-red-700 text-red-300 text-sm">
+                    <AlertCircle size={16} className="shrink-0" />
+                    {t.reportErrorMsg}{" "}
+                    <a href="mailto:ad.biolily@gmail.com" className="underline font-medium">ad.biolily@gmail.com</a>.
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                      Tipo de reporte
-                    </label>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.reportType}</label>
                     <select
-                      name="reportType"
-                      value={reportForm.reportType}
-                      onChange={handleReportChange}
+                      name="reportType" value={reportForm.reportType} onChange={handleReportChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-800 text-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-900 outline-none transition-all text-sm"
                     >
-                      <option value="">Selecciona</option>
-                      {reportTypeOptions.map(({ value, label }) => (
-                        <option key={value} value={value}>
-                          {label}
-                        </option>
+                      <option value="">{t.reportTypePlaceholder}</option>
+                      {t.reportTypes.map(({ value, label }) => (
+                        <option key={value} value={value}>{label}</option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                      Relación con Biolily
-                    </label>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.relation}</label>
                     <select
-                      name="relation"
-                      value={reportForm.relation}
-                      onChange={handleReportChange}
+                      name="relation" value={reportForm.relation} onChange={handleReportChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-800 text-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-900 outline-none transition-all text-sm"
                     >
-                      <option value="">Selecciona</option>
-                      {relationOptions.map(({ value, label }) => (
-                        <option key={value} value={value}>
-                          {label}
-                        </option>
+                      <option value="">{t.reportTypePlaceholder}</option>
+                      {t.relations.map(({ value, label }) => (
+                        <option key={value} value={value}>{label}</option>
                       ))}
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                    Descripción de la situación
-                  </label>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.description}</label>
                   <textarea
-                    name="description"
-                    required
-                    rows={4}
-                    value={reportForm.description}
-                    onChange={handleReportChange}
-                    placeholder="Describe la situación con el mayor detalle posible..."
+                    name="description" required rows={4} value={reportForm.description} onChange={handleReportChange}
+                    placeholder={t.descriptionPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-800 text-gray-200 placeholder-gray-500 focus:border-green-500 focus:ring-2 focus:ring-green-900 outline-none transition-all text-sm resize-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                    Información adicional (opcional)
-                  </label>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.additionalInfo}</label>
                   <textarea
-                    name="additionalInfo"
-                    rows={3}
-                    value={reportForm.additionalInfo}
-                    onChange={handleReportChange}
-                    placeholder="Cualquier detalle adicional que consideres relevante..."
+                    name="additionalInfo" rows={3} value={reportForm.additionalInfo} onChange={handleReportChange}
+                    placeholder={t.additionalInfoPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-800 text-gray-200 placeholder-gray-500 focus:border-green-500 focus:ring-2 focus:ring-green-900 outline-none transition-all text-sm resize-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                    Correo de contacto (opcional)
-                  </label>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.contactEmail}</label>
                   <input
-                    type="email"
-                    name="contactEmail"
-                    value={reportForm.contactEmail}
-                    onChange={handleReportChange}
-                    placeholder="Para seguimiento (si lo deseas)"
+                    type="email" name="contactEmail" value={reportForm.contactEmail} onChange={handleReportChange}
+                    placeholder={t.contactEmailPlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-800 text-gray-200 placeholder-gray-500 focus:border-green-500 focus:ring-2 focus:ring-green-900 outline-none transition-all text-sm"
                   />
                 </div>
 
-                <label className="flex items-center gap-3 cursor-pointer">
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.attachFiles}</label>
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    aria-label={t.attachFilesPlaceholder}
+                    onClick={() => fileInputRef.current?.click()}
+                    onKeyDown={(e) => e.key === "Enter" && fileInputRef.current?.click()}
+                    className="w-full px-4 py-4 rounded-xl border border-dashed border-gray-600 bg-gray-800/50 text-gray-400 cursor-pointer hover:border-green-500 hover:bg-gray-800 transition-all flex items-center gap-3"
+                  >
+                    <Paperclip size={18} className="shrink-0" />
+                    <span className="text-sm">{t.attachFilesPlaceholder}</span>
+                  </div>
                   <input
-                    type="checkbox"
-                    name="anonymous"
-                    checked={reportForm.anonymous}
-                    onChange={handleReportChange}
-                    className="w-4 h-4 rounded border-gray-600 bg-gray-800 accent-green-500"
+                    ref={fileInputRef} type="file" multiple accept="image/*,video/*,.pdf"
+                    onChange={handleFileChange} className="hidden"
                   />
-                  <span className="text-gray-300 text-sm">
-                    Prefiero mantenerme anónimo
-                  </span>
-                </label>
+                  {fileError && (
+                    <p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                      <AlertCircle size={12} /> {fileError}
+                    </p>
+                  )}
+                  {reportFiles.length > 0 && (
+                    <ul className="mt-2 space-y-1">
+                      {reportFiles.map((file, i) => (
+                        <li key={i} className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800 border border-gray-700">
+                          <span className="text-gray-300 text-xs truncate max-w-[80%]">{file.name}</span>
+                          <button
+                            type="button"
+                            aria-label={`${t.deleteFile} ${file.name}`}
+                            onClick={() => removeFile(i)}
+                            className="text-gray-500 hover:text-red-400 transition-colors ml-2"
+                          >
+                            <X size={14} />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gray-600 hover:bg-gray-500 text-white font-semibold rounded-full transition-all"
+                  disabled={reportSending}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gray-600 hover:bg-gray-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-full transition-all"
                 >
                   <Shield size={16} />
-                  Enviar reporte
+                  {reportSending ? t.sendingReport : t.sendReport}
                 </button>
               </form>
             )}
