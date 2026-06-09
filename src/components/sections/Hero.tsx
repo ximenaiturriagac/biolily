@@ -43,7 +43,7 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-4 left-4 px-2 py-4 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10">
+              <div className="absolute bottom-4 left-4 px-4 py-2 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10">
                 <p className="text-white text-xs font-medium">Tecnología patentada en operación</p>
                 <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>
               </div>
