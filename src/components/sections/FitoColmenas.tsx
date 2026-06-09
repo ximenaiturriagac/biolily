@@ -78,7 +78,7 @@ export default function FitoColmenas() {
             />
           </div>
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
-            Nuestra Tecnología
+            Nuestras Tecnologías
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             Biorremediación flotante,{" "}
