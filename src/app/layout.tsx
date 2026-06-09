@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import HtmlLang from "@/components/HtmlLang";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,16 @@ export const metadata: Metadata = {
     description:
       "Biolily diseña, implementa y monitorea proyectos de restauración hídrica mediante Fito-colmenas®, una tecnología patentada que genera beneficios ambientales y volumétricos medibles.",
     type: "website",
+    locale: "es_MX",
+    alternateLocale: ["en_US"],
+  },
+  alternates: {
+    canonical: "https://biolily.mx",
+    languages: {
+      "es": "https://biolily.mx",
+      "en": "https://biolily.mx",
+      "x-default": "https://biolily.mx",
+    },
   },
 };
 
@@ -38,6 +49,7 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Providers>
+          <HtmlLang />
           <Navbar />
           <main>{children}</main>
           <Footer />
