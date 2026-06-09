@@ -6,17 +6,17 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
   return (
     <section id="tecnologias" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-4">
             Nuestras Tecnologías
           </span>
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center items-center mb-6">
             <Image
               src="/logo-principal-fitocolmenas.svg"
               alt="Fito-colmenas"
-              width={340}
-              height={102}
-              className="h-24 w-auto"
+              width={323}
+              height={97}
+              className="h-[91px] w-auto mx-auto block"
             />
           </div>
           <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto">

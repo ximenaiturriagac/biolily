@@ -4,46 +4,51 @@ const institutions = [
   {
     name: "BlueRisk",
     logo: "/logo-bluerisk.png",
-    logoScale: false,
+    logoClass: "object-contain w-full h-full scale-90",
+    containerPad: "p-3",
     desc: "BlueRisk evaluó el potencial de generación de beneficios volumétricos de las Fito-colmenas utilizando metodologías reconocidas internacionalmente. Su análisis permitió validar rangos de beneficio volumétrico y fortalecer la trazabilidad de los resultados ambientales generados por la tecnología.",
   },
   {
     name: "Universidad Nacional Autónoma de México",
     logo: "/logo-unam.png",
-    logoScale: false,
+    logoClass: "object-contain w-full h-full",
+    containerPad: "p-1",
     desc: "La UNAM ha contribuido al desarrollo técnico y científico del proyecto mediante monitoreo, análisis de calidad del agua y evaluación de indicadores ambientales, fortaleciendo el rigor metodológico de las Fito-colmenas.",
   },
   {
     name: "CONAGUA",
     logo: "/logo-conagua.png",
-    logoScale: false,
+    logoClass: "object-contain w-full h-full",
+    containerPad: "p-1",
     desc: "Biolily cuenta con permiso de operación otorgado por CONAGUA para la implementación de Fito-colmenas en Valle de Bravo. Este respaldo institucional demuestra la viabilidad regulatoria de la tecnología.",
   },
   {
     name: "Comité de Operación del Lago de Valle de Bravo",
     logo: "/logo-provalle.png",
-    logoScale: true,
+    logoClass: "object-contain w-full h-full scale-[1.6]",
+    containerPad: "p-0",
     desc: "El proyecto ha sido presentado y acompañado dentro de espacios de gobernanza hídrica donde participan autoridades, instituciones, academia y organizaciones de la sociedad civil.",
   },
   {
     name: "Tecnológico de Monterrey",
     logo: "/logo-itesm.png",
-    logoScale: true,
+    logoClass: "object-contain w-full h-full scale-90",
+    containerPad: "p-3",
     desc: "A través de programas de emprendimiento, innovación y aceleración, el Tecnológico de Monterrey ha acompañado el fortalecimiento del modelo de negocio y la consolidación institucional de Biolily.",
   },
 ];
 
-function InstitutionCard({ name, logo, logoScale, desc }: (typeof institutions)[0]) {
+function InstitutionCard({ name, logo, logoClass, containerPad, desc }: (typeof institutions)[0]) {
   return (
     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all flex flex-col" style={{ minHeight: 320 }}>
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-20 h-20 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden p-0">
+        <div className={`w-20 h-20 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden ${containerPad}`}>
           <Image
             src={logo}
             alt={name}
             width={80}
             height={80}
-            className={`object-contain w-full h-full ${logoScale ? "scale-125" : ""}`}
+            className={logoClass}
           />
         </div>
         <h3 className="font-display font-semibold text-white text-base leading-snug">{name}</h3>
