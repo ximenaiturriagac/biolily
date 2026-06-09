@@ -7,6 +7,7 @@ import Medicion from "@/components/sections/Medicion";
 import Metodologia from "@/components/sections/Metodologia";
 import Validacion from "@/components/sections/Validacion";
 import ImpactoSection from "@/components/sections/ImpactoSection";
+import ImpactoBanner from "@/components/ImpactoBanner";
 import Allies from "@/components/sections/Allies";
 import Reconocimientos from "@/components/sections/Reconocimientos";
 import LinkedInBanner from "@/components/LinkedInBanner";
@@ -32,6 +33,8 @@ export default function Home() {
       <Validacion />
 
       <ImpactoSection />
+
+      <ImpactoBanner />
 
       <Allies />
 

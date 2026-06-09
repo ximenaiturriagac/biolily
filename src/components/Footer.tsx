@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/#monitoreo", label: "Monitoreo" },
   { href: "/#validacion", label: "Validación" },
   { href: "/#impacto", label: "Impacto" },
+  { href: "/impacto", label: "Agenda 2030" },
   { href: "/#unete", label: "Únete" },
   { href: "/equipo", label: "Equipo" },
   { href: "/#reconocimientos", label: "Reconocimientos" },
