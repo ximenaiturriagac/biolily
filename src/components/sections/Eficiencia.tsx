@@ -3,7 +3,7 @@ import { TriangleAlert, CheckCircle } from "lucide-react";
 const metrics = [
   { value: "534 kg P/ha/año", label: "Fósforo removido", color: "from-green-500 to-emerald-600" },
   { value: "7,843 kg N/ha/año", label: "Nitrógeno removido", color: "from-teal-500 to-cyan-600" },
-  { value: "15,700–40,300 m³/año", label: "Beneficio volumétrico por Fito-colmena (validado por BlueRisk)", color: "from-blue-500 to-indigo-600" },
+  { value: "15,700–40,300 m³/año", label: "Beneficio volumétrico por Fito-colmena", color: "from-blue-500 to-indigo-600" },
 ];
 
 const benefits = [
