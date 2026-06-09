@@ -14,15 +14,15 @@ export default function Tecnologia() {
             <Image
               src="/logo-principal-fitocolmenas.svg"
               alt="Fito-colmenas"
-              width={320}
-              height={100}
-              className="h-20 w-auto"
+              width={400}
+              height={120}
+              className="h-28 w-auto"
             />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             Fito-colmenas
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 text-lg text-center">
             Tecnología patentada para la restauración hídrica
           </p>
         </div>

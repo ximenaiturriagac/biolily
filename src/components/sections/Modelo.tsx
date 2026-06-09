@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import {
   Search,
   Lightbulb,
@@ -9,12 +7,10 @@ import {
   Droplets,
   FileText,
   Leaf,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 const steps = [
-{
+  {
     icon: Search,
     title: "Diagnóstico del ecosistema",
     copy: "Evaluamos el estado del cuerpo de agua, identificamos presiones y definimos metas de restauración.",
@@ -53,18 +49,10 @@ const steps = [
     icon: Leaf,
     title: "Restauración ecológica",
     copy: "El ecosistema recupera su equilibrio a largo plazo, generando beneficios ambientales y sociales sostenibles.",
-  },];
-
-const SLIDES = Math.ceil(steps.length / 2); // 4 slides of 2
+  },
+];
 
 export default function Modelo() {
-  const [slide, setSlide] = useState(0);
-
-  const prev = () => setSlide((s) => (s - 1 + SLIDES) % SLIDES);
-  const next = () => setSlide((s) => (s + 1) % SLIDES);
-
-  const visible = steps.slice(slide * 2, slide * 2 + 2);
-
   return (
     <section id="modelo" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,58 +69,28 @@ export default function Modelo() {
           </p>
         </div>
 
-        {/* Desktop slider — 2 cards */}
-        <div className="hidden md:block">
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-8">
-              {visible.map((step, i) => {
-                const Icon = step.icon;
-                const idx = slide * 2 + i;
-                return (
-                  <div key={step.title} className="flex flex-col p-8 rounded-2xl bg-white border border-gray-100 hover:border-green-200 hover:shadow-md transition-all">
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-base shrink-0">
-                        {idx + 1}
-                      </div>
-                      <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
-                        <Icon size={20} className="text-green-700" />
-                      </div>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 text-base mb-3">{step.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed text-justify">{step.copy}</p>
+        {/* Desktop: full grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={step.title}
+                className="flex flex-col p-6 rounded-2xl bg-white border border-gray-100 hover:border-green-200 hover:shadow-md transition-all"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                    {idx + 1}
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-center gap-6 mt-8">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm"
-                aria-label="Anterior"
-              >
-                <ChevronLeft size={18} className="text-gray-600" />
-              </button>
-              <div className="flex gap-2">
-                {Array.from({ length: SLIDES }).map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSlide(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${i === slide ? "bg-green-600 w-6" : "bg-gray-300"}`}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
+                  <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center">
+                    <Icon size={18} className="text-green-700" />
+                  </div>
+                </div>
+                <h3 className="font-semibold text-gray-900 text-sm mb-2">{step.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed text-justify">{step.copy}</p>
               </div>
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm"
-                aria-label="Siguiente"
-              >
-                <ChevronRight size={18} className="text-gray-600" />
-              </button>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         {/* Mobile: vertical timeline */}

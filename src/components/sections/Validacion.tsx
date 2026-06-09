@@ -39,10 +39,10 @@ const institutions = [
 ];
 
 function InstitutionCard({ badge, name, logo, color, desc }: (typeof institutions)[0]) {
+  void badge; void color;
   return (
-    <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+    <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full">
       <div className="flex items-center gap-3 mb-4">
-        {/* Logo — shows badge initials as fallback until image is uploaded */}
         <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden p-1">
           <Image
             src={logo}
@@ -79,18 +79,10 @@ export default function Validacion() {
           </p>
         </div>
 
-        {/* First 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {institutions.slice(0, 3).map((inst) => (
+        {/* Uniform 5-card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {institutions.map((inst) => (
             <InstitutionCard key={inst.name} {...inst} />
-          ))}
-        </div>
-        {/* Last 2 centered */}
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          {institutions.slice(3).map((inst) => (
-            <div key={inst.name} className="w-full sm:w-80 lg:w-96">
-              <InstitutionCard {...inst} />
-            </div>
           ))}
         </div>
       </div>

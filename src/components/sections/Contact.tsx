@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { Send, Shield } from "lucide-react";
+import { useState, useRef } from "react";
+import { Send, Shield, Paperclip, X } from "lucide-react";
 
 const interestOptions = [
   { value: "proyecto", label: "Proyecto" },
@@ -47,9 +47,10 @@ export default function Contact() {
     description: "",
     additionalInfo: "",
     contactEmail: "",
-    anonymous: false,
   });
+  const [reportFiles, setReportFiles] = useState<File[]>([]);
   const [reportSent, setReportSent] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -61,13 +62,11 @@ export default function Contact() {
     e.preventDefault();
     // EmailJS — configure these values in your EmailJS dashboard (emailjs.com)
     // TODO: Replace with your actual ServiceID, TemplateID, and PublicKey
-    // Service must forward to: ad.biolily@gmail.com
-    // Template variables: {{name}}, {{org}}, {{cargo}}, {{email}}, {{phone}}, {{interest}}, {{message}}
     try {
       const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.send(
-        "YOUR_SERVICE_ID",    // TODO: replace with EmailJS service ID
-        "YOUR_TEMPLATE_ID",   // TODO: replace with EmailJS template ID
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         {
           name: form.name,
           org: form.org,
@@ -77,10 +76,10 @@ export default function Contact() {
           interest: form.interest,
           message: form.message,
         },
-        "YOUR_PUBLIC_KEY"     // TODO: replace with EmailJS public key
+        "YOUR_PUBLIC_KEY"
       );
     } catch {
-      // Silent fail in dev — remove in production or add error state
+      // Silent fail in dev
     }
     setSent(true);
   };
@@ -88,34 +87,38 @@ export default function Contact() {
   const handleReportChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const target = e.target as HTMLInputElement;
-    if (target.type === "checkbox") {
-      setReportForm({ ...reportForm, [target.name]: target.checked });
-    } else {
-      setReportForm({ ...reportForm, [target.name]: target.value });
+    setReportForm({ ...reportForm, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setReportFiles((prev) => [...prev, ...Array.from(e.target.files!)]);
     }
+  };
+
+  const removeFile = (index: number) => {
+    setReportFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleReportSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // EmailJS — canal de integridad
     // TODO: Replace with your actual ServiceID, TemplateID, and PublicKey
-    // Use a separate template for integrity reports forwarding to: ad.biolily@gmail.com
-    // Template variables: {{reportType}}, {{relation}}, {{description}}, {{additionalInfo}}, {{contactEmail}}, {{anonymous}}
+    // Note: file attachments are listed by name in the email; for binary uploads use a backend service
     try {
       const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.send(
-        "YOUR_SERVICE_ID",         // TODO: replace with EmailJS service ID
-        "YOUR_INTEGRITY_TEMPLATE_ID", // TODO: replace with integrity template ID
+        "YOUR_SERVICE_ID",
+        "YOUR_INTEGRITY_TEMPLATE_ID",
         {
           reportType: reportForm.reportType,
           relation: reportForm.relation,
           description: reportForm.description,
           additionalInfo: reportForm.additionalInfo,
-          contactEmail: reportForm.anonymous ? "Anónimo" : reportForm.contactEmail,
-          anonymous: reportForm.anonymous ? "Sí" : "No",
+          contactEmail: reportForm.contactEmail || "No proporcionado",
+          attachments: reportFiles.map((f) => f.name).join(", ") || "Ninguno",
         },
-        "YOUR_PUBLIC_KEY"          // TODO: replace with EmailJS public key
+        "YOUR_PUBLIC_KEY"
       );
     } catch {
       // Silent fail in dev
@@ -222,9 +225,7 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Teléfono
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Teléfono</label>
                   <input
                     type="tel"
                     name="phone"
@@ -247,9 +248,7 @@ export default function Contact() {
                   >
                     <option value="">Selecciona una opción</option>
                     {interestOptions.map(({ value, label }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
+                      <option key={value} value={value}>{label}</option>
                     ))}
                   </select>
                 </div>
@@ -335,9 +334,7 @@ export default function Contact() {
                     >
                       <option value="">Selecciona</option>
                       {reportTypeOptions.map(({ value, label }) => (
-                        <option key={value} value={value}>
-                          {label}
-                        </option>
+                        <option key={value} value={value}>{label}</option>
                       ))}
                     </select>
                   </div>
@@ -353,9 +350,7 @@ export default function Contact() {
                     >
                       <option value="">Selecciona</option>
                       {relationOptions.map(({ value, label }) => (
-                        <option key={value} value={value}>
-                          {label}
-                        </option>
+                        <option key={value} value={value}>{label}</option>
                       ))}
                     </select>
                   </div>
@@ -404,18 +399,43 @@ export default function Contact() {
                   />
                 </div>
 
-                <label className="flex items-center gap-3 cursor-pointer">
+                {/* File attachment */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                    Adjuntar archivos (opcional)
+                  </label>
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full px-4 py-4 rounded-xl border border-dashed border-gray-600 bg-gray-800/50 text-gray-400 cursor-pointer hover:border-green-500 hover:bg-gray-800 transition-all flex items-center gap-3"
+                  >
+                    <Paperclip size={18} className="shrink-0" />
+                    <span className="text-sm">Haz clic para adjuntar imágenes, videos o PDFs</span>
+                  </div>
                   <input
-                    type="checkbox"
-                    name="anonymous"
-                    checked={reportForm.anonymous}
-                    onChange={handleReportChange}
-                    className="w-4 h-4 rounded border-gray-600 bg-gray-800 accent-green-500"
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept="image/*,video/*,.pdf"
+                    onChange={handleFileChange}
+                    className="hidden"
                   />
-                  <span className="text-gray-300 text-sm">
-                    Prefiero mantenerme anónimo
-                  </span>
-                </label>
+                  {reportFiles.length > 0 && (
+                    <ul className="mt-2 space-y-1">
+                      {reportFiles.map((file, i) => (
+                        <li key={i} className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800 border border-gray-700">
+                          <span className="text-gray-300 text-xs truncate max-w-[80%]">{file.name}</span>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(i)}
+                            className="text-gray-500 hover:text-red-400 transition-colors ml-2"
+                          >
+                            <X size={14} />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
 
                 <button
                   type="submit"

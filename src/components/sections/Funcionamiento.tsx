@@ -11,15 +11,16 @@ const steps = [
   { number: 6, icon: Activity, title: "Monitoreo", desc: "Los resultados son cuantificados y reportados mediante indicadores de calidad del agua y alineados con estándares internacionales (VWBA2.0)." },
 ];
 
+const PER_SLIDE = 3;
+const SLIDES = Math.ceil(steps.length / PER_SLIDE); // 2 slides
+
 export default function Funcionamiento() {
   const [slide, setSlide] = useState(0);
-  const total = steps.length;
 
-  const prev = () => setSlide((s) => (s - 1 + total) % total);
-  const next = () => setSlide((s) => (s + 1) % total);
+  const prev = () => setSlide((s) => (s - 1 + SLIDES) % SLIDES);
+  const next = () => setSlide((s) => (s + 1) % SLIDES);
 
-  const current = steps[slide];
-  const Icon = current.icon;
+  const visible = steps.slice(slide * PER_SLIDE, slide * PER_SLIDE + PER_SLIDE);
 
   return (
     <section id="funcionamiento" className="py-24 bg-green-50">
@@ -37,25 +38,33 @@ export default function Funcionamiento() {
           </p>
         </div>
 
-        {/* Slider — all viewports */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-3xl p-10 border border-green-100 shadow-sm min-h-[280px] flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
-                  {current.number}
+        {/* Slider — 3 cards */}
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[240px]">
+            {visible.map((step) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.number}
+                  className="bg-white rounded-3xl p-8 border border-green-100 shadow-sm flex flex-col"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
+                      {step.number}
+                    </div>
+                    <div className="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center">
+                      <Icon size={22} className="text-green-700" />
+                    </div>
+                  </div>
+                  <h3 className="font-display font-bold text-gray-900 text-lg mb-3">{step.title}</h3>
+                  <p className="text-gray-500 leading-relaxed text-justify text-sm">{step.desc}</p>
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center">
-                  <Icon size={22} className="text-green-700" />
-                </div>
-              </div>
-              <h3 className="font-display font-bold text-gray-900 text-xl mb-3">{current.title}</h3>
-              <p className="text-gray-500 leading-relaxed text-justify">{current.desc}</p>
-            </div>
+              );
+            })}
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-6 mt-6">
+          <div className="flex items-center justify-center gap-6 mt-8">
             <button
               onClick={prev}
               className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm"
@@ -64,12 +73,12 @@ export default function Funcionamiento() {
               <ChevronLeft size={18} className="text-gray-600" />
             </button>
             <div className="flex gap-2">
-              {steps.map((_, i) => (
+              {Array.from({ length: SLIDES }).map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === slide ? "bg-green-600 w-6" : "bg-gray-300 w-2"}`}
-                  aria-label={`Paso ${i + 1}`}
+                  aria-label={`Slide ${i + 1}`}
                 />
               ))}
             </div>
@@ -81,7 +90,7 @@ export default function Funcionamiento() {
               <ChevronRight size={18} className="text-gray-600" />
             </button>
           </div>
-          <p className="text-center text-gray-400 text-xs mt-3">{slide + 1} / {total}</p>
+          <p className="text-center text-gray-400 text-xs mt-3">{slide + 1} / {SLIDES}</p>
         </div>
       </div>
     </section>
