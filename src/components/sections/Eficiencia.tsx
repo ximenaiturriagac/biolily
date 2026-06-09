@@ -29,7 +29,7 @@ export default function Eficiencia() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
             Eficiencia ambiental comprobable
           </h2>
-          <p className="text-green-300 text-lg font-medium mb-6 text-center">
+          <p className="text-green-300 text-lg font-medium mb-6 text-center max-w-2xl mx-auto">
             Resultados respaldados por evidencia científica
           </p>
           <p className="text-gray-300 text-base leading-relaxed max-w-3xl mx-auto text-justify">

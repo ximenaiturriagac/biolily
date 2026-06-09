@@ -32,8 +32,8 @@ const institutions = [
   {
     name: "Tecnológico de Monterrey",
     logo: "/logo-itesm.png",
-    logoClass: "object-contain w-full h-full scale-[1]",
-    containerPad: "p-3",
+    logoClass: "object-contain w-full h-full scale-[1.1]",
+    containerPad: "p-1",
     desc: "A través de programas de emprendimiento, innovación y aceleración, el Tecnológico de Monterrey ha acompañado el fortalecimiento del modelo de negocio y la consolidación institucional de Biolily.",
   },
 ];
