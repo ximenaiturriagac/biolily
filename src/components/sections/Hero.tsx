@@ -43,7 +43,7 @@ export default function Hero() {
                 className="object-contain"
                 priority
               />
-              <div className="hidden lg:block absolute bottom-9 left-6 max-w-[160px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
+              <div className="hidden lg:block absolute bottom-9 left-5 max-w-[160px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
                 <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>
               </div>
             </div>
