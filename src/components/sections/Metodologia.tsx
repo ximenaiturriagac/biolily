@@ -48,19 +48,21 @@ export default function Metodologia() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {components.map(({ title, desc, badge, color }) => (
-            <div
-              key={title}
-              className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all group"
-            >
-              <div
-                className={`w-10 h-10 rounded-xl ${color} text-white flex items-center justify-center font-bold text-sm mb-4`}
-              >
-                {badge}
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {components.slice(0, 3).map(({ title, desc, badge, color }) => (
+            <div key={title} className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all group">
+              <div className={`w-10 h-10 rounded-xl ${color} text-white flex items-center justify-center font-bold text-sm mb-4`}>{badge}</div>
               <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          {components.slice(3).map(({ title, desc, badge, color }) => (
+            <div key={title} className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all group w-full sm:w-80 lg:w-96">
+              <div className={`w-10 h-10 rounded-xl ${color} text-white flex items-center justify-center font-bold text-sm mb-4`}>{badge}</div>
+              <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
             </div>
           ))}
         </div>

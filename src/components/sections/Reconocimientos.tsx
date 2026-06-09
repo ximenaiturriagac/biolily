@@ -49,20 +49,21 @@ export default function Reconocimientos() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {awards.map(({ badge, badgeColor, title, desc, accentColor }) => (
-            <div
-              key={title}
-              className={`p-6 rounded-2xl bg-white border ${accentColor} hover:shadow-md transition-all`}
-            >
-              {/* TODO: Add award logo/image here when available */}
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeColor} mb-4`}
-              >
-                {badge}
-              </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {awards.slice(0, 3).map(({ badge, badgeColor, title, desc, accentColor }) => (
+            <div key={title} className={`p-6 rounded-2xl bg-white border ${accentColor} hover:shadow-md transition-all`}>
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeColor} mb-4`}>{badge}</span>
               <h3 className="font-display font-bold text-gray-900 text-lg mb-3">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          {awards.slice(3).map(({ badge, badgeColor, title, desc, accentColor }) => (
+            <div key={title} className={`p-6 rounded-2xl bg-white border ${accentColor} hover:shadow-md transition-all w-full sm:w-80 lg:w-96`}>
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeColor} mb-4`}>{badge}</span>
+              <h3 className="font-display font-bold text-gray-900 text-lg mb-3">{title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed text-justify">{desc}</p>
             </div>
           ))}
         </div>

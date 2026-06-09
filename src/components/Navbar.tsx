@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
   { href: "#biolily", label: "Biolily" },
-  { href: "#vision", label: "Fito-colmenas" },
+  { href: "#tecnologia", label: "Nuestras Tecnologías" },
   { href: "#medicion", label: "Medición" },
   { href: "#validacion", label: "Validación" },
   { href: "#impacto", label: "Impacto" },
@@ -45,9 +45,9 @@ export default function Navbar() {
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
-            width={160}
-            height={48}
-            className="h-9 w-auto"
+            width={200}
+            height={60}
+            className="h-12 w-auto"
             priority
           />
         </a>

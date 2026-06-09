@@ -57,9 +57,31 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Conectar con Formspree, Resend, EmailJS, Supabase, Airtable o backend propio
+    // EmailJS — configure these values in your EmailJS dashboard (emailjs.com)
+    // TODO: Replace with your actual ServiceID, TemplateID, and PublicKey
+    // Service must forward to: ad.biolily@gmail.com
+    // Template variables: {{name}}, {{org}}, {{cargo}}, {{email}}, {{phone}}, {{interest}}, {{message}}
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(
+        "YOUR_SERVICE_ID",    // TODO: replace with EmailJS service ID
+        "YOUR_TEMPLATE_ID",   // TODO: replace with EmailJS template ID
+        {
+          name: form.name,
+          org: form.org,
+          cargo: form.cargo,
+          email: form.email,
+          phone: form.phone,
+          interest: form.interest,
+          message: form.message,
+        },
+        "YOUR_PUBLIC_KEY"     // TODO: replace with EmailJS public key
+      );
+    } catch {
+      // Silent fail in dev — remove in production or add error state
+    }
     setSent(true);
   };
 
@@ -74,9 +96,30 @@ export default function Contact() {
     }
   };
 
-  const handleReportSubmit = (e: React.FormEvent) => {
+  const handleReportSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Conectar canal de integridad con servicio backend o formulario cifrado
+    // EmailJS — canal de integridad
+    // TODO: Replace with your actual ServiceID, TemplateID, and PublicKey
+    // Use a separate template for integrity reports forwarding to: ad.biolily@gmail.com
+    // Template variables: {{reportType}}, {{relation}}, {{description}}, {{additionalInfo}}, {{contactEmail}}, {{anonymous}}
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(
+        "YOUR_SERVICE_ID",         // TODO: replace with EmailJS service ID
+        "YOUR_INTEGRITY_TEMPLATE_ID", // TODO: replace with integrity template ID
+        {
+          reportType: reportForm.reportType,
+          relation: reportForm.relation,
+          description: reportForm.description,
+          additionalInfo: reportForm.additionalInfo,
+          contactEmail: reportForm.anonymous ? "Anónimo" : reportForm.contactEmail,
+          anonymous: reportForm.anonymous ? "Sí" : "No",
+        },
+        "YOUR_PUBLIC_KEY"          // TODO: replace with EmailJS public key
+      );
+    } catch {
+      // Silent fail in dev
+    }
     setReportSent(true);
   };
 
