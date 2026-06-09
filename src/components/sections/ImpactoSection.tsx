@@ -1,4 +1,5 @@
 import { Leaf, Users, Building2 } from "lucide-react";
+import ODS from "./ODS";
 
 const blocks = [
   {
@@ -29,34 +30,36 @@ const blocks = [
 
 export default function ImpactoSection() {
   return (
-    <section id="impacto" className="py-24 bg-green-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
-            Impacto
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Transformando ecosistemas y fortaleciendo comunidades
-          </h2>
-        </div>
+    <>
+      <section id="impacto" className="py-24 bg-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
+              Impacto
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Transformando ecosistemas y fortaleciendo comunidades
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blocks.map(({ icon: Icon, title, desc, color, bg, border }) => (
-            <div
-              key={title}
-              className={`p-8 rounded-3xl ${bg} border ${border} text-center hover:shadow-md transition-all`}
-            >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blocks.map(({ icon: Icon, title, desc, color, bg, border }) => (
               <div
-                className={`w-16 h-16 rounded-2xl bg-white flex items-center justify-center mx-auto mb-5 shadow-sm`}
+                key={title}
+                className={`p-8 rounded-3xl ${bg} border ${border} text-center hover:shadow-md transition-all`}
               >
-                <Icon size={28} className={color} />
+                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mx-auto mb-5 shadow-sm">
+                  <Icon size={28} className={color} />
+                </div>
+                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">{title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
               </div>
-              <h3 className="font-display text-xl font-bold text-gray-900 mb-3">{title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <ODS />
+    </>
   );
 }
