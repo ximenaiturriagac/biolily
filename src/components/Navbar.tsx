@@ -28,6 +28,23 @@ export default function Navbar() {
   ];
 
   return (
+    <>
+    {/* Floating language toggle */}
+    <div className="fixed top-4 right-4 z-[60] flex items-center gap-1 text-xs font-semibold bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-1.5 shadow-sm">
+      <button
+        onClick={() => setLang("es")}
+        className={`transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+      >
+        ES
+      </button>
+      <span className="text-gray-300">|</span>
+      <button
+        onClick={() => setLang("en")}
+        className={`transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+      >
+        EN
+      </button>
+    </div>
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
@@ -88,41 +105,10 @@ export default function Navbar() {
             </a>
           </li>
 
-          {/* Language toggle */}
-          <li className="ml-3 flex items-center gap-1 text-sm font-semibold border-l border-gray-200 pl-3">
-            <button
-              onClick={() => setLang("es")}
-              className={`px-2 py-1 rounded transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
-            >
-              ES
-            </button>
-            <span className="text-gray-300">|</span>
-            <button
-              onClick={() => setLang("en")}
-              className={`px-2 py-1 rounded transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
-            >
-              EN
-            </button>
-          </li>
         </ul>
 
-        {/* Mobile: language toggle + hamburger */}
+        {/* Mobile: hamburger */}
         <div className="lg:hidden flex items-center gap-2">
-          <div className="flex items-center gap-1 text-sm font-semibold">
-            <button
-              onClick={() => setLang("es")}
-              className={`px-2 py-1 rounded transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400"}`}
-            >
-              ES
-            </button>
-            <span className="text-gray-300">|</span>
-            <button
-              onClick={() => setLang("en")}
-              className={`px-2 py-1 rounded transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400"}`}
-            >
-              EN
-            </button>
-          </div>
           <button
             className="p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -192,5 +178,6 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    </>
   );
 }
