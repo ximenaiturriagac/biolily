@@ -62,14 +62,14 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:contacto@biolily.com"
+                href="mailto:ad.biolily@gmail.com"
                 className="flex items-center gap-2 text-gray-400 text-sm hover:text-green-300 transition-colors"
               >
                 <Mail size={14} className="text-green-400 shrink-0" />
-                contacto@biolily.com
+                ad.biolily@gmail.com
               </a>
               <a
-                href="https://es.linkedin.com/posts/fito-colmenas-by-biolily-innovations_biolilyinnovations-fitocolmenas-innovaci%C3%B3nambiental-activity-7299983063822839809-qDG2"
+                href="https://es.linkedin.com/posts/fito-colmenas-by-biolily/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 text-sm hover:text-green-300 transition-colors"
