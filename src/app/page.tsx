@@ -8,9 +8,8 @@ import Metodologia from "@/components/sections/Metodologia";
 import Validacion from "@/components/sections/Validacion";
 import ImpactoSection from "@/components/sections/ImpactoSection";
 import Allies from "@/components/sections/Allies";
-import Team from "@/components/sections/Team";
 import Reconocimientos from "@/components/sections/Reconocimientos";
-import Contact from "@/components/sections/Contact";
+import LinkedInBanner from "@/components/LinkedInBanner";
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ export default function Home() {
         <Modelo />
       </div>
 
-      {/* #tecnologias — only the first part (Fito-colmenas intro) */}
+      {/* #tecnologias — intro only; full detail at /tecnologias */}
       <div id="tecnologias">
         <Tecnologia />
       </div>
@@ -42,17 +41,16 @@ export default function Home() {
       {/* #impacto */}
       <ImpactoSection />
 
-      {/* #unete */}
+      {/* #unete — Aliados only; Equipo is at /equipo */}
       <div id="unete">
         <Allies />
-        <Team />
       </div>
 
       {/* #reconocimientos */}
       <Reconocimientos />
 
-      {/* #contacto */}
-      <Contact />
+      {/* LinkedIn banner */}
+      <LinkedInBanner />
     </>
   );
 }

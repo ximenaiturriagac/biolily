@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#validacion", label: "Validación" },
   { href: "#impacto", label: "Impacto" },
   { href: "#unete", label: "Únete" },
+  { href: "/equipo", label: "Equipo" },
   { href: "#reconocimientos", label: "Reconocimientos" },
 ];
 
@@ -25,9 +26,9 @@ export default function Navbar() {
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
-            width={240}
-            height={72}
-            className="h-14 w-auto"
+            width={280}
+            height={84}
+            className="h-16 w-auto"
             priority
           />
         </a>
@@ -38,7 +39,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-2.5 py-2 rounded-lg text-xs font-medium text-gray-700 transition-all hover:bg-green-50 hover:text-green-700"
+                className="px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 transition-all hover:bg-green-50 hover:text-green-700"
               >
                 {link.label}
               </a>
@@ -46,8 +47,8 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#contacto"
-              className="ml-2 px-4 py-2.5 bg-green-700 hover:bg-green-800 text-white text-xs font-semibold rounded-full transition-all shadow-sm hover:shadow-md"
+              href="/contacto"
+              className="ml-2 px-5 py-2.5 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-sm hover:shadow-md"
             >
               Contáctanos
             </a>
@@ -73,7 +74,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors"
+                  className="block px-4 py-3 text-gray-700 text-sm font-medium rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -81,9 +82,9 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="#contacto"
+                href="/contacto"
                 onClick={() => setMenuOpen(false)}
-                className="block text-center px-4 py-3 bg-green-700 text-white font-semibold rounded-full hover:bg-green-800 transition-colors"
+                className="block text-center px-4 py-3 bg-green-700 text-white text-sm font-semibold rounded-full hover:bg-green-800 transition-colors"
               >
                 Contáctanos
               </a>

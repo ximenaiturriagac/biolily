@@ -22,9 +22,15 @@ export default function Tecnologia() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             Fito-colmenas
           </h2>
-          <p className="text-gray-500 text-lg text-center">
+          <p className="text-gray-500 text-lg text-center mb-6">
             Tecnología patentada para la restauración hídrica
           </p>
+          <a
+            href="/tecnologias"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
+          >
+            Conoce más
+          </a>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">

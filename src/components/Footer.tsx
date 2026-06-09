@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Mail, Link2, ChevronDown, Download, FileText } from "lucide-react";
 
-const footerLinks = [
+const navLinks = [
   { href: "#inicio", label: "Inicio" },
   { href: "#biolily", label: "Biolily" },
   { href: "#tecnologias", label: "Nuestras Tecnologías" },
@@ -11,27 +11,10 @@ const footerLinks = [
   { href: "#validacion", label: "Validación" },
   { href: "#impacto", label: "Impacto" },
   { href: "#unete", label: "Únete" },
+  { href: "/equipo", label: "Equipo" },
   { href: "#reconocimientos", label: "Reconocimientos" },
-  { href: "#contacto", label: "Contáctanos" },
-];
-
-const mediaLinks = [
-  {
-    label: "TecScience — El EXATEC que usa el lirio acuático",
-    url: "https://tecscience.tec.mx/es/biotecnologia/lirio-acuatico-contra-contaminantes/",
-  },
-  {
-    label: "LinkedIn — Fito-colmenas by Biolily",
-    url: "https://www.linkedin.com/company/fito-colmenas-by-biolily/",
-  },
-  {
-    label: "Informe técnico 2023 (Scribd)",
-    url: "https://www.scribd.com/document/675128324/Informe-IMPLEMENTACIO-N-DE-LAS-FITO-COLMENAS-PARA-EL-MANEJO-INTEGRAL-DEL-LIRIO-ACUA-TICO-Julio2023-2",
-  },
-  {
-    label: "Observatorio Valle de Bravo · UNAM",
-    url: "https://observatoriovalle.org.mx/wp-content/uploads/2024/06/ProValle-de-Bravo-UNAM_Monitoreo-del-Lago_mayo2022.pdf",
-  },
+  { href: "/notas", label: "Notas y menciones" },
+  { href: "/contacto", label: "Contáctanos" },
 ];
 
 export default function Footer() {
@@ -40,67 +23,20 @@ export default function Footer() {
   return (
     <footer className="bg-[#0f1f0f] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <Image
               src="/logo-vertical-biolily.svg"
               alt="Biolily"
-              width={160}
-              height={96}
-              className="h-20 w-auto brightness-0 invert"
+              width={180}
+              height={108}
+              className="h-24 w-auto brightness-0 invert"
             />
             <p className="text-green-300 text-sm font-medium italic">
               &ldquo;Tecnología ambiental inspirada en la naturaleza.&rdquo;
             </p>
-          </div>
-
-          {/* Nav links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-green-400 mb-5">
-              Navegación
-            </h4>
-            <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 text-sm hover:text-green-300 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Notas y menciones */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-green-400 mb-5">
-              Notas y menciones
-            </h4>
-            <ul className="space-y-2">
-              {mediaLinks.map((link) => (
-                <li key={link.url}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 text-sm hover:text-green-300 transition-colors leading-snug block"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-green-400 mb-5">
-              Contacto
-            </h4>
-            <div className="space-y-3">
+            <div className="space-y-2 pt-2">
               <a
                 href="mailto:ad.biolily@gmail.com"
                 className="flex items-center gap-2 text-gray-400 text-sm hover:text-green-300 transition-colors"
@@ -118,11 +54,25 @@ export default function Footer() {
                 LinkedIn
               </a>
             </div>
-            <div className="mt-6 p-4 rounded-xl bg-green-900/30 border border-green-800/50">
-              <p className="text-green-300 text-xs italic leading-relaxed">
-                &ldquo;Confiamos en la infinita sabiduría de la naturaleza.&rdquo;
-              </p>
-            </div>
+          </div>
+
+          {/* Nav links */}
+          <div className="md:col-span-2">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-green-400 mb-5">
+              Navegación
+            </h4>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 text-sm hover:text-green-300 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -147,22 +97,20 @@ export default function Footer() {
               </h4>
               <div className="text-gray-400 text-xs leading-relaxed space-y-3">
                 <p>
-                  <span className="text-gray-300 font-medium">Responsable:</span> Biolily, con domicilio en México, es responsable del tratamiento de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).
+                  <span className="text-gray-300 font-medium">Responsable:</span> Biolily es responsable del tratamiento de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).
                 </p>
                 <p>
-                  <span className="text-gray-300 font-medium">Finalidades:</span> Los datos personales recabados se utilizan para: atender solicitudes de contacto y proyectos; enviar información sobre nuestros servicios de restauración hídrica; dar seguimiento a reportes del canal de integridad; y cumplir obligaciones legales.
+                  <span className="text-gray-300 font-medium">Finalidades:</span> Atender solicitudes de contacto y proyectos; enviar información sobre nuestros servicios; dar seguimiento a reportes del canal de integridad; y cumplir obligaciones legales.
                 </p>
                 <p>
-                  <span className="text-gray-300 font-medium">Datos recabados:</span> Nombre, correo electrónico, teléfono, organización y cargo. No recabamos datos personales sensibles.
+                  <span className="text-gray-300 font-medium">Datos recabados:</span> Nombre, correo electrónico, teléfono, organización y cargo. No recabamos datos sensibles.
                 </p>
                 <p>
-                  <span className="text-gray-300 font-medium">Transferencias:</span> Sus datos no serán transferidos a terceros sin su consentimiento, salvo por obligación legal.
+                  <span className="text-gray-300 font-medium">Transferencias:</span> Sus datos no serán transferidos a terceros sin su consentimiento, salvo obligación legal.
                 </p>
                 <p>
-                  <span className="text-gray-300 font-medium">Derechos ARCO:</span> Puede ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición enviando un correo a{" "}
-                  <a href="mailto:ad.biolily@gmail.com" className="text-green-400 underline">
-                    ad.biolily@gmail.com
-                  </a>.
+                  <span className="text-gray-300 font-medium">Derechos ARCO:</span> Envía un correo a{" "}
+                  <a href="mailto:ad.biolily@gmail.com" className="text-green-400 underline">ad.biolily@gmail.com</a>.
                 </p>
               </div>
               <a
