@@ -42,14 +42,6 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-center text-white/30">
-                  <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-3">
-                    <div className="w-8 h-8 rounded-full bg-white/10" />
-                  </div>
-                  <p className="text-xs">Imagen / Render</p>
-                </div>
-              </div>
               <div className="absolute bottom-4 left-4 px-4 py-2 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10">
                 <p className="text-white text-xs font-medium">Fito-colmenas en Valle de Bravo</p>
                 <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>

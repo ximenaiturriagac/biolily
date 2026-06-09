@@ -63,14 +63,6 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center text-green-400">
-                <div className="w-16 h-16 rounded-full border-2 border-green-300 flex items-center justify-center mx-auto mb-3">
-                  <div className="w-8 h-8 rounded-full bg-green-200" />
-                </div>
-                <p className="text-xs font-medium text-green-500">Imagen / Render</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
