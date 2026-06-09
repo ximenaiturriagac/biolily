@@ -38,19 +38,12 @@ const institutions = [
   },
 ];
 
-function InstitutionCard({ badge, name, logo, color, desc }: (typeof institutions)[0]) {
-  void badge; void color;
+function InstitutionCard({ name, logo, desc }: (typeof institutions)[0]) {
   return (
     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all flex flex-col min-h-[280px]">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden p-1">
-          <Image
-            src={logo}
-            alt={name}
-            width={48}
-            height={48}
-            className="object-contain w-full h-full"
-          />
+          <Image src={logo} alt={name} width={48} height={48} className="object-contain w-full h-full" />
         </div>
         <h3 className="font-display font-semibold text-white text-base leading-snug">{name}</h3>
       </div>
@@ -79,11 +72,21 @@ export default function Validacion() {
           </p>
         </div>
 
-        {/* Uniform 5-card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {institutions.map((inst) => (
+        {/* First 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {institutions.slice(0, 3).map((inst) => (
             <InstitutionCard key={inst.name} {...inst} />
           ))}
+        </div>
+
+        {/* Last 2 centered using 6-col subgrid */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+          <div className="md:col-start-2 md:col-span-2">
+            <InstitutionCard {...institutions[3]} />
+          </div>
+          <div className="md:col-start-4 md:col-span-2">
+            <InstitutionCard {...institutions[4]} />
+          </div>
         </div>
       </div>
     </section>

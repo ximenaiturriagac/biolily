@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
-import { Waves, Beaker, TrendingUp, Scissors, ArrowDown, Activity, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Waves, Beaker, TrendingUp, Scissors, ArrowDown, Activity,
+  ChevronLeft, ChevronRight,
+} from "lucide-react";
 
 const steps = [
   { number: 1, icon: Waves, title: "Captación natural", desc: "Las raíces del lirio acuático interactúan directamente con la columna de agua, iniciando el proceso de absorción." },
@@ -12,14 +15,13 @@ const steps = [
 ];
 
 const PER_SLIDE = 3;
-const SLIDES = Math.ceil(steps.length / PER_SLIDE); // 2 slides
+const SLIDES = Math.ceil(steps.length / PER_SLIDE);
 
-export default function Funcionamiento() {
+export default function Funcionamiento({ asGrid = false }: { asGrid?: boolean }) {
   const [slide, setSlide] = useState(0);
 
   const prev = () => setSlide((s) => (s - 1 + SLIDES) % SLIDES);
   const next = () => setSlide((s) => (s + 1) % SLIDES);
-
   const visible = steps.slice(slide * PER_SLIDE, slide * PER_SLIDE + PER_SLIDE);
 
   return (
@@ -38,16 +40,13 @@ export default function Funcionamiento() {
           </p>
         </div>
 
-        {/* Slider — 3 cards */}
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[240px]">
-            {visible.map((step) => {
+        {asGrid ? (
+          /* Grid layout — all 6 steps at once */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {steps.map((step) => {
               const Icon = step.icon;
               return (
-                <div
-                  key={step.number}
-                  className="bg-white rounded-3xl p-8 border border-green-100 shadow-sm flex flex-col"
-                >
+                <div key={step.number} className="bg-white rounded-3xl p-8 border border-green-100 shadow-sm flex flex-col">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
                       {step.number}
@@ -62,36 +61,44 @@ export default function Funcionamiento() {
               );
             })}
           </div>
-
-          {/* Navigation */}
-          <div className="flex items-center justify-center gap-6 mt-8">
-            <button
-              onClick={prev}
-              className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Anterior"
-            >
-              <ChevronLeft size={18} className="text-gray-600" />
-            </button>
-            <div className="flex gap-2">
-              {Array.from({ length: SLIDES }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSlide(i)}
-                  className={`h-2 rounded-full transition-all ${i === slide ? "bg-green-600 w-6" : "bg-gray-300 w-2"}`}
-                  aria-label={`Slide ${i + 1}`}
-                />
-              ))}
+        ) : (
+          /* Slider layout — 3 cards per slide */
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[240px]">
+              {visible.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.number} className="bg-white rounded-3xl p-8 border border-green-100 shadow-sm flex flex-col">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
+                        {step.number}
+                      </div>
+                      <div className="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center">
+                        <Icon size={22} className="text-green-700" />
+                      </div>
+                    </div>
+                    <h3 className="font-display font-bold text-gray-900 text-lg mb-3">{step.title}</h3>
+                    <p className="text-gray-500 leading-relaxed text-justify text-sm">{step.desc}</p>
+                  </div>
+                );
+              })}
             </div>
-            <button
-              onClick={next}
-              className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Siguiente"
-            >
-              <ChevronRight size={18} className="text-gray-600" />
-            </button>
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <button onClick={prev} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label="Anterior">
+                <ChevronLeft size={18} className="text-gray-600" />
+              </button>
+              <div className="flex gap-2">
+                {Array.from({ length: SLIDES }).map((_, i) => (
+                  <button key={i} onClick={() => setSlide(i)} className={`h-2 rounded-full transition-all ${i === slide ? "bg-green-600 w-6" : "bg-gray-300 w-2"}`} aria-label={`Slide ${i + 1}`} />
+                ))}
+              </div>
+              <button onClick={next} className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:border-green-400 flex items-center justify-center transition-colors shadow-sm" aria-label="Siguiente">
+                <ChevronRight size={18} className="text-gray-600" />
+              </button>
+            </div>
+            <p className="text-center text-gray-400 text-xs mt-3">{slide + 1} / {SLIDES}</p>
           </div>
-          <p className="text-center text-gray-400 text-xs mt-3">{slide + 1} / {SLIDES}</p>
-        </div>
+        )}
       </div>
     </section>
   );

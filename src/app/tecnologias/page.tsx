@@ -5,8 +5,8 @@ import Eficiencia from "@/components/sections/Eficiencia";
 export default function TecnologiasPage() {
   return (
     <div className="pt-20">
-      <Tecnologia />
-      <Funcionamiento />
+      <Tecnologia showCTA={false} />
+      <Funcionamiento asGrid={true} />
       <Eficiencia />
     </div>
   );

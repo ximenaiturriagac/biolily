@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const features = ["Modular", "Flotante", "Controlada", "Medible", "Escalable", "Patentada"];
 
-export default function Tecnologia() {
+export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
   return (
     <section id="tecnologia" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,19 +22,13 @@ export default function Tecnologia() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             Fito-colmenas
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-6">
+          <p className="text-gray-500 text-lg text-center">
             Tecnología patentada para la restauración hídrica
           </p>
-          <a
-            href="/tecnologias"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
-          >
-            Conoce más
-          </a>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
-          {/* Left: text */}
+          {/* Left: text + feature badges + CTA */}
           <div>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 text-justify">
               Las Fito-colmenas son un sistema modular flotante diseñado para aprovechar la
@@ -44,7 +38,7 @@ export default function Tecnologia() {
               y cosechar la biomasa vegetal de manera controlada, convirtiendo un problema
               ambiental en una herramienta de restauración.
             </p>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 mb-8">
               {features.map((f) => (
                 <div
                   key={f}
@@ -54,11 +48,18 @@ export default function Tecnologia() {
                 </div>
               ))}
             </div>
+            {showCTA && (
+              <a
+                href="/tecnologias"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
+              >
+                Conoce más
+              </a>
+            )}
           </div>
 
           {/* Right: render image */}
           <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-100 to-teal-100 border border-green-200 relative">
-            {/* TODO: Ensure /render-fito-colmena.png is uploaded to public/ */}
             <Image
               src="/render-fito-colmena.png"
               alt="Módulo Fito-colmena"

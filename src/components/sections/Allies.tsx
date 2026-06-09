@@ -75,7 +75,7 @@ export default function Allies() {
             </div>
             <div className="mt-6">
               <a
-                href="#contacto"
+                href="/contacto"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
               >
                 Hablemos de tu proyecto
