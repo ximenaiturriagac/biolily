@@ -367,7 +367,7 @@ export const translations = {
     navbar: {
       inicio: "Home",
       biolily: "Biolily",
-      tecnologias: "Our Technologies",
+      tecnologias: "Technologies",
       fitocolmenas: "Phyto-hives",
       monitoreo: "Monitoring",
       validacion: "Validation",
