@@ -58,7 +58,7 @@ function ODSCard({ ods, color, titulo, desc, metas }: ODSItem) {
           style={{ backgroundColor: color }}
         >
           <Image
-            src={`/ods-${ods}.svg`}
+            src={`/E_SDG_Icons-${String(ods).padStart(2, "0")}.jpg`}
             alt={`ODS ${ods}`}
             width={64}
             height={64}
