@@ -17,7 +17,7 @@ const mediaItems = [
     source: "LinkedIn oficial",
     title: "Fito-colmenas by Biolily",
     desc: "Publicaciones oficiales sobre Biolily, las Fito-colmenas, tecnología ambiental y soluciones basadas en la naturaleza.",
-    url: "https://es.linkedin.com/posts/fito-colmenas-by-biolily-innovations_biolilyinnovations-fitocolmenas-innovaci%C3%B3nambiental-activity-7299983063822839809-qDG2",
+    url: "https://www.linkedin.com/company/fito-colmenas-by-biolily/",
     tag: "LinkedIn",
     color: "from-sky-500 to-blue-600",
     bg: "bg-sky-50",
@@ -28,7 +28,7 @@ const mediaItems = [
     source: "LinkedIn",
     title: "Fito-colmenas: tecnología en acción",
     desc: "Publicación sobre el funcionamiento, beneficios ambientales y potencial de las Fito-colmenas.",
-    url: "https://es.linkedin.com/posts/fito-colmenas-by-biolily-innovations_tecnolog%C3%ADaambiental-beneficiosambientales-activity-7300207576590286849-ASB-",
+    url: "https://www.linkedin.com/posts/fito-colmenas-by-biolily_de-un-problema-hist%C3%B3rico-a-una-esperanza-activity-7374888058548015104-v2Gj?utm_source=share&utm_medium=member_desktop&rcm=ACoAABMfwqkBt-yjK2qSBc_O5CdFVb0z4X1gFjU",
     tag: "LinkedIn",
     color: "from-sky-500 to-blue-600",
     bg: "bg-sky-50",
@@ -120,7 +120,7 @@ export default function Media() {
             tecnología ambiental, restauración hídrica y soluciones basadas en la naturaleza.
           </p>
           <a
-            href="https://es.linkedin.com/posts/fito-colmenas-by-biolily-innovations_biolilyinnovations-fitocolmenas-innovaci%C3%B3nambiental-activity-7299983063822839809-qDG2"
+            href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition-all shadow-lg"
