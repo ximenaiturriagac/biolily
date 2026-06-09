@@ -409,7 +409,7 @@ export default function Contact() {
                     className="w-full px-4 py-4 rounded-xl border border-dashed border-gray-600 bg-gray-800/50 text-gray-400 cursor-pointer hover:border-green-500 hover:bg-gray-800 transition-all flex items-center gap-3"
                   >
                     <Paperclip size={18} className="shrink-0" />
-                    <span className="text-sm">Haz clic para adjuntar imágenes, videos o PDFs</span>
+                    <span className="text-sm">Haz clic para adjuntar imágenes, videos o PDFs (menores a 5MB)</span>
                   </div>
                   <input
                     ref={fileInputRef}
