@@ -72,10 +72,10 @@ export default function Navbar() {
 
           {/* Dropdown: Nuestras Tecnologías */}
           <li className="relative group">
-            <Link href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all whitespace-nowrap">
+            <a href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all whitespace-nowrap">
               {t.tecnologias}
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
-            </Link>
+            </a>
             <div className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[180px] z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
               {tecLinks.map((link) => (
                 <a
@@ -135,13 +135,13 @@ export default function Navbar() {
             {/* Mobile dropdown: Tecnologías */}
             <li>
               <div className="flex items-center">
-                <Link
+                <a
                   href="/#tecnologias"
                   onClick={() => setMenuOpen(false)}
                   className="flex-1 px-4 py-3 text-gray-700 text-sm font-medium rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors"
                 >
                   {t.tecnologias}
-                </Link>
+                </a>
                 <button
                   onClick={() => setTechOpen(!techOpen)}
                   className="px-3 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-colors"

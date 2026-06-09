@@ -384,7 +384,7 @@ export const translations = {
       siguenos: "Follow Us",
       inicio: "Home",
       biolily: "Biolily",
-      tecnologias: "Our Technologies",
+      tecnologias: "Technologies",
       monitoreo: "Monitoring",
       validacion: "Validation",
       impacto: "Impact",
@@ -461,7 +461,7 @@ export const translations = {
       ],
     },
     tecnologia: {
-      eyebrow: "Our Technologies",
+      eyebrow: "Technologies",
       subtitle: "Patented technology for water restoration",
       features: ["Modular", "Floating", "Controlled", "Measurable", "Scalable", "Patented"],
       desc: "Fito-colmenas are a modular floating system designed to harness the natural ability of water hyacinth to absorb nutrients present in water bodies affected by eutrophication. Unlike uncontrolled hyacinth growth, Fito-colmenas allow the plant biomass to be contained, accelerated, monitored, and harvested in a controlled manner, turning an environmental problem into a restoration tool.",
@@ -470,7 +470,7 @@ export const translations = {
     funcionamiento: {
       eyebrow: "Process",
       heading: "How do they work?",
-      desc: "Each Phyto-hive follows a continuous cycle of capture, absorption, harvesting, and monitoring to turn natural processes into measurable results.",
+      desc: "Each Fito-colmena follows a continuous cycle of capture, absorption, harvesting, and monitoring to turn natural processes into measurable results.",
       prev: "Previous",
       next: "Next",
       steps: [
@@ -605,7 +605,7 @@ export const translations = {
       metrics: [
         { value: "534 kg P/ha/yr", label: "Phosphorus removed" },
         { value: "7,843 kg N/ha/yr", label: "Nitrogen removed" },
-        { value: "15,700–40,300 m³/yr", label: "Volumetric benefit per Phyto-hive" },
+        { value: "15,700–40,300 m³/yr", label: "Volumetric benefit per Fito-colmena" },
       ],
       benefits: ["Continuous monitoring", "VWBA2.0 validation by BlueRisk", "Social inclusion & governance", "Circular economy", "Guaranteed restoration", "Verifiable volumetric benefits"],
       note1: "Volumetric benefits can be adapted to the specific objectives of each project, allowing strategies to be designed aligned with corporate, territorial, or ecological restoration goals.",
