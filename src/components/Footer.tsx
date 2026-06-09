@@ -6,7 +6,7 @@ const footerLinks = [
   { href: "/biolily", label: "Biolily" },
   { href: "/tecnologias", label: "Nuestras Tecnologías" },
   { href: "/monitoreo", label: "Monitoreo" },
-  { href: "/respaldo", label: "Respaldo" },
+  { href: "/respaldo", label: "Validación" },
   { href: "/impacto", label: "Impacto" },
   { href: "/aliados", label: "Aliados" },
   { href: "/equipo", label: "Equipo" },
