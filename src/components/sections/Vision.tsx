@@ -10,7 +10,7 @@ export default function Vision() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-12">
-            Confiamos en la infinita sabiduría de la naturaleza
+            La naturaleza como aliada
           </h2>
 
           <div className="space-y-6 text-left max-w-3xl mx-auto mb-16">
