@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
     {/* Floating language toggle */}
-    <div className="fixed top-4 right-4 z-[60] flex items-center gap-1 text-xs font-semibold bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-1.5 shadow-sm">
+    <div className="fixed top-[84px] right-4 z-[60] flex items-center gap-1 text-xs font-semibold bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-1.5 shadow-sm">
       <button
         onClick={() => setLang("es")}
         className={`transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
