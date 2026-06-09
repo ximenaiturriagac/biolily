@@ -28,24 +28,25 @@ export default function Navbar() {
   ];
 
   return (
-    <>
-    {/* Floating language toggle */}
-    <div className="fixed top-[84px] right-4 z-[60] flex items-center gap-1 text-xs font-semibold bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-1.5 shadow-sm">
-      <button
-        onClick={() => setLang("es")}
-        className={`transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
-      >
-        ES
-      </button>
-      <span className="text-gray-300">|</span>
-      <button
-        onClick={() => setLang("en")}
-        className={`transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
-      >
-        EN
-      </button>
-    </div>
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      {/* Top bar — desktop only, language toggle */}
+      <div className="hidden lg:flex justify-end items-center px-4 sm:px-6 lg:px-8 py-1 border-b border-gray-100 bg-gray-50">
+        <div className="flex items-center gap-1 text-xs font-semibold">
+          <button
+            onClick={() => setLang("es")}
+            className={`px-2 py-0.5 rounded transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+          >
+            ES
+          </button>
+          <span className="text-gray-300">|</span>
+          <button
+            onClick={() => setLang("en")}
+            className={`px-2 py-0.5 rounded transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+          >
+            EN
+          </button>
+        </div>
+      </div>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
@@ -174,10 +175,25 @@ export default function Navbar() {
                 {t.contactanos}
               </a>
             </li>
+
+            {/* Language toggle at bottom of mobile menu */}
+            <li className="pt-3 pb-1 border-t border-gray-100 flex justify-center gap-1 text-sm font-semibold">
+              <button
+                onClick={() => { setLang("es"); setMenuOpen(false); }}
+                className={`px-3 py-1.5 rounded-full transition-colors ${lang === "es" ? "bg-green-50 text-green-700" : "text-gray-400"}`}
+              >
+                Español
+              </button>
+              <button
+                onClick={() => { setLang("en"); setMenuOpen(false); }}
+                className={`px-3 py-1.5 rounded-full transition-colors ${lang === "en" ? "bg-green-50 text-green-700" : "text-gray-400"}`}
+              >
+                English
+              </button>
+            </li>
           </ul>
         </div>
       )}
     </header>
-    </>
   );
 }
