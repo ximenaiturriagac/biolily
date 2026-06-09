@@ -1,7 +1,7 @@
 const components = [
   {
     title: "Nature Based Solutions",
-    desc: "Adoptamos los principios de Soluciones Basadas en la Naturaleza para diseñar intervenciones que trabajan con los procesos ecológicos, no contra ellos.",
+    desc: "Adoptamos los principios de Soluciones Basadas en la Naturaleza para diseñar tecnologías que ayudan al planeta a ser más eficiente.",
     badge: "NbS",
     color: "bg-green-600",
   },
