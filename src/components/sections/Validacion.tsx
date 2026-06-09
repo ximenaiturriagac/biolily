@@ -68,7 +68,7 @@ export default function Validacion() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-blue-400 block mb-3">
-            Respaldo
+            Validación y respaldo institucional
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Respaldados por ciencia, instituciones y experiencia en campo
