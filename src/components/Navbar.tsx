@@ -32,9 +32,9 @@ export default function Navbar() {
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
-            width={280}
-            height={84}
-            className="h-16 w-auto"
+            width={238}
+            height={71}
+            className="h-14 w-auto"
             priority
           />
         </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           {/* Dropdown: Nuestras Tecnologías */}
           <li className="relative group">
-            <a href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all">
+            <a href="/#tecnologias" className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-all whitespace-nowrap">
               Nuestras Tecnologías
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
             </a>

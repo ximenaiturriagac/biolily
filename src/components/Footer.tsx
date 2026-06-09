@@ -64,7 +64,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
+              className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group w-full"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="4" fill="#0A66C2" />
@@ -80,7 +80,7 @@ export default function Footer() {
             </a>
             <a
               href="mailto:ad.biolily@gmail.com"
-              className="mt-3 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
+              className="mt-3 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group w-full"
             >
               <div className="w-6 h-6 flex items-center justify-center">
                 <Mail size={20} className="text-green-400" />
