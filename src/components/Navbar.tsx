@@ -35,9 +35,9 @@ export default function Navbar() {
           <Image
             src="/logo-horizontal-biolily.svg"
             alt="Biolily"
-            width={238}
-            height={71}
-            className="h-14 w-auto"
+            width={160}
+            height={48}
+            className="h-12 w-auto"
             priority
           />
         </Link>
