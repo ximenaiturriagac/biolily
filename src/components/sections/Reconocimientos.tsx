@@ -28,7 +28,7 @@ const awards = [
     accentColor: "border-sky-200",
   },
   {
-    badge: "Reconocido",
+    badge: "Finalista",
     badgeColor: "bg-teal-100 text-teal-800",
     title: "Aquavance",
     desc: "Proyecto reconocido por combinar innovación tecnológica, impacto ambiental y capacidad de escalamiento para enfrentar desafíos hídricos complejos.",
