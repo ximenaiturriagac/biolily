@@ -8,7 +8,7 @@ export default function Tecnologia() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-4">
-            Nuestra Tecnología
+            Nuestras Tecnologías
           </span>
           <div className="flex justify-center mb-6">
             <Image
