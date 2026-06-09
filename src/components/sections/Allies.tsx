@@ -58,10 +58,10 @@ export default function Allies() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
-              Aliados potenciales
+              Diseñado para colaborar
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Diseñado para <span className="text-green-700">colaborar</span>
+              Construyamos juntos la <span className="text-green-700">restauración del agua</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Biolily trabaja con empresas, gobiernos, organizaciones civiles, academia y
