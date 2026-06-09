@@ -1,6 +1,6 @@
 const awards = [
   {
-    badge: "Seleccionado",
+    badge: "Finalista",
     badgeColor: "bg-lime-100 text-lime-800",
     title: "ClimateLaunchpad",
     desc: "Seleccionados entre los emprendimientos climáticos más prometedores de México para participar en el principal programa europeo de aceleración de tecnologías climáticas.",
