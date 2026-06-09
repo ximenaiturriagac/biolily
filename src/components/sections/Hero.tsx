@@ -38,13 +38,13 @@ export default function Hero() {
             <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-green-800/40 to-blue-900/40 border border-white/10 relative">
               <Image
                 src="/render-completo.png"
-                alt="Fito-colmenas en Valle de Bravo"
+                alt="Tecnologia patentada en operacion"
                 fill
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-4 left-4 px-4 py-2 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10">
-                <p className="text-white text-xs font-medium">Fito-colmenas en Valle de Bravo</p>
+              <div className="absolute bottom-4 left-4 px-2 py-4 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10">
+                <p className="text-white text-xs font-medium">Tecnología patentada en operación</p>
                 <p className="text-green-300 text-xs mt-0.5">Tecnología patentada en operación</p>
               </div>
             </div>
