@@ -48,12 +48,12 @@ export default function LinkedInBanner() {
                 ¿Listo para actuar?
               </span>
               <h3 className="font-display text-2xl font-bold mb-3">
-                Diseñemos tu proyecto de restauración hídrica
+                Convirtamos una visión en un proyecto de restauración hídrica
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Si tu organización tiene metas de agua, sostenibilidad o restauración ecológica,
-                cuéntanos tu caso. Juntos podemos diseñar una solución basada en la naturaleza
-                con resultados verificables.
+                Ya sea que busques generar beneficios ambientales y volumétricos, fortalecer una
+                estrategia de Water Stewardship o impulsar la recuperación de un ecosistema acuático, 
+                conversemos sobre cómo diseñar una solución respaldada por la ciencia, monitoreo y resultados verificables.
               </p>
               <a
                 href="/contacto"
