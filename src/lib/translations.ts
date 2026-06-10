@@ -101,7 +101,7 @@ export const translations = {
       subtitle: "Tecnología patentada para la restauración hídrica",
       features: ["Modular", "Flotante", "Controlada", "Medible", "Escalable", "Patentada"],
       desc: "Las Fito-colmenas son un sistema modular flotante diseñado para aprovechar la capacidad natural del lirio acuático para absorber nutrientes presentes en cuerpos de agua afectados por procesos de eutrofización. A diferencia del crecimiento descontrolado del lirio, las Fito-colmenas permiten contener, acelerar, monitorear y cosechar la biomasa vegetal de manera controlada, convirtiendo un problema ambiental en una herramienta de restauración.",
-      cta: "Conoce más",
+      cta: "Conoce nuestros resultados",
     },
     funcionamiento: {
       eyebrow: "Proceso",
@@ -465,7 +465,7 @@ export const translations = {
       subtitle: "Patented technology for water restoration",
       features: ["Modular", "Floating", "Controlled", "Measurable", "Scalable", "Patented"],
       desc: "Fito-colmenas are a modular floating system designed to harness the natural ability of water hyacinth to absorb nutrients present in water bodies affected by eutrophication. Unlike uncontrolled hyacinth growth, Fito-colmenas allow the plant biomass to be contained, accelerated, monitored, and harvested in a controlled manner, turning an environmental problem into a restoration tool.",
-      cta: "Learn more",
+      cta: "Explore our results",
     },
     funcionamiento: {
       eyebrow: "Process",
