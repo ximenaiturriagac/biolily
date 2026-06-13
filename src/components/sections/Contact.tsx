@@ -92,9 +92,11 @@ export default function Contact() {
         body: data,
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) throw new Error();
+      const json = await res.json();
+      if (!res.ok || json.error) throw new Error(json.error ?? res.status.toString());
       setReportSent(true);
-    } catch {
+    } catch (err) {
+      console.error("Formspree error:", err);
       setReportError(true);
     } finally {
       setReportSending(false);
