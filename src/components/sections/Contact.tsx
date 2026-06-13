@@ -1,14 +1,13 @@
 "use client";
-import { useState, useRef } from "react";
-import { Send, Shield, Paperclip, X, AlertCircle } from "lucide-react";
+import { useState } from "react";
+import { Send, Shield, AlertCircle } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
-const MAX_FILE_MB = 5;
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
-const WEB3FORMS_KEY = "69c380b5-087c-49e1-b4a9-f7bde31fe79d";
+const INTEGRITY_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_INTEGRITY_TEMPLATE ?? "";
 
 export default function Contact() {
   const { lang } = useLang();
@@ -24,12 +23,9 @@ export default function Contact() {
   const [reportForm, setReportForm] = useState({
     reportType: "", relation: "", description: "", additionalInfo: "", contactEmail: "",
   });
-  const [reportFiles, setReportFiles] = useState<File[]>([]);
-  const [fileError, setFileError] = useState("");
   const [reportSent, setReportSent] = useState(false);
   const [reportError, setReportError] = useState(false);
   const [reportSending, setReportSending] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -58,46 +54,21 @@ export default function Contact() {
     setReportForm({ ...reportForm, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return;
-    const newFiles = Array.from(e.target.files);
-    const oversized = newFiles.filter((f) => f.size > MAX_FILE_MB * 1024 * 1024);
-    if (oversized.length > 0) {
-      setFileError(`${t.fileTooBig} ${oversized.map((f) => f.name).join(", ")}`);
-      return;
-    }
-    setFileError("");
-    setReportFiles((prev) => [...prev, ...newFiles]);
-  };
-
-  const removeFile = (index: number) => {
-    setReportFiles((prev) => prev.filter((_, i) => i !== index));
-  };
-
   const handleReportSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setReportSending(true);
     setReportError(false);
     try {
-      const data = new FormData();
-      data.append("access_key", WEB3FORMS_KEY);
-      data.append("subject", "Nuevo reporte — Canal de Integridad Biolily");
-      data.append("Tipo de reporte", reportForm.reportType || "No especificado");
-      data.append("Relación con Biolily", reportForm.relation || "No especificado");
-      data.append("Descripción", reportForm.description);
-      data.append("Información adicional", reportForm.additionalInfo || "Ninguna");
-      data.append("Correo de contacto", reportForm.contactEmail || "Anónimo");
-      reportFiles.forEach((file) => data.append("attachment", file));
-
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data,
-      });
-      const json = await res.json();
-      if (!json.success) throw new Error(json.message);
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(SERVICE_ID, INTEGRITY_TEMPLATE, {
+        reportType: reportForm.reportType || "No especificado",
+        relation: reportForm.relation || "No especificado",
+        description: reportForm.description,
+        additionalInfo: reportForm.additionalInfo || "Ninguna",
+        contactEmail: reportForm.contactEmail || "Anónimo",
+      }, PUBLIC_KEY);
       setReportSent(true);
-    } catch (err) {
-      console.error("Web3Forms error:", err);
+    } catch {
       setReportError(true);
     } finally {
       setReportSending(false);
@@ -326,45 +297,14 @@ export default function Contact() {
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">{t.attachFiles}</label>
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    aria-label={t.attachFilesPlaceholder}
-                    onClick={() => fileInputRef.current?.click()}
-                    onKeyDown={(e) => e.key === "Enter" && fileInputRef.current?.click()}
-                    className="w-full px-4 py-4 rounded-xl border border-dashed border-gray-600 bg-gray-800/50 text-gray-400 cursor-pointer hover:border-green-500 hover:bg-gray-800 transition-all flex items-center gap-3"
-                  >
-                    <Paperclip size={18} className="shrink-0" />
-                    <span className="text-sm">{t.attachFilesPlaceholder}</span>
-                  </div>
-                  <input
-                    ref={fileInputRef} type="file" multiple accept="image/*,video/*,.pdf"
-                    onChange={handleFileChange} className="hidden"
-                  />
-                  {fileError && (
-                    <p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                      <AlertCircle size={12} /> {fileError}
-                    </p>
-                  )}
-                  {reportFiles.length > 0 && (
-                    <ul className="mt-2 space-y-1">
-                      {reportFiles.map((file, i) => (
-                        <li key={i} className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800 border border-gray-700">
-                          <span className="text-gray-300 text-xs truncate max-w-[80%]">{file.name}</span>
-                          <button
-                            type="button"
-                            aria-label={`${t.deleteFile} ${file.name}`}
-                            onClick={() => removeFile(i)}
-                            className="text-gray-500 hover:text-red-400 transition-colors ml-2"
-                          >
-                            <X size={14} />
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                <div className="flex items-start gap-3 px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700">
+                  <AlertCircle size={16} className="text-amber-400 mt-0.5 shrink-0" />
+                  <p className="text-gray-400 text-xs leading-relaxed">
+                    {lang === "es"
+                      ? <>Si tienes evidencia que respalde tu reporte, envíala de forma anónima a <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> indicando una referencia de tu reporte.</>
+                      : <>If you have evidence to support your report, send it anonymously to <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> with a reference to your report.</>
+                    }
+                  </p>
                 </div>
 
                 <button
