@@ -8,7 +8,7 @@ const MAX_FILE_MB = 5;
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
-const INTEGRITY_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_INTEGRITY_TEMPLATE ?? "";
+const FORMSPREE_INTEGRITY = "https://formspree.io/f/xnjyodeg";
 
 export default function Contact() {
   const { lang } = useLang();
@@ -79,15 +79,20 @@ export default function Contact() {
     setReportSending(true);
     setReportError(false);
     try {
-      const emailjs = (await import("@emailjs/browser")).default;
-      await emailjs.send(SERVICE_ID, INTEGRITY_TEMPLATE, {
-        reportType: reportForm.reportType,
-        relation: reportForm.relation,
-        description: reportForm.description,
-        additionalInfo: reportForm.additionalInfo,
-        contactEmail: reportForm.contactEmail || "No proporcionado",
-        attachments: reportFiles.map((f) => f.name).join(", ") || "Ninguno",
-      }, PUBLIC_KEY);
+      const data = new FormData();
+      data.append("reportType", reportForm.reportType || "No especificado");
+      data.append("relation", reportForm.relation || "No especificado");
+      data.append("description", reportForm.description);
+      data.append("additionalInfo", reportForm.additionalInfo || "Ninguna");
+      data.append("contactEmail", reportForm.contactEmail || "Anónimo");
+      reportFiles.forEach((file) => data.append("attachment", file));
+
+      const res = await fetch(FORMSPREE_INTEGRITY, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error();
       setReportSent(true);
     } catch {
       setReportError(true);
