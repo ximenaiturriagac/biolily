@@ -8,7 +8,7 @@ const MAX_FILE_MB = 5;
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
-const FORMSPREE_INTEGRITY = "https://formspree.io/f/xnjyodeg";
+const WEB3FORMS_KEY = "69c380b5-087c-49e1-b4a9-f7bde31fe79d";
 
 export default function Contact() {
   const { lang } = useLang();
@@ -80,23 +80,24 @@ export default function Contact() {
     setReportError(false);
     try {
       const data = new FormData();
-      data.append("reportType", reportForm.reportType || "No especificado");
-      data.append("relation", reportForm.relation || "No especificado");
-      data.append("description", reportForm.description);
-      data.append("additionalInfo", reportForm.additionalInfo || "Ninguna");
-      data.append("contactEmail", reportForm.contactEmail || "Anónimo");
+      data.append("access_key", WEB3FORMS_KEY);
+      data.append("subject", "Nuevo reporte — Canal de Integridad Biolily");
+      data.append("Tipo de reporte", reportForm.reportType || "No especificado");
+      data.append("Relación con Biolily", reportForm.relation || "No especificado");
+      data.append("Descripción", reportForm.description);
+      data.append("Información adicional", reportForm.additionalInfo || "Ninguna");
+      data.append("Correo de contacto", reportForm.contactEmail || "Anónimo");
       reportFiles.forEach((file) => data.append("attachment", file));
 
-      const res = await fetch(FORMSPREE_INTEGRITY, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: data,
-        headers: { Accept: "application/json" },
       });
       const json = await res.json();
-      if (!res.ok || json.error) throw new Error(json.error ?? res.status.toString());
+      if (!json.success) throw new Error(json.message);
       setReportSent(true);
     } catch (err) {
-      console.error("Formspree error:", err);
+      console.error("Web3Forms error:", err);
       setReportError(true);
     } finally {
       setReportSending(false);
