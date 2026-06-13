@@ -255,7 +255,7 @@ export default function Contact() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleReportSubmit} className="space-y-4">
+              <form onSubmit={handleReportSubmit} className="space-y-4" noValidate>
                 {reportError && (
                   <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-900/40 border border-red-700 text-red-300 text-sm">
                     <AlertCircle size={16} className="shrink-0" />
