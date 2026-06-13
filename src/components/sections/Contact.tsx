@@ -7,7 +7,6 @@ import { translations } from "@/lib/translations";
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
-const INTEGRITY_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_INTEGRITY_TEMPLATE ?? "";
 
 export default function Contact() {
   const { lang } = useLang();
@@ -59,14 +58,18 @@ export default function Contact() {
     setReportSending(true);
     setReportError(false);
     try {
-      const emailjs = (await import("@emailjs/browser")).default;
-      await emailjs.send(SERVICE_ID, INTEGRITY_TEMPLATE, {
-        reportType: reportForm.reportType || "No especificado",
-        relation: reportForm.relation || "No especificado",
-        description: reportForm.description,
-        additionalInfo: reportForm.additionalInfo || "Ninguna",
-        contactEmail: reportForm.contactEmail || "Anónimo",
-      }, PUBLIC_KEY);
+      const res = await fetch("/api/integrity", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reportType: reportForm.reportType,
+          relation: reportForm.relation,
+          description: reportForm.description,
+          additionalInfo: reportForm.additionalInfo,
+          contactEmail: reportForm.contactEmail,
+        }),
+      });
+      if (!res.ok) throw new Error();
       setReportSent(true);
     } catch {
       setReportError(true);
