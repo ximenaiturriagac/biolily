@@ -260,8 +260,8 @@ export const translations = {
           bullets: [
             "Ingeniero en Biotecnología · Tecnológico de Monterrey",
             "Experiencia en Project Management, innovación y sostenibilidad",
-            "Fundador y líder del proyecto Fito-colmenas",
             "Enfoque en convertir ciencia aplicada en soluciones escalables",
+            "Fundador y líder del proyecto Fito-colmenas",
           ],
         },
         {
@@ -284,8 +284,8 @@ export const translations = {
           bullets: [
             "Lic. en Contaduría y Gestión Empresarial · Universidad Iberoamericana",
             "Diplomado en Consultoría Fiscal",
-            "Experiencia en finanzas corporativas, cumplimiento normativo y sostenibilidad",
             "Especialista en análisis de datos y automatización de procesos",
+            "Experiencia en finanzas corporativas, cumplimiento normativo y sostenibilidad",
           ],
         },
       ],
