@@ -32,7 +32,7 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:max-w-[calc(50%-20px)] lg:[&>*:last-child:nth-child(odd)]:mx-auto">
           {t.members.map((member, idx) => {
             const { gradient, initials, photo } = memberStyles[idx];
             const icons = bulletIcons[idx];
