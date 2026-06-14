@@ -7,11 +7,13 @@ import { translations } from "@/lib/translations";
 const memberStyles = [
   { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg" },
   { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg" },
+  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg" },
 ];
 
 const bulletIcons = [
   [GraduationCap, Briefcase, Leaf, Microscope],
   [GraduationCap, Microscope, Leaf, Briefcase],
+  [GraduationCap, Briefcase, Microscope, Leaf],
 ];
 
 export default function Team() {

@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       from: `Contacto Biolily <${FROM}>`,
       to: TO,
       replyTo: email,
-      subject: `Nuevo mensaje de contacto — ${name}`,
+      subject: `Alguien te está contactando — ${name}${cargo ? `, ${cargo}` : ""}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
 
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
               style="height: 44px; display: block; margin: 0 auto;" />
           </div>
 
-          <div style="background: #f0f7e6; padding: 10px 24px; border-bottom: 1px solid #d4edb8;">
+          <div style="background: #f9f9f9; padding: 10px 24px; border-bottom: 1px solid #eee;">
             <p style="margin: 0; color: #4a7c2f; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
               📩 Nuevo mensaje de contacto
             </p>

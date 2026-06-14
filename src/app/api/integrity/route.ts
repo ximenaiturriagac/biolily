@@ -18,14 +18,14 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
 
-          <div style="background: #1a1a2e; padding: 28px 24px; text-align: center;">
+          <div style="background: #ffffff; padding: 28px 24px; text-align: center; border-bottom: 1px solid #eee;">
             <img src="https://biolily.com.mx/logo-horizontal-biolily.svg" alt="Biolily"
               style="height: 44px; display: block; margin: 0 auto;" />
           </div>
 
           <div style="background: #fff8e1; padding: 10px 24px; border-bottom: 1px solid #ffe082;">
             <p style="margin: 0; color: #b45309; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-              🔒 Reporte confidencial — Canal de Integridad
+              🔒 Reporte confidencial — Voz con Valor Biolily
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
 
           <div style="padding: 20px 24px; border-top: 1px solid #eee; text-align: center;">
             <p style="margin: 0; color: #aaa; font-size: 11px;">
-              Biolily · Canal de Integridad confidencial<br/>
+              Biolily · Voz con Valor · Canal de integridad y confianza<br/>
               <a href="https://biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
             </p>
           </div>
@@ -84,15 +84,20 @@ export async function POST(req: NextRequest) {
             <div style="padding: 32px 24px 0 24px;">
               <p style="margin: 0 0 12px 0; color: #333; font-size: 16px;">Hola,</p>
               <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.7;">
-                Confirmamos que recibimos tu reporte a través del Canal de Integridad de Biolily.
+                Confirmamos que recibimos tu reporte a través del Canal de Voz con Valor de Biolily.
                 Lo revisaremos con confidencialidad y tomaremos las acciones correspondientes.
               </p>
             </div>
 
             <div style="padding: 24px;">
               <div style="padding: 18px; background: #fff8e1; border-radius: 8px; border-left: 4px solid #b45309;">
-                <p style="margin: 0; color: #78350f; font-size: 13px; line-height: 1.7;">
+                <p style="margin: 0 0 10px 0; color: #78350f; font-size: 13px; line-height: 1.7;">
                   Tu identidad y la información que compartiste serán tratadas con estricta confidencialidad conforme a nuestra política de integridad.
+                </p>
+                <p style="margin: 0; color: #78350f; font-size: 13px; line-height: 1.7;">
+                  Si tienes evidencia que respalde tu reporte (imágenes, videos, documentos), envíala a
+                  <a href="mailto:ad.biolily@gmail.com" style="color: #b45309; font-weight: bold;">ad.biolily@gmail.com</a>
+                  donde será tratada de forma confidencial.
                 </p>
               </div>
             </div>
@@ -104,7 +109,7 @@ export async function POST(req: NextRequest) {
 
             <div style="padding: 20px 24px; border-top: 1px solid #eee; text-align: center;">
               <p style="margin: 0; color: #aaa; font-size: 11px;">
-                Biolily · Canal de Integridad confidencial<br/>
+                Biolily · Voz con Valor · Canal de integridad y confianza<br/>
                 <a href="https://biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
               </p>
             </div>

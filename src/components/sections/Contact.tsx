@@ -300,8 +300,8 @@ export default function Contact() {
                   <AlertCircle size={16} className="text-amber-400 mt-0.5 shrink-0" />
                   <p className="text-gray-400 text-xs leading-relaxed">
                     {lang === "es"
-                      ? <>Si tienes evidencia que respalde tu reporte, envíala de forma anónima a <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> indicando una referencia de tu reporte.</>
-                      : <>If you have evidence to support your report, send it anonymously to <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> with a reference to your report.</>
+                      ? <>Si tienes evidencia que respalde tu reporte (imágenes, videos, documentos), envíala a <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> donde será tratada de forma confidencial.</>
+                      : <>If you have evidence to support your report (images, videos, documents), send it to <span className="text-amber-300 font-medium">ad.biolily@gmail.com</span> where it will be handled confidentially.</>
                     }
                   </p>
                 </div>
