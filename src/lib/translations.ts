@@ -255,7 +255,7 @@ export const translations = {
         {
           name: "Eduardo Caballero Murillo",
           role: "Fundador y CEO",
-          org: "Biolily",
+          org: "Líder de proyecto · Biolily",
           bio: "Eduardo Caballero Murillo es ingeniero en biotecnología, emprendedor ambiental y fundador de Biolily. Originario de Valle de Bravo, ha dedicado los últimos años al desarrollo de las Fito-colmenas como una solución tecnológica para restaurar cuerpos de agua afectados por eutrofización. Su experiencia combina innovación, gestión de proyectos, sostenibilidad, alianzas estratégicas y desarrollo de modelos de negocio de impacto ambiental.",
           bullets: [
             "Ingeniero en Biotecnología · Tecnológico de Monterrey",
