@@ -4,10 +4,6 @@ import { Send, Shield, AlertCircle } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
-const CONTACT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE ?? "";
-
 export default function Contact() {
   const { lang } = useLang();
   const t = translations[lang].contact;
@@ -35,12 +31,12 @@ export default function Contact() {
     setSending(true);
     setSendError(false);
     try {
-      const emailjs = (await import("@emailjs/browser")).default;
-      await emailjs.send(SERVICE_ID, CONTACT_TEMPLATE, {
-        name: form.name, org: form.org, cargo: form.cargo,
-        email: form.email, phone: form.phone,
-        interest: form.interest, message: form.message,
-      }, PUBLIC_KEY);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
       setSent(true);
     } catch {
       setSendError(true);
