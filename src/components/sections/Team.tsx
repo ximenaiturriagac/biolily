@@ -7,7 +7,7 @@ import { translations } from "@/lib/translations";
 const memberStyles = [
   { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg", imgClass: "object-cover object-top" },
   { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg", imgClass: "object-cover object-top" },
-  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg", imgClass: "object-contain" },
+  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg", imgClass: "object-cover object-top" },
 ];
 
 const bulletIcons = [
