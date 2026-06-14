@@ -5,9 +5,9 @@ import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
 const memberStyles = [
-  { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg" },
-  { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg" },
-  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg" },
+  { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg", imgClass: "object-cover object-top" },
+  { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg", imgClass: "object-cover object-top" },
+  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg", imgClass: "object-contain" },
 ];
 
 const bulletIcons = [
@@ -34,7 +34,7 @@ export default function Team() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:max-w-[calc(50%-20px)] lg:[&>*:last-child:nth-child(odd)]:mx-auto">
           {t.members.map((member, idx) => {
-            const { gradient, initials, photo } = memberStyles[idx];
+            const { gradient, initials, photo, imgClass } = memberStyles[idx];
             const icons = bulletIcons[idx];
             return (
               <div
@@ -43,14 +43,14 @@ export default function Team() {
               >
                 <div className={`h-32 bg-gradient-to-br ${gradient} relative`}>
                   <div className="absolute bottom-0 left-8 translate-y-1/2">
-                    <div className="w-20 h-20 rounded-2xl border-4 border-white shadow-lg overflow-hidden">
+                    <div className={`w-20 h-20 rounded-2xl border-4 border-white shadow-lg overflow-hidden bg-gradient-to-br ${gradient}`}>
                       {photo ? (
                         <Image
                           src={photo}
                           alt={member.name}
                           width={80}
                           height={80}
-                          className="w-full h-full object-cover object-top"
+                          className={`w-full h-full ${imgClass}`}
                         />
                       ) : (
                         <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
