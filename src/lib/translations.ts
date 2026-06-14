@@ -253,24 +253,24 @@ export const translations = {
       heading2: "Biolily",
       members: [
         {
-          name: "José Eduardo Caballero Murillo",
+          name: "Eduardo Caballero Murillo",
           role: "Fundador y CEO",
           org: "Biolily",
           bio: "Eduardo Caballero Murillo es ingeniero en biotecnología, emprendedor ambiental y fundador de Biolily. Originario de Valle de Bravo, ha dedicado los últimos años al desarrollo de las Fito-colmenas como una solución tecnológica para restaurar cuerpos de agua afectados por eutrofización. Su experiencia combina innovación, gestión de proyectos, sostenibilidad, alianzas estratégicas y desarrollo de modelos de negocio de impacto ambiental.",
           bullets: [
             "Ingeniero en Biotecnología · Tecnológico de Monterrey",
-            "Experiencia en project management, innovación y sostenibilidad",
+            "Experiencia en Project Management, innovación y sostenibilidad",
             "Fundador y líder del proyecto Fito-colmenas",
             "Enfoque en convertir ciencia aplicada en soluciones escalables",
           ],
         },
         {
-          name: "Dr. Jorge Alberto Ramírez Zierold",
+          name: "Dr. Jorge Ramírez Zierold",
           role: "Cofundador y Director Científico",
-          org: "Asesor científico · Fito-colmenas",
-          bio: "Jorge Alberto Ramírez Zierold es Doctor en Ciencias y especialista vinculado al estudio de sistemas acuáticos, calidad del agua y limnología. Su experiencia científica ha sido clave para fortalecer el fundamento técnico de las Fito-colmenas, el monitoreo de cuerpos de agua y la interpretación de indicadores ambientales.",
+          org: "Asesor científico · Biolily",
+          bio: "Jorge Ramírez Zierold es Doctor en Ciencias y especialista vinculado al estudio de sistemas acuáticos, calidad del agua y limnología. Su experiencia científica ha sido clave para fortalecer el fundamento técnico de las Fito-colmenas, el monitoreo de cuerpos de agua y la interpretación de indicadores ambientales.",
           bullets: [
-            "Doctor en Ciencias",
+            "Doctor en Ciencias · Universidad Autónoma de México",
             "Experiencia académica en UNAM",
             "Especialista en agua, limnología y calidad ambiental",
             "Monitoreo hídrico y recuperación sustentable de Valle de Bravo",
@@ -278,8 +278,8 @@ export const translations = {
         },
         {
           name: "Carolina Flores Q.",
-          role: "CFO y Responsable de ESG",
-          org: "Biolily",
+          role: "Cofundadora y CFO",
+          org: "Responsable de ESG · Biolily",
           bio: "Carolina Flores es especialista en finanzas corporativas, sostenibilidad y análisis de datos. En Biolily lidera la estrategia financiera y ESG de la organización, contribuyendo al desarrollo de modelos de negocio sostenibles, la medición de impacto ambiental y el fortalecimiento de la gobernanza corporativa. Su experiencia combina planeación financiera, cumplimiento normativo, automatización de procesos y análisis de información para la toma de decisiones. Su enfoque está orientado a transformar datos en herramientas que permitan evaluar, comunicar y maximizar el impacto de las soluciones ambientales desarrolladas por Biolily.",
           bullets: [
             "Lic. en Contaduría y Gestión Empresarial · Universidad Iberoamericana",
@@ -629,24 +629,24 @@ export const translations = {
       heading2: "Biolily",
       members: [
         {
-          name: "José Eduardo Caballero Murillo",
+          name: "Eduardo Caballero Murillo",
           role: "Founder & CEO",
           org: "Biolily",
           bio: "Eduardo Caballero Murillo is a biotechnology engineer, environmental entrepreneur, and founder of Biolily. Originally from Valle de Bravo, he has dedicated recent years to developing Fito-colmenas as a technological solution to restore water bodies affected by eutrophication. His experience combines innovation, project management, sustainability, strategic partnerships, and environmental impact business model development.",
           bullets: [
             "Biotechnology Engineer · Tecnológico de Monterrey",
-            "Experience in project management, innovation, and sustainability",
+            "Experience in Project Management, innovation, and sustainability",
             "Founder and leader of the Fito-colmenas project",
             "Focus on turning applied science into scalable solutions",
           ],
         },
         {
-          name: "Dr. Jorge Alberto Ramírez Zierold",
+          name: "Dr. Jorge Ramírez Zierold",
           role: "Co-founder & Scientific Director",
-          org: "Scientific advisor · Fito-colmenas",
-          bio: "Jorge Alberto Ramírez Zierold holds a PhD in Sciences and is a specialist linked to the study of aquatic systems, water quality, and limnology. His scientific expertise has been key to strengthening the technical foundation of Fito-colmenas, water body monitoring, and the interpretation of environmental indicators.",
+          org: "Scientific advisor · Biolily",
+          bio: "Jorge Ramírez Zierold holds a PhD in Sciences and is a specialist linked to the study of aquatic systems, water quality, and limnology. His scientific expertise has been key to strengthening the technical foundation of Fito-colmenas, water body monitoring, and the interpretation of environmental indicators.",
           bullets: [
-            "PhD in Sciences",
+            "PhD in Sciences · Universidad Autónoma de México",
             "Academic experience at UNAM",
             "Specialist in water, limnology, and environmental quality",
             "Water monitoring and sustainable recovery of Valle de Bravo",
@@ -654,8 +654,8 @@ export const translations = {
         },
         {
           name: "Carolina Flores Q.",
-          role: "CFO & ESG Lead",
-          org: "Biolily",
+          role: "Co-founder & CFO",
+          org: "ESG Lead · Biolily",
           bio: "Carolina Flores is a specialist in corporate finance, sustainability, and data analysis. At Biolily she leads the financial and ESG strategy of the organization, contributing to the development of sustainable business models, environmental impact measurement, and corporate governance. Her experience combines financial planning, regulatory compliance, process automation, and data analysis for decision-making.",
           bullets: [
             "B.S. in Accounting and Business Management · Universidad Iberoamericana",
