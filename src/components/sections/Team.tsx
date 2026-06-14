@@ -11,8 +11,8 @@ const memberStyles = [
 ];
 
 const bulletIcons = [
-  [GraduationCap, Briefcase, Leaf, Microscope],
-  [GraduationCap, Microscope, Leaf, Briefcase],
+  [GraduationCap, Briefcase, Microscope, Leaf],
+  [GraduationCap, Briefcase, Microscope, Leaf],
   [GraduationCap, Briefcase, Microscope, Leaf],
 ];
 
