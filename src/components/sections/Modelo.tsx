@@ -33,7 +33,7 @@ export default function Modelo() {
           </p>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.steps.map((step, idx) => {
             const Icon = icons[idx];
             return (
@@ -51,29 +51,6 @@ export default function Modelo() {
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm mb-2">{step.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed text-justify">{step.desc}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="md:hidden space-y-0">
-          {t.steps.map((step, index) => {
-            const Icon = icons[index];
-            return (
-              <div key={step.title} className="relative flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
-                    {index + 1}
-                  </div>
-                  {index < t.steps.length - 1 && <div className="w-0.5 flex-1 bg-green-200 my-1" />}
-                </div>
-                <div className="pb-6 pt-1 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Icon size={16} className="text-green-700 shrink-0" />
-                    <h3 className="font-semibold text-gray-900 text-sm">{step.title}</h3>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed text-justify">{step.desc}</p>
-                </div>
               </div>
             );
           })}
