@@ -21,7 +21,7 @@ const mediaItems = [
     source: "TV Azteca",
     title: "Vivir sin agua en Valle de Bravo: crisis hídrica y soluciones",
     desc: "Cobertura sobre la grave crisis de agua en Valle de Bravo, Estado de México, y las alternativas tecnológicas para enfrentarla.",
-    url: "https://www.facebook.com/AztecaNoticias/videos/vivirsinagua-en-valle-de-bravo-edomex-enfrentamos-una-grave-crisis-de-agua-la-po/1031448298536735/",
+    url: "https://www.tvazteca.com/aztecanoticias/crisis-ambiental-en-valle-bravo-lago-enfrenta-contaminacion-y-sequia-severa",
     tag: "Televisión",
     color: "from-red-500 to-rose-600",
     bg: "bg-red-50",
