@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ImpactoSection from "@/components/sections/ImpactoSection";
 import ODS from "@/components/sections/ODS";
+import FAQ from "@/components/sections/FAQ";
 
 export const metadata: Metadata = {
   title: "Impacto y Agenda 2030 | Biolily",
@@ -19,6 +20,7 @@ export default function ImpactoPage() {
     <div className="pt-20">
       <ImpactoSection />
       <ODS />
+      <FAQ variant="impacto" />
     </div>
   );
 }

@@ -247,6 +247,98 @@ export const translations = {
       note1: "Los beneficios volumétricos pueden adaptarse a los objetivos específicos de cada proyecto, permitiendo diseñar estrategias alineadas con metas corporativas, territoriales o de restauración ecológica.",
       note2: "Los valores presentados son estimados sujetos a condiciones de cada sitio de implementación.",
     },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      heading: "Preguntas frecuentes sobre las Fito-colmenas",
+      subheading: "Conoce cómo funciona nuestra tecnología, qué problema atiende y cómo contribuye a la restauración hídrica de cuerpos de agua eutróficos.",
+      items: [
+        {
+          q: "¿Qué es una Fito-colmena?",
+          a: [
+            "Una Fito-colmena es un sistema flotante modular diseñado para apoyar la restauración hídrica de cuerpos de agua eutróficos mediante soluciones basadas en la naturaleza.",
+            "Su diseño permite contener y aprovechar el crecimiento del lirio acuático de forma controlada, utilizando su capacidad natural para absorber nutrientes presentes en el agua, especialmente nitrógeno y fósforo.",
+          ],
+        },
+        {
+          q: "¿Cómo ayudan las Fito-colmenas a restaurar cuerpos de agua?",
+          a: [
+            "Las Fito-colmenas funcionan como sistemas vivos de restauración hídrica.",
+            "A través del crecimiento controlado del lirio acuático, la tecnología contribuye a capturar nutrientes, reducir cargas contaminantes y generar biomasa que puede ser cosechada y retirada del sistema.",
+            "Este proceso permite extraer nutrientes del cuerpo de agua y apoyar la recuperación gradual del ecosistema acuático.",
+          ],
+        },
+        {
+          q: "¿Qué relación tienen las Fito-colmenas con la eutrofización?",
+          a: [
+            "La eutrofización ocurre cuando un cuerpo de agua recibe un exceso de nutrientes, principalmente nitrógeno y fósforo.",
+            "Estos nutrientes pueden favorecer el crecimiento excesivo de algas, plantas acuáticas y otros organismos, alterando el equilibrio ecológico del sistema.",
+            "Las Fito-colmenas fueron diseñadas para intervenir en esta problemática mediante la captura controlada de nutrientes y la cosecha periódica de biomasa.",
+          ],
+        },
+        {
+          q: "¿Las Fito-colmenas eliminan el lirio acuático?",
+          a: [
+            "Las Fito-colmenas no parten de la eliminación del lirio acuático como único objetivo.",
+            "Su enfoque consiste en contenerlo, controlarlo y aprovecharlo como una herramienta de restauración hídrica.",
+            "El lirio acuático puede convertirse en un problema cuando crece sin control; sin embargo, bajo un sistema diseñado, monitoreado y contenido, puede ser utilizado para capturar nutrientes y generar beneficios ambientales medibles.",
+          ],
+        },
+        {
+          q: "¿Qué nutrientes ayudan a remover?",
+          a: [
+            "Las Fito-colmenas aprovechan la capacidad del lirio acuático para absorber nutrientes presentes en el agua, principalmente nitrógeno y fósforo.",
+            "Estos nutrientes están asociados con procesos de eutrofización y deterioro de la calidad del agua.",
+            "La remoción ocurre mediante el crecimiento de biomasa vegetal y su posterior cosecha, lo que permite retirar parte de esos nutrientes del ecosistema acuático.",
+          ],
+        },
+        {
+          q: "¿Qué son los beneficios volumétricos?",
+          a: [
+            "Los beneficios volumétricos son una forma de estimar el volumen de agua que se beneficia ambientalmente a partir de una intervención de restauración hídrica.",
+            "En el caso de Biolily, estos beneficios se calculan mediante metodologías reconocidas y permiten traducir el impacto ambiental de las Fito-colmenas en métricas comprensibles para empresas, gobiernos y organizaciones.",
+          ],
+        },
+        {
+          q: "¿Cómo se mide el impacto de las Fito-colmenas?",
+          a: [
+            "El impacto se mide mediante monitoreo científico, indicadores de calidad del agua, seguimiento de biomasa cosechada y estimación de beneficios ambientales y volumétricos.",
+            "Biolily integra medición, operación y reportes para que los proyectos puedan evaluarse con información verificable y trazable.",
+          ],
+        },
+        {
+          q: "¿Las Fito-colmenas sustituyen otros métodos de tratamiento de agua?",
+          a: [
+            "No necesariamente.",
+            "Las Fito-colmenas pueden formar parte de una estrategia integral de restauración hídrica.",
+            "Su valor está en ofrecer una solución basada en la naturaleza, modular y escalable, que puede complementar otras acciones de saneamiento, manejo de cuenca, control de descargas, restauración ecológica y gestión de nutrientes.",
+          ],
+        },
+        {
+          q: "¿En qué cuerpos de agua pueden implementarse?",
+          a: [
+            "Las Fito-colmenas están diseñadas para cuerpos de agua afectados por eutrofización, exceso de nutrientes o crecimiento descontrolado de vegetación acuática.",
+            "Su implementación depende de un diagnóstico previo, condiciones del sitio, objetivos del proyecto, permisos aplicables y viabilidad técnica, ambiental y operativa.",
+          ],
+        },
+        {
+          q: "¿Por qué Biolily utiliza soluciones basadas en la naturaleza?",
+          a: [
+            "Porque los ecosistemas tienen procesos naturales capaces de contribuir a su propia recuperación cuando son entendidos, diseñados y gestionados correctamente.",
+            "Biolily aprovecha estos procesos mediante tecnología, monitoreo científico y operación controlada para generar proyectos de restauración hídrica con beneficios ambientales medibles.",
+          ],
+        },
+      ],
+      ctaTecnologias: {
+        heading: "¿Buscas una solución para restauración hídrica, eutrofización o manejo de lirio acuático?",
+        desc: "Conversemos sobre las condiciones de tu cuerpo de agua y cómo una solución basada en la naturaleza puede generar beneficios ambientales y volumétricos medibles.",
+        button: "Contactar a Biolily",
+      },
+      ctaImpacto: {
+        heading: "¿Tu organización busca generar impacto hídrico medible?",
+        desc: "En Biolily diseñamos proyectos de restauración que integran ciencia, monitoreo, colaboración multisectorial y beneficios ambientales verificables.",
+        button: "Construyamos un proyecto",
+      },
+    },
     team: {
       eyebrow: "Quiénes somos",
       heading1: "El equipo detrás de",
@@ -622,6 +714,98 @@ export const translations = {
       benefits: ["Continuous monitoring", "VWBA2.0 validation by BlueRisk", "Social inclusion & governance", "Circular economy", "Guaranteed restoration", "Verifiable volumetric benefits"],
       note1: "Volumetric benefits can be adapted to the specific objectives of each project, allowing strategies to be designed aligned with corporate, territorial, or ecological restoration goals.",
       note2: "The values presented are estimates subject to conditions at each implementation site.",
+    },
+    faq: {
+      eyebrow: "FAQ",
+      heading: "Frequently asked questions about Fito-colmenas",
+      subheading: "Learn how our technology works, what problem it addresses, and how it contributes to the water restoration of eutrophic water bodies.",
+      items: [
+        {
+          q: "What is a Fito-colmena?",
+          a: [
+            "A Fito-colmena is a modular floating system designed to support the water restoration of eutrophic water bodies through nature-based solutions.",
+            "Its design allows water hyacinth growth to be contained and harnessed in a controlled manner, leveraging its natural capacity to absorb nutrients present in the water, especially nitrogen and phosphorus.",
+          ],
+        },
+        {
+          q: "How do Fito-colmenas help restore water bodies?",
+          a: [
+            "Fito-colmenas function as living water restoration systems.",
+            "Through the controlled growth of water hyacinth, the technology contributes to capturing nutrients, reducing pollutant loads, and generating biomass that can be harvested and removed from the system.",
+            "This process allows nutrients to be extracted from the water body and supports the gradual recovery of the aquatic ecosystem.",
+          ],
+        },
+        {
+          q: "What is the relationship between Fito-colmenas and eutrophication?",
+          a: [
+            "Eutrophication occurs when a water body receives an excess of nutrients, primarily nitrogen and phosphorus.",
+            "These nutrients can promote the excessive growth of algae, aquatic plants, and other organisms, disrupting the ecological balance of the system.",
+            "Fito-colmenas were designed to intervene in this problem through the controlled capture of nutrients and the periodic harvest of biomass.",
+          ],
+        },
+        {
+          q: "Do Fito-colmenas eliminate water hyacinth?",
+          a: [
+            "Fito-colmenas do not start from the elimination of water hyacinth as their sole objective.",
+            "Their approach consists of containing, controlling, and using it as a water restoration tool.",
+            "Water hyacinth can become a problem when it grows uncontrollably; however, under a designed, monitored, and contained system, it can be used to capture nutrients and generate measurable environmental benefits.",
+          ],
+        },
+        {
+          q: "Which nutrients do they help remove?",
+          a: [
+            "Fito-colmenas leverage the capacity of water hyacinth to absorb nutrients present in the water, primarily nitrogen and phosphorus.",
+            "These nutrients are associated with eutrophication processes and deterioration of water quality.",
+            "Removal occurs through the growth of plant biomass and its subsequent harvest, which allows part of those nutrients to be removed from the aquatic ecosystem.",
+          ],
+        },
+        {
+          q: "What are volumetric benefits?",
+          a: [
+            "Volumetric benefits are a way of estimating the volume of water that is environmentally benefited from a water restoration intervention.",
+            "In Biolily's case, these benefits are calculated using recognized methodologies and allow the environmental impact of Fito-colmenas to be translated into understandable metrics for companies, governments, and organizations.",
+          ],
+        },
+        {
+          q: "How is the impact of Fito-colmenas measured?",
+          a: [
+            "Impact is measured through scientific monitoring, water quality indicators, harvested biomass tracking, and estimation of environmental and volumetric benefits.",
+            "Biolily integrates measurement, operation, and reporting so that projects can be evaluated with verifiable and traceable information.",
+          ],
+        },
+        {
+          q: "Do Fito-colmenas replace other water treatment methods?",
+          a: [
+            "Not necessarily.",
+            "Fito-colmenas can be part of a comprehensive water restoration strategy.",
+            "Their value lies in offering a nature-based, modular, and scalable solution that can complement other actions including sanitation, watershed management, discharge control, ecological restoration, and nutrient management.",
+          ],
+        },
+        {
+          q: "In which water bodies can they be implemented?",
+          a: [
+            "Fito-colmenas are designed for water bodies affected by eutrophication, excess nutrients, or uncontrolled growth of aquatic vegetation.",
+            "Their implementation depends on a prior diagnosis, site conditions, project objectives, applicable permits, and technical, environmental, and operational feasibility.",
+          ],
+        },
+        {
+          q: "Why does Biolily use nature-based solutions?",
+          a: [
+            "Because ecosystems have natural processes capable of contributing to their own recovery when properly understood, designed, and managed.",
+            "Biolily leverages these processes through technology, scientific monitoring, and controlled operation to generate water restoration projects with measurable environmental benefits.",
+          ],
+        },
+      ],
+      ctaTecnologias: {
+        heading: "Looking for a solution for water restoration, eutrophication, or water hyacinth management?",
+        desc: "Let's talk about your water body's conditions and how a nature-based solution can generate measurable environmental and volumetric benefits.",
+        button: "Contact Biolily",
+      },
+      ctaImpacto: {
+        heading: "Is your organization looking to generate measurable water impact?",
+        desc: "At Biolily we design restoration projects that integrate science, monitoring, multisectoral collaboration, and verifiable environmental benefits.",
+        button: "Let's build a project",
+      },
     },
     team: {
       eyebrow: "Who we are",

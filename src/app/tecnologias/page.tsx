@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Tecnologia from "@/components/sections/Tecnologia";
 import Funcionamiento from "@/components/sections/Funcionamiento";
 import Eficiencia from "@/components/sections/Eficiencia";
+import FAQ from "@/components/sections/FAQ";
 
 export const metadata: Metadata = {
   title: "Fito-colmenas® | Tecnología de restauración hídrica — Biolily",
@@ -21,6 +22,7 @@ export default function TecnologiasPage() {
       <Tecnologia showCTA={false} />
       <Funcionamiento asGrid={true} />
       <Eficiencia />
+      <FAQ variant="tecnologias" />
     </div>
   );
 }
