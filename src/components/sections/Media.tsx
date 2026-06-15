@@ -21,7 +21,7 @@ const mediaItems = [
     title: "Fito-colmenas: limpieza del agua con soluciones basadas en la naturaleza",
     desc: "Dos científicos expertos en materia hídrica exploran el proceso de limpieza con Fito-colmenas, la eutrofización, y las ventajas frente a soluciones tradicionales de tratamiento de agua.",
     url: "https://open.spotify.com/episode/0T89v3gTOAFELlE069Lo4Y",
-    tag: "Podcast · Spotify",
+    tag: "Podcast",
     color: "from-green-500 to-emerald-600",
     bg: "bg-green-50",
     border: "border-green-200",
