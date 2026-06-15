@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
   },
   alternates: {
-    canonical: "https://biolily.mx",
+    canonical: "https://biolily.com.mx",
     languages: {
-      "es": "https://biolily.mx",
-      "en": "https://biolily.mx",
-      "x-default": "https://biolily.mx",
+      "es": "https://biolily.com.mx",
+      "en": "https://biolily.com.mx",
+      "x-default": "https://biolily.com.mx",
     },
   },
 };

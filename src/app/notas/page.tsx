@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     description:
       "Biolily en los medios: notas de prensa, menciones, reconocimientos y cobertura sobre Fito-colmenas® y los proyectos de restauración hídrica en Valle de Bravo y México.",
     type: "website",
+    url: "https://biolily.com.mx/notas",
   },
+  alternates: { canonical: "https://biolily.com.mx/notas" },
 };
 
 export default function NotasPage() {
