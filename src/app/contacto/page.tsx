@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     description:
       "¿Tu organización tiene metas de agua, sostenibilidad o restauración ecológica? Contacta a Biolily y diseñemos juntos un proyecto de restauración hídrica con resultados verificables.",
     type: "website",
-    url: "https://biolily.com.mx/contacto",
+    url: "https://www.biolily.com.mx/contacto",
   },
-  alternates: { canonical: "https://biolily.com.mx/contacto" },
+  alternates: { canonical: "https://www.biolily.com.mx/contacto" },
 };
 
 export default function ContactoPage() {

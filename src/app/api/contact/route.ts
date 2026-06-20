@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
 
           <div style="background: #ffffff; padding: 28px 24px; text-align: center; border-bottom: 1px solid #eee;">
-            <img src="https://biolily.com.mx/logo-horizontal-biolily.svg" alt="Biolily"
+            <img src="https://www.biolily.com.mx/logo-horizontal-biolily.svg" alt="Biolily"
               style="height: 44px; display: block; margin: 0 auto;" />
           </div>
 
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
           <div style="padding: 20px 24px; border-top: 1px solid #eee; text-align: center;">
             <p style="margin: 0; color: #aaa; font-size: 11px;">
               Biolily · Tecnología ambiental · Valle de Bravo, México<br/>
-              <a href="https://biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
+              <a href="https://www.biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
 
           <div style="background: #ffffff; padding: 28px 24px; text-align: center; border-bottom: 1px solid #eee;">
-            <img src="https://biolily.com.mx/logo-horizontal-biolily.svg" alt="Biolily"
+            <img src="https://www.biolily.com.mx/logo-horizontal-biolily.svg" alt="Biolily"
               style="height: 44px; display: block; margin: 0 auto;" />
           </div>
 
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
           <div style="padding: 20px 24px; border-top: 1px solid #eee; text-align: center;">
             <p style="margin: 0; color: #aaa; font-size: 11px;">
               Biolily · Tecnología ambiental · Valle de Bravo, México<br/>
-              <a href="https://biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
+              <a href="https://www.biolily.com.mx" style="color: #4a7c2f;">biolily.com.mx</a>
             </p>
           </div>
         </div>

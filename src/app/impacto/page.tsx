@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     description:
       "Conoce el impacto ambiental, social e institucional de Biolily y cómo nuestros proyectos de restauración hídrica se alinean con los Objetivos de Desarrollo Sostenible de la ONU.",
     type: "website",
-    url: "https://biolily.com.mx/impacto",
+    url: "https://www.biolily.com.mx/impacto",
   },
-  alternates: { canonical: "https://biolily.com.mx/impacto" },
+  alternates: { canonical: "https://www.biolily.com.mx/impacto" },
 };
 
 export default function ImpactoPage() {

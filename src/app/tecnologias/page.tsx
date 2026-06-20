@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     description:
       "Conoce las Fito-colmenas®, tecnología patentada de Biolily para la restauración hídrica mediante el control del lirio acuático. Modular, flotante, medible y validada científicamente.",
     type: "website",
-    url: "https://biolily.com.mx/tecnologias",
+    url: "https://www.biolily.com.mx/tecnologias",
   },
-  alternates: { canonical: "https://biolily.com.mx/tecnologias" },
+  alternates: { canonical: "https://www.biolily.com.mx/tecnologias" },
 };
 
 export default function TecnologiasPage() {

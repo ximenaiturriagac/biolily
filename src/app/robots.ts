@@ -3,6 +3,6 @@ import { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://biolily.com.mx/sitemap.xml",
+    sitemap: "https://www.biolily.com.mx/sitemap.xml",
   };
 }
