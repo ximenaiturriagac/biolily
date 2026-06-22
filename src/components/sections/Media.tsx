@@ -207,7 +207,7 @@ export default function Media() {
     <section id="medios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -232,7 +232,7 @@ export default function Media() {
                 <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors mt-1" />
               </div>
               <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">{source}</span>
-              <h4 className="font-semibold text-gray-800 text-sm mb-2 leading-snug flex-1">{title}</h4>
+              <h3 className="font-semibold text-gray-800 text-sm mb-2 leading-snug flex-1">{title}</h3>
               <p className="text-gray-500 text-xs leading-relaxed mb-3">{desc}</p>
               <span className="inline-block px-2.5 py-1 rounded-full bg-white/70 text-xs text-gray-600 font-medium border border-gray-200 self-start">
                 {tag}

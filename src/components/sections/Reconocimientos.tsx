@@ -31,7 +31,7 @@ export default function Reconocimientos() {
     <section id="reconocimientos" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 block mb-3">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

@@ -71,7 +71,7 @@ export default function ODS() {
 
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 block mb-3">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

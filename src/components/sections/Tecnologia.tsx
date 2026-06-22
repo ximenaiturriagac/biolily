@@ -11,7 +11,7 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
     <section id="tecnologias" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-4">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 block mb-4">
             {t.eyebrow}
           </span>
           <div className="flex justify-center items-center mb-6">

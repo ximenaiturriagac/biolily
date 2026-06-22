@@ -20,7 +20,7 @@ export default function FAQ({ variant = "tecnologias" }: { variant?: "tecnologia
 
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -50,7 +50,7 @@ export default function FAQ({ variant = "tecnologias" }: { variant?: "tecnologia
                     </span>
                     <ChevronDown
                       size={18}
-                      className={`shrink-0 text-green-600 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      className={`shrink-0 text-green-700 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     />
                   </button>
                 </h3>

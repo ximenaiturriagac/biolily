@@ -44,6 +44,7 @@ export default function Hero() {
                 fill
                 className="object-contain"
                 priority
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 480px"
               />
               <div className="hidden lg:block absolute bottom-18 left-3 max-w-[160px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
                 <p className="text-green-300 text-xs mt-0.5">{t.caption}</p>
@@ -54,7 +55,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="/tecnologias"
-                className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25 hover:scale-105 text-sm"
+                className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-green-700 hover:bg-green-600 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25 hover:scale-105 text-sm"
               >
                 {t.cta1}
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

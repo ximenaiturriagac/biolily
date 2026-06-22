@@ -4,7 +4,7 @@ import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
 const styles = [
-  { color: "text-green-600", bg: "bg-green-50", border: "border-green-100", icon: Leaf },
+  { color: "text-green-700", bg: "bg-green-50", border: "border-green-100", icon: Leaf },
   { color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100", icon: Users },
   { color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100", icon: Building2 },
 ];
@@ -17,7 +17,7 @@ export default function ImpactoSection() {
     <section id="impacto" className="py-24 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 block mb-3">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 block mb-3">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

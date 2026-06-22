@@ -6,7 +6,7 @@ import { translations } from "@/lib/translations";
 const icons = [Building2, Landmark, Heart, Users, GraduationCap, Home];
 const styles = [
   { color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-  { color: "text-green-600", bg: "bg-green-50", border: "border-green-100" },
+  { color: "text-green-700", bg: "bg-green-50", border: "border-green-100" },
   { color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100" },
   { color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
   { color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
@@ -22,7 +22,7 @@ export default function Allies() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
+            <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
               {t.eyebrow}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
@@ -57,7 +57,7 @@ export default function Allies() {
                     <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                       <Icon size={17} className={color} />
                     </div>
-                    <h4 className="font-semibold text-gray-800 text-sm">{title}</h4>
+                    <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
                   </div>
                   <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
                 </div>

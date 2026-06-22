@@ -24,7 +24,7 @@ export default function Team() {
     <section id="equipo" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
+          <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
             {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
@@ -77,7 +77,7 @@ export default function Team() {
                       return (
                         <li key={text} className="flex items-start gap-3">
                           <div className="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center shrink-0 mt-0.5">
-                            <Icon size={13} className="text-green-600" />
+                            <Icon size={13} className="text-green-700" />
                           </div>
                           <span className="text-gray-600 text-sm">{text}</span>
                         </li>

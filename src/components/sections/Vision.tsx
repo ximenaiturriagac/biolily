@@ -33,7 +33,7 @@ export default function Vision() {
             <blockquote className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-green-800 leading-tight italic">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
-            <p className="mt-4 text-green-600 text-sm font-medium uppercase tracking-widest">
+            <p className="mt-4 text-green-700 text-sm font-medium uppercase tracking-widest">
               {t.quoteAttr}
             </p>
           </div>

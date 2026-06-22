@@ -81,7 +81,7 @@ export default function Contact() {
         {/* ── Main contact form ── */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-sm font-semibold uppercase tracking-widest text-green-600 mb-3 block">
+            <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
               {t.eyebrow}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -95,7 +95,7 @@ export default function Contact() {
             <div className="max-w-2xl mx-auto flex items-center justify-center p-16 rounded-3xl bg-green-50 border border-green-200 text-center">
               <div>
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                  <Send size={24} className="text-green-600" />
+                  <Send size={24} className="text-green-700" />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-green-800 mb-2">{t.successTitle}</h3>
                 <p className="text-green-700 text-sm">{t.successDesc}</p>
