@@ -53,7 +53,7 @@ export default function LinkedInBanner() {
               <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.descRight}</p>
               <a
                 href="/contacto"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-600 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25"
               >
                 {t.ctaContact}
                 <ArrowRight size={16} />

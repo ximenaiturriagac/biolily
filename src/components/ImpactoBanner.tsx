@@ -27,7 +27,7 @@ export default function ImpactoBanner() {
           </p>
           <Link
             href="/impacto"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-green-700 hover:bg-green-600 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-green-500/25"
           >
             {t.cta}
             <ArrowRight size={16} />

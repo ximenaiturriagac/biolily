@@ -19,7 +19,7 @@ export default function Medicion() {
               {t.heading}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">{t.p1}</p>
-            <p className="text-gray-500 text-base leading-relaxed">{t.p2}</p>
+            <p className="text-gray-600 text-base leading-relaxed">{t.p2}</p>
           </div>
 
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-blue-100">

@@ -81,7 +81,7 @@ export default function Footer() {
                 <p className="text-white text-sm font-semibold leading-tight">{t.linkedinName}</p>
                 <p className="text-gray-400 text-xs mt-0.5">{t.linkedin}</p>
               </div>
-              <ExternalLink size={14} className="text-gray-500 group-hover:text-gray-300 transition-colors ml-auto" />
+              <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-200 transition-colors ml-auto" />
             </a>
             <a
               href="mailto:ad.biolily@gmail.com"
@@ -94,7 +94,7 @@ export default function Footer() {
                 <p className="text-white text-sm font-semibold leading-tight">ad.biolily@gmail.com</p>
                 <p className="text-gray-400 text-xs mt-0.5">{t.email}</p>
               </div>
-              <ExternalLink size={14} className="text-gray-500 group-hover:text-gray-300 transition-colors ml-auto" />
+              <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-200 transition-colors ml-auto" />
             </a>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-green-900/50 pt-8 mb-6">
           <button
             onClick={() => setPrivacyOpen(!privacyOpen)}
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-300 text-sm transition-colors"
+            className="flex items-center gap-2 text-gray-400 hover:text-gray-200 text-sm transition-colors"
           >
             <FileText size={14} className="text-green-600" />
             {t.avisosPrivacidad}
@@ -134,8 +134,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-xs">&copy; {new Date().getFullYear()} Biolily. {t.copyright}</p>
-          <p className="text-gray-600 text-xs">{t.lugar}</p>
+          <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Biolily. {t.copyright}</p>
+          <p className="text-gray-400 text-xs">{t.lugar}</p>
         </div>
       </div>
     </footer>

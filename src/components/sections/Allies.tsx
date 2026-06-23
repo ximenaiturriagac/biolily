@@ -59,7 +59,7 @@ export default function Allies() {
                     </div>
                     <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
                   </div>
-                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                  <p className="text-gray-600 text-xs leading-relaxed">{desc}</p>
                 </div>
               );
             })}
