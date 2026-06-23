@@ -14,6 +14,9 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
           <span className="text-sm font-semibold uppercase tracking-widest text-green-700 block mb-4">
             {t.eyebrow}
           </span>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            {t.subtitle}
+          </h1>
           <div className="flex justify-center items-center mb-6">
             <Image
               src="/logo-principal-fitocolmenas.svg"
@@ -23,9 +26,6 @@ export default function Tecnologia({ showCTA = true }: { showCTA?: boolean }) {
               className="h-[91px] w-auto mx-auto block"
             />
           </div>
-          <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto">
-            {t.subtitle}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">

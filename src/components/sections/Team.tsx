@@ -27,8 +27,11 @@ export default function Team() {
           <span className="text-sm font-semibold uppercase tracking-widest text-green-700 mb-3 block">
             {t.eyebrow}
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
             {t.heading1} <span className="text-green-700">{t.heading2}</span>
+          </h1>
+          <h2 className="font-display text-xl sm:text-2xl font-semibold text-gray-600">
+            {t.heading3}
           </h2>
         </div>
 

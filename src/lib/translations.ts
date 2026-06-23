@@ -160,7 +160,7 @@ export const translations = {
     },
     impacto: {
       eyebrow: "Impacto",
-      heading: "Transformando ecosistemas y fortaleciendo comunidades",
+      heading: "Transformando el agua, fortaleciendo comunidades y territorios",
       blocks: [
         { title: "Impacto Ambiental", desc: "Generación de beneficios ambientales medibles mediante la extracción de nutrientes, el monitoreo de la calidad del agua y la implementación de soluciones basadas en la naturaleza." },
         { title: "Impacto Social", desc: "Participación comunitaria, fortalecimiento de capacidades locales y construcción de una cultura de corresponsabilidad en torno al agua." },
@@ -343,6 +343,7 @@ export const translations = {
       eyebrow: "Quiénes somos",
       heading1: "El equipo detrás de",
       heading2: "Biolily",
+      heading3: "Expertos en restauración hídrica y tecnología ambiental",
       members: [
         {
           name: "Eduardo Caballero Murillo",
@@ -628,7 +629,7 @@ export const translations = {
     },
     impacto: {
       eyebrow: "Impact",
-      heading: "Transforming ecosystems and strengthening communities",
+      heading: "Transforming water, strengthening communities and territories",
       blocks: [
         { title: "Environmental Impact", desc: "Generation of measurable environmental benefits through nutrient extraction, water quality monitoring, and the implementation of nature-based solutions." },
         { title: "Social Impact", desc: "Community participation, local capacity building, and the construction of a culture of shared responsibility around water." },
@@ -811,6 +812,7 @@ export const translations = {
       eyebrow: "Who we are",
       heading1: "The team behind",
       heading2: "Biolily",
+      heading3: "Experts in water restoration and environmental technology",
       members: [
         {
           name: "Eduardo Caballero Murillo",
