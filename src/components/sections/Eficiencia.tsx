@@ -41,18 +41,16 @@ export default function Eficiencia() {
                 {value}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed text-center mb-2">{label}</p>
-              {source && (
+              {i === 2 ? (
                 <p className="text-gray-500 text-xs leading-relaxed text-center">
-                  {sourceLink && sourceLinkText ? (
-                    <>
-                      {source.replace(sourceLinkText, "")}{" "}
-                      <a href={sourceLink} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300 transition-colors">
-                        {sourceLinkText}
-                      </a>
-                    </>
-                  ) : source}
+                  Validado por BlueRisk mediante metodología{" "}
+                  <a href="https://www.wri.org/research/volumetric-water-benefit-accounting-2-0" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300 transition-colors">
+                    VWBA 2.0
+                  </a>
                 </p>
-              )}
+              ) : source ? (
+                <p className="text-gray-500 text-xs leading-relaxed text-center">{source}</p>
+              ) : null}
             </div>
           ))}
         </div>
