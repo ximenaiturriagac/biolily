@@ -241,7 +241,7 @@ export const translations = {
       metrics: [
         { value: "534 kg P/ha/año", label: "Fósforo removido", source: "Datos propios de eficiencia operativa · Biolily, Valle de Bravo" },
         { value: "7,843 kg N/ha/año", label: "Nitrógeno removido", source: "Datos propios de eficiencia operativa · Biolily, Valle de Bravo" },
-        { value: "15,700–40,300 m³/año", label: "Beneficio volumétrico por Fito-colmena", source: "Validado por BlueRisk mediante metodología VWBA 2.0", sourceLink: "https://www.wri.org/research/volumetric-water-benefit-accounting-2-0", sourceLinkText: "VWBA 2.0" },
+        { value: "15,700–40,300 m³/año", label: "Beneficio volumétrico por Fito-colmena", source: "Validado por BlueRisk mediante metodología VWBA 2.0" },
       ],
       benefits: ["Monitoreo continuo", "Validación VWBA2.0 por BlueRisk", "Inclusión social y gobernanza", "Economía circular", "Restauración garantizada", "Beneficios volumétricos comprobables"],
       note1: "Los beneficios volumétricos pueden adaptarse a los objetivos específicos de cada proyecto, permitiendo diseñar estrategias alineadas con metas corporativas, territoriales o de restauración ecológica.",
@@ -710,7 +710,7 @@ export const translations = {
       metrics: [
         { value: "534 kg P/ha/yr", label: "Phosphorus removed", source: "Own operational efficiency data · Biolily, Valle de Bravo" },
         { value: "7,843 kg N/ha/yr", label: "Nitrogen removed", source: "Own operational efficiency data · Biolily, Valle de Bravo" },
-        { value: "15,700–40,300 m³/yr", label: "Volumetric benefit per Fito-colmena", source: "Validated by BlueRisk using VWBA 2.0 methodology", sourceLink: "https://www.wri.org/research/volumetric-water-benefit-accounting-2-0", sourceLinkText: "VWBA 2.0" },
+        { value: "15,700–40,300 m³/yr", label: "Volumetric benefit per Fito-colmena", source: "Validated by BlueRisk using VWBA 2.0 methodology" },
       ],
       benefits: ["Continuous monitoring", "VWBA2.0 validation by BlueRisk", "Social inclusion & governance", "Circular economy", "Guaranteed restoration", "Verifiable volumetric benefits"],
       note1: "Volumetric benefits can be adapted to the specific objectives of each project, allowing strategies to be designed aligned with corporate, territorial, or ecological restoration goals.",
