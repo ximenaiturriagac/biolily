@@ -35,13 +35,24 @@ export default function Eficiencia() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {t.metrics.map(({ value, label, source }, i) => (
+          {t.metrics.map(({ value, label, source, sourceLink, sourceLinkText }, i) => (
             <div key={label} className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-center flex flex-col items-center justify-center">
               <div className={`text-3xl sm:text-4xl font-display font-bold bg-gradient-to-br ${metricColors[i]} bg-clip-text text-transparent mb-3`}>
                 {value}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed text-center mb-2">{label}</p>
-              {source && <p className="text-gray-500 text-xs leading-relaxed text-center">{source}</p>}
+              {source && (
+                <p className="text-gray-500 text-xs leading-relaxed text-center">
+                  {sourceLink && sourceLinkText ? (
+                    <>
+                      {source.replace(sourceLinkText, "")}{" "}
+                      <a href={sourceLink} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300 transition-colors">
+                        {sourceLinkText}
+                      </a>
+                    </>
+                  ) : source}
+                </p>
+              )}
             </div>
           ))}
         </div>
