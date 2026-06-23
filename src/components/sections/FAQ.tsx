@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
-export default function FAQ({ variant = "tecnologias" }: { variant?: "tecnologias" | "impacto" }) {
+export default function FAQ({ variant = "tecnologias", lastUpdated }: { variant?: "tecnologias" | "impacto"; lastUpdated?: string }) {
   const { lang } = useLang();
   const t = translations[lang].faq;
   const cta = variant === "impacto" ? t.ctaImpacto : t.ctaTecnologias;
@@ -89,6 +89,9 @@ export default function FAQ({ variant = "tecnologias" }: { variant?: "tecnologia
           </Link>
         </div>
 
+      {lastUpdated && (
+        <p className="text-gray-400 text-xs text-center mt-6">Última actualización: {lastUpdated}</p>
+      )}
       </div>
     </section>
   );

@@ -24,10 +24,7 @@ export default function TecnologiasPage() {
       <Tecnologia showCTA={false} />
       <Funcionamiento asGrid={true} />
       <Eficiencia />
-      <FAQ variant="tecnologias" />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 -mt-16 text-center">
-        <p className="text-gray-400 text-xs">Última actualización: junio 2026</p>
-      </div>
+      <FAQ variant="tecnologias" lastUpdated="junio 2026" />
     </div>
   );
 }
