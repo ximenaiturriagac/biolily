@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Hero from "@/components/sections/Hero";
 import QuienesSomos from "@/components/sections/QuienesSomos";
 import Vision from "@/components/sections/Vision";
@@ -41,7 +42,7 @@ const organizationSchema = {
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <Script id="org-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <Hero />
 
       <div>

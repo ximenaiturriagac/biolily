@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Team from "@/components/sections/Team";
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ const teamSchema = {
 export default function EquipoPage() {
   return (
     <div className="pt-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamSchema) }} />
+      <Script id="team-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamSchema) }} />
       <Team />
     </div>
   );

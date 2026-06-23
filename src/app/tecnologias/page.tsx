@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Tecnologia from "@/components/sections/Tecnologia";
 import Funcionamiento from "@/components/sections/Funcionamiento";
 import Eficiencia from "@/components/sections/Eficiencia";
@@ -38,7 +39,7 @@ const faqSchema = {
 export default function TecnologiasPage() {
   return (
     <div className="pt-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Tecnologia showCTA={false} />
       <Funcionamiento asGrid={true} />
       <Eficiencia />
