@@ -90,7 +90,7 @@ export default function FAQ({ variant = "tecnologias", lastUpdated }: { variant?
         </div>
 
       {lastUpdated && (
-        <p className="text-gray-400 text-xs text-center mt-6">Última actualización: {lastUpdated}</p>
+        <p className="text-gray-400 text-xs text-center mt-6">{t.lastUpdated}</p>
       )}
       </div>
     </section>

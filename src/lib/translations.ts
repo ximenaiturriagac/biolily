@@ -338,6 +338,7 @@ export const translations = {
         desc: "En Biolily diseñamos proyectos de restauración que integran ciencia, monitoreo, colaboración multisectorial y beneficios ambientales verificables.",
         button: "Construyamos un proyecto",
       },
+      lastUpdated: "Última actualización: junio 2026",
     },
     team: {
       eyebrow: "Quiénes somos",
@@ -807,6 +808,7 @@ export const translations = {
         desc: "At Biolily we design restoration projects that integrate science, monitoring, multisectoral collaboration, and verifiable environmental benefits.",
         button: "Let's build a project",
       },
+      lastUpdated: "Last updated: June 2026",
     },
     team: {
       eyebrow: "Who we are",
