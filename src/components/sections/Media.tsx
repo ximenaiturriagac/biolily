@@ -177,17 +177,6 @@ const mediaItems = [
   },
   {
     icon: FileText,
-    source: "Scribd / Informe técnico 2023",
-    title: "Informe de implementación de las Fito-colmenas para el manejo integral del lirio acuático",
-    desc: "Documento técnico sobre la implementación de Fito-colmenas en Valle de Bravo.",
-    url: "https://www.scribd.com/document/675128324/Informe-IMPLEMENTACIO-N-DE-LAS-FITO-COLMENAS-PARA-EL-MANEJO-INTEGRAL-DEL-LIRIO-ACUA-TICO-Julio2023-2",
-    tag: "Informe técnico",
-    color: "from-violet-500 to-purple-600",
-    bg: "bg-violet-50",
-    border: "border-violet-200",
-  },
-  {
-    icon: FileText,
     source: "Observatorio Valle de Bravo · UNAM",
     title: "Monitoreo hídrico permanente para la recuperación sustentable de Valle de Bravo",
     desc: "Documento técnico que menciona colmenas de fitorremediación con lirio acuático como estrategia de largo plazo.",

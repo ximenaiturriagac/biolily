@@ -25,6 +25,9 @@ export default function TecnologiasPage() {
       <Funcionamiento asGrid={true} />
       <Eficiencia />
       <FAQ variant="tecnologias" />
+      <div className="py-4 text-center">
+        <p className="text-gray-400 text-xs">Última actualización: junio 2026</p>
+      </div>
     </div>
   );
 }
