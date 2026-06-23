@@ -44,6 +44,7 @@ export default function Hero() {
                 fill
                 className="object-contain"
                 priority
+                quality={60}
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 480px"
               />
               <div className="hidden lg:block absolute bottom-18 left-3 max-w-[160px] px-3 py-2 rounded-xl bg-black/55 backdrop-blur-sm border border-white/15">
