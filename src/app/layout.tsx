@@ -22,13 +22,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Biolily | Restauración hídrica y soluciones basadas en la naturaleza",
   description:
-    "Biolily diseña, implementa y monitorea proyectos de restauración hídrica mediante Fito-colmenas®, una tecnología patentada que genera beneficios ambientales y volumétricos medibles.",
+    "Restauramos cuerpos de agua mediante proyectos verificables para empresas, gobiernos e instituciones.",
   keywords:
     "Biolily, Fito-colmenas, restauración hídrica, water stewardship, beneficios volumétricos, soluciones basadas en la naturaleza, eutrofización, lirio acuático, calidad del agua, BlueRisk, Valle de Bravo",
   openGraph: {
     title: "Biolily | Restauración hídrica y soluciones basadas en la naturaleza",
     description:
-      "Biolily diseña, implementa y monitorea proyectos de restauración hídrica mediante Fito-colmenas®, una tecnología patentada que genera beneficios ambientales y volumétricos medibles.",
+      "Restauramos cuerpos de agua mediante proyectos verificables para empresas, gobiernos e instituciones.",
     type: "website",
     locale: "es_MX",
     alternateLocale: ["en_US"],
