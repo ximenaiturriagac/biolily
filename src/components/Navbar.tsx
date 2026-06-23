@@ -34,14 +34,14 @@ export default function Navbar() {
         <div className="flex items-center gap-1 text-xs font-semibold">
           <button
             onClick={() => setLang("es")}
-            className={`px-2 py-0.5 rounded transition-colors ${lang === "es" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+            className={`px-2 py-0.5 rounded transition-colors ${lang === "es" ? "text-green-700" : "text-gray-500 hover:text-gray-800"}`}
           >
             ES
           </button>
           <span className="text-gray-300">|</span>
           <button
             onClick={() => setLang("en")}
-            className={`px-2 py-0.5 rounded transition-colors ${lang === "en" ? "text-green-700" : "text-gray-400 hover:text-gray-700"}`}
+            className={`px-2 py-0.5 rounded transition-colors ${lang === "en" ? "text-green-700" : "text-gray-500 hover:text-gray-800"}`}
           >
             EN
           </button>
