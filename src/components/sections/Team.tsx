@@ -45,7 +45,7 @@ export default function Team() {
                 className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-shadow"
               >
                 {/* Foto centrada y grande */}
-                <div className={`relative w-full bg-gradient-to-br ${gradient} flex justify-center pt-10 pb-0`}>
+                <div className={`relative w-full bg-gradient-to-br ${gradient} flex justify-center pt-10 pb-10`}>
                   <div className="w-48 h-48 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
                     {photo ? (
                       <Image
