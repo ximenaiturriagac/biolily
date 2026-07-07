@@ -115,6 +115,37 @@ export default function NotaPage({ nota }: { nota: Nota }) {
             ))}
           </div>
 
+          {/* Publicaciones científicas + apariciones (solo para notas con mediaList) */}
+          {nota.mediaList && (
+            <>
+              <div className="mt-10 pt-8 border-t border-gray-100">
+                <h2 className="font-display text-lg font-bold text-gray-900 mb-3">Publicaciones científicas</h2>
+                <a
+                  href={nota.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+                >
+                  Ver perfil en Google Scholar
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <h2 className="font-display text-lg font-bold text-gray-900 mb-5">Apariciones en medios seleccionadas</h2>
+                <ul className="space-y-2.5">
+                  {nota.mediaList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
+
           {/* Bottom CTA */}
           <div className="mt-14 rounded-2xl bg-gradient-to-r from-[#0d2235] to-[#1a3a2a] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>

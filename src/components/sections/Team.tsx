@@ -5,9 +5,9 @@ import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 
 const memberStyles = [
-  { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg", imgClass: "object-cover object-top" },
-  { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg", imgClass: "object-cover object-top" },
-  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg", imgClass: "object-cover object-top" },
+  { gradient: "from-green-700 to-emerald-600", initials: "EC", photo: "/eduardo-caballero.jpeg", imgClass: "object-cover object-top", profileLink: null },
+  { gradient: "from-blue-700 to-cyan-600", initials: "JR", photo: "/jorge-ramirez.jpg", imgClass: "object-cover object-top", profileLink: { label: "Ver trayectoria científica y presencia en medios →", url: "/notas/jorge-ramirez-zierold-trayectoria-cientifica" } },
+  { gradient: "from-purple-700 to-violet-600", initials: "CF", photo: "/carolina-flores.jpg", imgClass: "object-cover object-top", profileLink: null },
 ];
 
 const bulletIcons = [
@@ -37,7 +37,7 @@ export default function Team() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:max-w-[calc(50%-20px)] lg:[&>*:last-child:nth-child(odd)]:mx-auto">
           {t.members.map((member, idx) => {
-            const { gradient, initials, photo, imgClass } = memberStyles[idx];
+            const { gradient, initials, photo, imgClass, profileLink } = memberStyles[idx];
             const icons = bulletIcons[idx];
             return (
               <div
@@ -73,7 +73,19 @@ export default function Team() {
                     </span>
                     <span className="text-gray-400 text-xs">{member.org}</span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">{member.bio}</p>
+                  <div className="mb-6 space-y-3">
+                    {member.bio.split("\n\n").map((para, i) => (
+                      <p key={i} className="text-gray-600 text-sm leading-relaxed">{para}</p>
+                    ))}
+                    {profileLink && (
+                      <a
+                        href={profileLink.url}
+                        className="inline-block text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                      >
+                        {profileLink.label}
+                      </a>
+                    )}
+                  </div>
 
                   <ul className="space-y-2.5">
                     {member.bullets.map((text, i) => {

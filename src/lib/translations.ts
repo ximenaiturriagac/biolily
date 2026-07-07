@@ -362,7 +362,7 @@ export const translations = {
           name: "Dr. Jorge Ramírez Zierold",
           role: "Cofundador y Director Científico",
           org: "Asesor científico · Biolily",
-          bio: "Jorge Ramírez Zierold es Doctor en Ciencias y especialista vinculado al estudio de sistemas acuáticos, calidad del agua y limnología. Su experiencia científica ha sido clave para fortalecer el fundamento técnico de las Fito-colmenas, el monitoreo de cuerpos de agua y la interpretación de indicadores ambientales.",
+          bio: "Jorge Ramírez Zierold es Doctor en Ciencias por la Universidad Nacional Autónoma de México. Es investigador del Instituto de Ciencias del Mar y Limnología (ICML-UNAM) y lleva más de dos décadas estudiando la presa de Valle de Bravo y el sistema Cutzamala. Su trabajo ha documentado la evolución de la calidad del agua, los procesos de eutrofización y los ciclos de nutrientes que hoy son la base científica de Fito-colmenas.\n\nEn Biolily, Jorge garantiza que cada decisión técnica esté respaldada por evidencia. Su experiencia científica permite traducir el comportamiento del ecosistema en parámetros de diseño, monitoreo y validación de resultados.",
           bullets: [
             "Doctor en Ciencias · Universidad Autónoma de México",
             "Experiencia académica en UNAM",
@@ -857,7 +857,7 @@ export const translations = {
           name: "Dr. Jorge Ramírez Zierold",
           role: "Co-founder & Scientific Director",
           org: "Scientific advisor · Biolily",
-          bio: "Jorge Ramírez Zierold holds a PhD in Sciences and is a specialist linked to the study of aquatic systems, water quality, and limnology. His scientific expertise has been key to strengthening the technical foundation of Fito-colmenas, water body monitoring, and the interpretation of environmental indicators.",
+          bio: "Jorge Ramírez Zierold holds a PhD in Sciences from the Universidad Nacional Autónoma de México. He is a researcher at the Institute of Marine Sciences and Limnology (ICML-UNAM) and has spent more than two decades studying the Valle de Bravo reservoir and the Cutzamala system. His work has documented the evolution of water quality, eutrophication processes, and nutrient cycles that now form the scientific foundation of Fito-colmenas.\n\nAt Biolily, Jorge ensures that every technical decision is backed by evidence. His scientific expertise allows him to translate ecosystem behavior into design parameters, monitoring protocols, and results validation.",
           bullets: [
             "PhD in Sciences · Universidad Autónoma de México",
             "Academic experience at UNAM",
