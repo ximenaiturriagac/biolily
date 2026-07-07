@@ -31,7 +31,7 @@ export default function LinkedInBanner() {
               <h3 className="font-display text-2xl font-bold mb-3">{t.heading}</h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.desc}</p>
               <a
-                href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
+                href="https://www.linkedin.com/company/biolily/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#0A66C2] hover:bg-[#0856A0] text-white font-semibold rounded-full transition-all shadow-lg"

@@ -66,7 +66,7 @@ export default function Footer() {
               {t.siguenos}
             </h4>
             <a
-              href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
+              href="https://www.linkedin.com/company/biolily/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group w-full"

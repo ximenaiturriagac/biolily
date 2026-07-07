@@ -244,7 +244,7 @@ export default function Media() {
           <h3 className="font-display text-2xl font-bold mb-3">{t.siguenos}</h3>
           <p className="text-gray-300 text-sm max-w-xl mx-auto mb-6 leading-relaxed">{t.siguenosDesc}</p>
           <a
-            href="https://www.linkedin.com/company/fito-colmenas-by-biolily/"
+            href="https://www.linkedin.com/company/biolily/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#0A66C2] hover:bg-[#0856A0] text-white font-semibold rounded-full transition-all shadow-lg"
