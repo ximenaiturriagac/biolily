@@ -13,7 +13,8 @@ export interface Nota {
   gradient: string;
   image?: string;
   hidden?: boolean;
-  mediaList?: string[];
+  sections?: Array<{ heading: string; paragraphs: string[] }>;
+  mediaList?: Array<{ label: string; url: string }>;
 }
 
 const gradients = [
@@ -181,40 +182,62 @@ export const notas: Nota[] = [
     gradient: gradients[3],
     body: [
       "Cuando Bloomberg News, Reuters o Reforma buscan una voz autorizada sobre la crisis hídrica del sistema Cutzamala, llaman al doctor Jorge Ramírez Zierold. Director científico y cofundador de Biolily, Jorge es investigador del Instituto de Ciencias del Mar y Limnología de la UNAM (ICML-UNAM) y uno de los científicos con mayor trayectoria en el monitoreo de la presa Miguel Alemán en Valle de Bravo —el embalse que abastece de agua potable a millones de personas en la Zona Metropolitana del Valle de México.",
-      "Jorge lleva más de 20 años estudiando la presa de Valle de Bravo como parte del programa de monitoreo hídrico del ICML-UNAM. Su trabajo ha documentado con continuidad la evolución de los niveles de nitrógeno y fósforo, los florecimientos de cianobacterias potencialmente tóxicas, los balances hídricos del embalse y los procesos de mezcla que determinan cómo se distribuyen los contaminantes en el lago. Es una de las fuentes de datos más sistemáticas y de largo plazo sobre la calidad del agua en el sistema Cutzamala, uno de los sistemas de abastecimiento de agua más importantes de México.",
-      "Ese trabajo de campo no es un antecedente académico de Biolily —es su columna vertebral. Los parámetros que Fito-colmenas busca corregir (concentraciones de fósforo total, nitrógeno total, coliformes fecales, presencia de cianobacterias) son exactamente los que Jorge ha medido en la presa desde 2002. El diseño de la tecnología, los puntos de intervención prioritarios y los indicadores de éxito del programa de restauración parten de esa evidencia acumulada.",
-      "La trayectoria de Jorge en medios refleja el lugar que ocupa en el debate público sobre el agua en México. En 2024, Bloomberg News lo consultó para su reportaje sobre el deterioro del lago de Valle de Bravo y la inequidad hídrica en la región. Reuters lo entrevistó para una pieza sobre los lagos privados como símbolo de la crisis del agua en México. Reforma lo citó en dos ocasiones ese mismo año: primero sobre la presión que la calidad del agua ejerce sobre el sistema Cutzamala, y después sobre la urgencia de usar agua reciclada en la metrópoli.",
-      "En televisión, ha participado en Foro TV en dos ocasiones —incluyendo el segmento de Hora 21 donde se presentó Fito-colmenas como solución natural para la contaminación del Cutzamala— y ha sido consultado por Russia Today sobre la sequía que afecta al 75% del territorio mexicano. Su presencia en medios internacionales no es casual: es el resultado de años de producción científica publicada en revistas arbitradas de alto impacto, disponible en Google Scholar, y de un compromiso sostenido con la divulgación del conocimiento hídrico para audiencias no especializadas.",
-      "Además de su trabajo de investigación, Jorge ha participado de forma constante en espacios de divulgación ciudadana. Ha sido parte del podcast Por la Subcuenca del Observatorio Ciudadano de la Subcuenca Amanalco–Valle de Bravo en múltiples episodios, abordando desde la crisis hídrica en las presas del Cutzamala hasta la limpieza del agua con Fito-colmenas como solución a la problemática de calidad. Ha participado en conversatorios del ICML-UNAM, en videos de divulgación para todo público y en foros de discusión sobre el plan hídrico nacional.",
-      "En mayo de 2025, el ICML-UNAM transmitió el conversatorio \"Crisis de los cuerpos de agua en México: reflexiones y alternativas para su recuperación\", en el que Jorge participó junto a otros investigadores. Ese mismo mes, Facebook difundió el programa de implementación de Fito-colmenas como herramienta de restauración ecológica de Valle de Bravo —un paso concreto hacia la intervención en el terreno que ha estudiado por más de dos décadas.",
-      "Fito-colmenas no es una tecnología que se propone intervenir en un ecosistema desconocido. Es una respuesta diseñada desde adentro: desde el conocimiento profundo de cómo funciona la presa de Valle de Bravo, qué la enferma, en qué puntos los contaminantes entran con mayor concentración y qué mecanismos biológicos pueden revertir el proceso.",
-      "Eso es lo que Jorge aporta a Biolily: no solo credibilidad científica hacia afuera, sino certeza técnica hacia adentro. La diferencia entre una solución bien intencionada y una que funciona.",
+    ],
+    sections: [
+      {
+        heading: "Dos décadas en campo",
+        paragraphs: [
+          "Jorge lleva más de 20 años estudiando la presa de Valle de Bravo como parte del programa de monitoreo hídrico del ICML-UNAM. Su trabajo ha documentado con continuidad la evolución de los niveles de nitrógeno y fósforo, los florecimientos de cianobacterias potencialmente tóxicas, los balances hídricos del embalse y los procesos de mezcla que determinan cómo se distribuyen los contaminantes en el lago. Es una de las fuentes de datos más sistemáticas y de largo plazo sobre la calidad del agua en el sistema Cutzamala, uno de los sistemas de abastecimiento de agua más importantes de México.",
+          "Ese trabajo de campo no es un antecedente académico de Biolily —es su columna vertebral. Los parámetros que Fito-colmenas busca corregir (concentraciones de fósforo total, nitrógeno total, coliformes fecales, presencia de cianobacterias) son exactamente los que Jorge ha medido en la presa desde 2002. El diseño de la tecnología, los puntos de intervención prioritarios y los indicadores de éxito del programa de restauración parten de esa evidencia acumulada.",
+        ],
+      },
+      {
+        heading: "Una voz de referencia en la crisis hídrica",
+        paragraphs: [
+          "La trayectoria de Jorge en medios refleja el lugar que ocupa en el debate público sobre el agua en México. En 2024, Bloomberg News lo consultó para su reportaje sobre el deterioro del lago de Valle de Bravo y la inequidad hídrica en la región. Reuters lo entrevistó para una pieza sobre los lagos privados como símbolo de la crisis del agua en México. Reforma lo citó en dos ocasiones ese mismo año: primero sobre la presión que la calidad del agua ejerce sobre el sistema Cutzamala, y después sobre la urgencia de usar agua reciclada en la metrópoli.",
+          "En televisión, ha participado en Foro TV en dos ocasiones —incluyendo el segmento de Hora 21 donde se presentó Fito-colmenas como solución natural para la contaminación del Cutzamala— y ha sido consultado por Russia Today sobre la sequía que afecta al 75% del territorio mexicano. Su presencia en medios internacionales no es casual: es el resultado de años de producción científica publicada en revistas arbitradas de alto impacto, disponible en Google Scholar, y de un compromiso sostenido con la divulgación del conocimiento hídrico para audiencias no especializadas.",
+        ],
+      },
+      {
+        heading: "Divulgación como responsabilidad",
+        paragraphs: [
+          "Además de su trabajo de investigación, Jorge ha participado de forma constante en espacios de divulgación ciudadana. Ha sido parte del podcast Por la Subcuenca del Observatorio Ciudadano de la Subcuenca Amanalco–Valle de Bravo en múltiples episodios, abordando desde la crisis hídrica en las presas del Cutzamala hasta la limpieza del agua con Fito-colmenas como solución a la problemática de calidad. Ha participado en conversatorios del ICML-UNAM, en videos de divulgación para todo público y en foros de discusión sobre el plan hídrico nacional.",
+          "En mayo de 2025, el ICML-UNAM transmitió el conversatorio \"Crisis de los cuerpos de agua en México: reflexiones y alternativas para su recuperación\", en el que Jorge participó junto a otros investigadores. Ese mismo mes, Facebook difundió el programa de implementación de Fito-colmenas como herramienta de restauración ecológica de Valle de Bravo —un paso concreto hacia la intervención en el terreno que ha estudiado por más de dos décadas.",
+        ],
+      },
+      {
+        heading: "Por qué importa para Biolily",
+        paragraphs: [
+          "Fito-colmenas no es una tecnología que se propone intervenir en un ecosistema desconocido. Es una respuesta diseñada desde adentro: desde el conocimiento profundo de cómo funciona la presa de Valle de Bravo, qué la enferma, en qué puntos los contaminantes entran con mayor concentración y qué mecanismos biológicos pueden revertir el proceso.",
+          "Eso es lo que Jorge aporta a Biolily: no solo credibilidad científica hacia afuera, sino certeza técnica hacia adentro. La diferencia entre una solución bien intencionada y una que funciona.",
+        ],
+      },
     ],
     mediaList: [
-      "Bloomberg News — Mexico City Wealthy's Favorite Lake Getaway is Drying Out (junio 2024)",
-      "Reuters — Private lakes emerge as symbol of water inequity in elite Mexican holiday town (febrero 2024)",
-      "Reforma — Presiona a Cutzamala, ahora, calidad del agua (junio 2024)",
-      "Reforma — Urgen a la metrópoli usar agua reciclada (abril 2025)",
-      "Foro TV / Hora 21 — Expertos revelan solución natural para limpiar contaminación en Cutzamala (marzo 2024)",
-      "Foro TV — Día Mundial del Medio Ambiente (junio 2024)",
-      "Russia Today — México: 75% del territorio padece sequía (junio 2024)",
-      "Milenio Hábitat — Fuerte contaminación en la Presa Valle de Bravo (septiembre 2024)",
-      "Podcast Por la Subcuenca — Limpieza del agua con Fito-colmenas (mayo 2024)",
-      "Podcast Por la Subcuenca — Plan Hídrico Nacional y situación hídrica en Valle de Bravo (enero 2025)",
-      "Sopitas — El Cutzamala a más del 90% (octubre 2025)",
-      "El Sol de Toluca — Presa de Valle de Bravo podría llegar al 90% de almacenamiento (agosto 2025)",
-      "ICML-UNAM — Conversatorio \"Crisis de los cuerpos de agua en México: reflexiones y alternativas para su recuperación\" (mayo 2025)",
-      "Facebook — Programa de implementación de Fito-colmenas como herramienta de restauración ecológica de Valle de Bravo (mayo 2025)",
-      "YouTube — Sobreviviendo... más que un intento. Agua con-ciencia (junio 2025)",
-      "Frecuencia CAD — Crisis Sistema Cutzamala 2024: Compartiendo Ideas (febrero 2024)",
-      "Facebook / El Humedal — Diálogos por amor al Agua (marzo 2024)",
-      "Podcast Por la Subcuenca — Crisis hídrica en las presas del Sistema Cutzamala (agosto 2023)",
-      "Podcast Por la Subcuenca — Calidad del agua en la presa de Valle de Bravo (agosto 2023)",
-      "Facebook — Retos a futuro en materia de agua en la subcuenca Valle de Bravo-Amanalco (agosto 2022)",
-      "Este País / El País — La sequía evidencia la mala gestión del agua (junio 2021)",
-      "YouTube — Crisis hídrica en el Cutzamala: causas y recomendaciones (abril 2021)",
-      "YouTube — ¿Por qué se pone verde el agua? CCMSS (febrero 2017)",
-      "TV UNAM — El río Mississippi y un chapuzón por su historia (diciembre 2017)",
+      { label: "Bloomberg News — Mexico City Wealthy's Favorite Lake Getaway is Drying Out (junio 2024)", url: "https://www.bloomberg.com/news/features/2024-06-05/a-drying-lake-near-mexico-city-showcases-nation-s-water-crisis" },
+      { label: "Reuters — Private lakes emerge as symbol of water inequity in elite Mexican holiday town (febrero 2024)", url: "https://www.reuters.com/world/americas/private-lakes-emerge-symbol-water-inequity-elite-mexican-holiday-town-2024-02-27/" },
+      { label: "Reforma — Presiona a Cutzamala, ahora, calidad del agua (junio 2024)", url: "https://www.reforma.com/presiona-a-cutzamala-ahora-calidad-del-agua/ar2823435" },
+      { label: "Reforma — Urgen a la metrópoli usar agua reciclada (abril 2025)", url: "https://www.reforma.com/edicionimpresa/aplicacionEI/webview/compartir/ImagenEdImpresa.aspx?Titulo=Ciudad&Resumen=04+de+abril&img=https://hemerotecalibre.reforma.com/20250404/large/RCIU20250404-004.JPG&md5=37bd905d4c4f004e6c989d34d9f6c60b" },
+      { label: "Foro TV / Hora 21 — Expertos revelan solución natural para limpiar contaminación en Cutzamala (marzo 2024)", url: "https://www.nmas.com.mx/foro-tv/programas/hora-21/videos/expertos-revelan-solucion-natural-para-limpiar-contaminacion-cutzamala/" },
+      { label: "Foro TV — Día Mundial del Medio Ambiente (junio 2024)", url: "https://www.nmas.com.mx/foro-tv/programas/en-una-hora/videos/por-que-es-importante-dia-mundial-medio-ambiente/" },
+      { label: "Russia Today — México: 75% del territorio padece sequía (junio 2024)", url: "https://actualidad.rt.com/video/513055-mexico-sequia-falta-lluvias-fenomeno-nino" },
+      { label: "Milenio Hábitat — Fuerte contaminación en la Presa Valle de Bravo (septiembre 2024)", url: "https://www.milenio.com/politica/comunidad/presa-valle-bravo-nivel-repleta-aguas-negras" },
+      { label: "Podcast Por la Subcuenca — Limpieza del agua con Fito-colmenas (mayo 2024)", url: "https://podcasters.spotify.com/pod/show/observatoriovalle/episodes/Limpieza-del-agua-con-Fito-colmenas--como-una-solucin-a-la-problemtica-de-calidad-del-agua-e2j6cc6" },
+      { label: "Podcast Por la Subcuenca — Plan Hídrico Nacional y situación hídrica en Valle de Bravo (enero 2025)", url: "https://creators.spotify.com/pod/show/observatoriovalle/episodes/Plan-Hdrico-Nacional-y-la-Situacin-Hdrica-actual-en-Valle-de-Bravo-e2trtfs" },
+      { label: "Sopitas — El Cutzamala a más del 90% (octubre 2025)", url: "https://www.sopitas.com/noticias/cutzamala-almacenamiento-lluvias-maxima-capacidad/" },
+      { label: "El Sol de Toluca — Presa de Valle de Bravo podría llegar al 90% de almacenamiento (agosto 2025)", url: "https://www.elsoldetoluca.com.mx/local/valle-de-bravo-presa-miguel-aleman-recibe-historica-dosis-de-agua-12946456.html" },
+      { label: "ICML-UNAM — Conversatorio \"Crisis de los cuerpos de agua en México\" (mayo 2025)", url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=697466562684028&rdid=myh0hRbAb4UM6cV0" },
+      { label: "Facebook — Programa de implementación de Fito-colmenas como herramienta de restauración ecológica de Valle de Bravo (mayo 2025)", url: "https://fb.watch/eXM5tX3Fyc/?mibextid=PdaYdh" },
+      { label: "YouTube — Sobreviviendo... más que un intento. Agua con-ciencia (junio 2025)", url: "https://www.youtube.com/watch?v=AuuGzz9MggA" },
+      { label: "Frecuencia CAD — Crisis Sistema Cutzamala 2024: Compartiendo Ideas (febrero 2024)", url: "https://www.youtube.com/watch?v=bdq-dHVFLLI" },
+      { label: "Facebook / El Humedal — Diálogos por amor al Agua (marzo 2024)", url: "https://www.facebook.com/elhumedal/videos/406818562091905" },
+      { label: "Podcast Por la Subcuenca — Crisis hídrica en las presas del Sistema Cutzamala (agosto 2023)", url: "https://podcasters.spotify.com/pod/show/observatoriovalle/episodes/Crisis-hdrica-en-las-presas-del-Sistema-Cutzamala---Problemtica-actual-y-retos-a-futuro-e28g068" },
+      { label: "Podcast Por la Subcuenca — Calidad del agua en la presa de Valle de Bravo (agosto 2023)", url: "https://podcasters.spotify.com/pod/show/observatoriovalle/episodes/Crisis-hdrica-en-las-presas-del-Sistema-Cutzamala---Problemtica-actual-y-retos-a-futuro-e28g068" },
+      { label: "Facebook — Retos a futuro en materia de agua en la subcuenca Valle de Bravo-Amanalco (agosto 2022)", url: "http://fb.watch/aXLRsMMiBe/" },
+      { label: "Este País / El País — La sequía evidencia la mala gestión del agua (junio 2021)", url: "https://estepais.com/ambiente/si-la-lluvia-se-va/la-sequia-evidencia-la-mala-gestion-del-agua/" },
+      { label: "YouTube — Crisis hídrica en el Cutzamala: causas y recomendaciones (abril 2021)", url: "https://www.youtube.com/watch?v=oAmKHkgkjUY&t=1s" },
+      { label: "YouTube — ¿Por qué se pone verde el agua? CCMSS (febrero 2017)", url: "https://www.youtube.com/watch?v=Bcg1dAJCClQ" },
+      { label: "TV UNAM — El río Mississippi y un chapuzón por su historia (diciembre 2017)", url: "https://es-la.facebook.com/TVUNAMoficial/photos/el-r%C3%ADo-mississippi-y-un-chapuz%C3%B3n-por-su-historia-formaci%C3%B3n-y-m%C3%A1s-en-cienciaytecn/10155592176164724/" },
     ],
   },
   {
