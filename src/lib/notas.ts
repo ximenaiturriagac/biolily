@@ -53,6 +53,7 @@ export const notas: Nota[] = [
     url: "https://www.nmas.com.mx/foro-tv/programas/hora-21/videos/expertos-revelan-solucion-natural-para-limpiar-contaminacion-cutzamala/",
     urlLabel: "Ver el segmento completo en Foro TV / N+",
     gradient: gradients[1],
+    image: "/notas/nota-foro-tv.png",
     body: [
       "El noticiero Hora 21 de Foro TV, canal de noticias de TelevisaUnivision, dedicó un segmento a Fito-colmenas en el contexto de la crisis hídrica que enfrenta el sistema Cutzamala —la infraestructura que abastece de agua potable a la Ciudad de México y su zona metropolitana.",
       "La cobertura posiciona a Fito-colmenas dentro del debate público sobre las alternativas disponibles para enfrentar la contaminación de los cuerpos de agua que alimentan el sistema. Frente a métodos convencionales como el dragado o el uso de productos químicos, el segmento presenta el enfoque de Biolily como una solución basada en la naturaleza: aprovechar las propiedades del lirio acuático —una especie invasora que ya está presente en la presa— para remover los nutrientes que generan la eutrofización del lago.",
