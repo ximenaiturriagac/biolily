@@ -134,7 +134,7 @@ function TikTokIcon() {
 
 function SocialBlock({ t }: { t: NotasT }) {
   return (
-    <div className="mt-20 rounded-3xl overflow-hidden bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
+    <div className="mt-20 rounded-3xl overflow-hidden bg-gradient-to-r from-[#0d3550] to-[#0f4a40]">
       <div className="grid md:grid-cols-2 gap-0">
         <div className="p-8 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10">
           <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">{t.socialEyebrow}</p>
