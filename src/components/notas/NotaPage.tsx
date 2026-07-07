@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
@@ -53,12 +54,25 @@ export default function NotaPage({ nota }: { nota: Nota }) {
           </div>
         </div>
 
-        {/* Gradient image hero */}
-        <div
-          className="w-full h-52 md:h-72"
-          style={{ background: nota.gradient }}
-          aria-hidden="true"
-        />
+        {/* Hero image or gradient */}
+        {nota.image ? (
+          <div className="relative w-full h-52 md:h-72">
+            <Image
+              src={nota.image}
+              alt={nota.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        ) : (
+          <div
+            className="w-full h-52 md:h-72"
+            style={{ background: nota.gradient }}
+            aria-hidden="true"
+          />
+        )}
 
         <div className="max-w-3xl mx-auto px-6 py-10">
           {/* Top CTA banner — verde para que resalte */}

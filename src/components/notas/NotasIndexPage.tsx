@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
@@ -42,13 +43,22 @@ function CategoryPill({ category, t }: { category: NotaCategory; t: NotasT }) {
   );
 }
 
-function GradientImage({ gradient, className }: { gradient: string; className?: string }) {
+function NotaCover({ nota, className }: { nota: Nota; className: string }) {
+  if (nota.image) {
+    return (
+      <div className={`relative overflow-hidden ${className}`}>
+        <Image
+          src={nota.image}
+          alt={nota.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    );
+  }
   return (
-    <div
-      className={className}
-      style={{ background: gradient }}
-      aria-hidden="true"
-    />
+    <div className={className} style={{ background: nota.gradient }} aria-hidden="true" />
   );
 }
 
@@ -56,7 +66,7 @@ function FeaturedCard({ nota, t }: { nota: Nota; t: NotasT }) {
   return (
     <Link href={`/notas/${nota.slug}`} className="group block">
       <div className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-gray-300 hover:shadow-md transition-all">
-        <GradientImage gradient={nota.gradient} className="h-56 md:h-full min-h-[220px]" />
+        <NotaCover nota={nota} className="h-56 md:h-full min-h-[220px]" />
         <div className="p-8 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -84,7 +94,7 @@ function FeaturedCard({ nota, t }: { nota: Nota; t: NotasT }) {
 function NoteCard({ nota, t }: { nota: Nota; t: NotasT }) {
   return (
     <Link href={`/notas/${nota.slug}`} className="group flex flex-col rounded-xl overflow-hidden border border-gray-200 bg-white hover:border-gray-300 hover:shadow-md transition-all">
-      <GradientImage gradient={nota.gradient} className="h-40 w-full" />
+      <NotaCover nota={nota} className="h-40 w-full" />
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-center gap-2 mb-3">
           <CategoryPill category={nota.category} t={t} />
@@ -104,31 +114,26 @@ function NoteCard({ nota, t }: { nota: Nota; t: NotasT }) {
   );
 }
 
-function InstagramIcon() {
+function SocialIcon({ platform }: { platform: string }) {
+  if (platform === "Instagram") {
+    return (
+      <Image
+        src="/notas/logo-instagram.png"
+        alt="Instagram"
+        width={28}
+        height={28}
+        className="rounded-lg"
+      />
+    );
+  }
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#f09433" />
-          <stop offset="25%" stopColor="#e6683c" />
-          <stop offset="50%" stopColor="#dc2743" />
-          <stop offset="75%" stopColor="#cc2366" />
-          <stop offset="100%" stopColor="#bc1888" />
-        </linearGradient>
-      </defs>
-      <rect width="24" height="24" rx="6" fill="url(#ig-grad)" />
-      <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="1.8" fill="none" />
-      <circle cx="17.5" cy="6.5" r="1.2" fill="white" />
-    </svg>
-  );
-}
-
-function TikTokIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect width="24" height="24" rx="6" fill="#000" />
-      <path d="M16.5 5a3.5 3.5 0 003.5 3.5v2.5a6 6 0 01-3.5-1.12V15a5 5 0 11-5-5 5.07 5.07 0 01.5.03V12.5a2.5 2.5 0 10-2.5 2.5V5h2.5v.28A6 6 0 0016.5 5z" fill="white" />
-    </svg>
+    <Image
+      src="/notas/logo-tiktok.webp"
+      alt="TikTok"
+      width={28}
+      height={28}
+      className="rounded-lg"
+    />
   );
 }
 
@@ -151,7 +156,7 @@ function SocialBlock({ t }: { t: NotasT }) {
               className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-colors px-4 py-3"
             >
               <span className="flex-shrink-0">
-                {link.platform === "Instagram" ? <InstagramIcon /> : <TikTokIcon />}
+                <SocialIcon platform={link.platform} />
               </span>
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-white/40 font-medium">{link.platform}</p>
@@ -178,7 +183,6 @@ export default function NotasIndexPage() {
   return (
     <>
       <section className="bg-white min-h-screen">
-        {/* Hero banner — mismo verde que el inicio */}
         <div className="bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-4">{t.eyebrow}</p>
@@ -188,12 +192,10 @@ export default function NotasIndexPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 py-14">
-          {/* Featured */}
           <div className="mb-14">
             <FeaturedCard nota={featured} t={t} />
           </div>
 
-          {/* Grid */}
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">{t.all}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {rest.map((nota) => (
@@ -201,7 +203,6 @@ export default function NotasIndexPage() {
             ))}
           </div>
 
-          {/* Social */}
           <SocialBlock t={t} />
         </div>
       </section>

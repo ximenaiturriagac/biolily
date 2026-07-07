@@ -11,6 +11,7 @@ export interface Nota {
   urlLabel: string;
   body: string[];
   gradient: string;
+  image?: string;
 }
 
 const gradients = [
@@ -33,6 +34,7 @@ export const notas: Nota[] = [
     url: "https://tecscience.tec.mx/es/biotecnologia/lirio-acuatico-contra-contaminantes/",
     urlLabel: "Leer la nota completa en TecScience",
     gradient: gradients[0],
+    image: "/notas/nota-tecscience.webp",
     body: [
       "El portal de divulgación científica del Tec de Monterrey, TecScience, publicó un perfil sobre Eduardo Caballero Murillo, ingeniero en biotecnología, CEO y fundador de Biolily, en el que explora el origen y funcionamiento de Fito-colmenas como respuesta a la contaminación de la presa Miguel Alemán en Valle de Bravo.",
       "La nota parte de un dato que define el problema: sin intervención, el lirio acuático podría cubrir por completo la presa de Valle de Bravo en menos de dos meses. Considerada una de las 100 especies exóticas invasoras más dañinas por la Unión Internacional para la Conservación de la Naturaleza, el lirio representa hoy una de las principales amenazas para los cuerpos de agua del sistema Cutzamala, que abastece de agua potable a millones de personas en la Zona Metropolitana del Valle de México.",
@@ -67,6 +69,7 @@ export const notas: Nota[] = [
     url: "https://lajornadaestadodemexico.com/valle-de-bravo-van-por-saneamiento-de-presa-con-lirio-acuatico/",
     urlLabel: "Leer el reportaje completo en La Jornada Estado de México",
     gradient: gradients[2],
+    image: "/notas/nota-la-jornada.webp",
     body: [
       "La Jornada Estado de México publicó un reportaje sobre el proyecto de restauración de la presa Miguel Alemán en Valle de Bravo, con Fito-colmenas como tecnología central. La cobertura sitúa el proyecto dentro del contexto de crisis hídrica que vive el municipio: una presa que opera por debajo de su capacidad histórica, con niveles crecientes de contaminación por coliformes fecales, fosfatos y nitratos, y un lirio acuático que avanza sobre la superficie del embalse.",
       "El reportaje describe cómo Fito-colmenas propone resolver simultáneamente dos problemas que suelen tratarse por separado: el control del lirio y la descontaminación del agua. En lugar de eliminar la planta mediante métodos manuales o químicos —un proceso costoso, temporal y sin efecto sobre la calidad del agua— el sistema la convierte en herramienta activa de restauración.",
@@ -84,6 +87,7 @@ export const notas: Nota[] = [
     url: "https://www.aneas.com.mx/wp-content/uploads/2024/08/AyS-95.pdf",
     urlLabel: "Consultar la revista Agua y Saneamiento No. 95 — pág. 57",
     gradient: gradients[3],
+    image: "/notas/nota-aneas.png",
     body: [
       "La revista Agua y Saneamiento de la Asociación Nacional de Empresas de Agua y Saneamiento (ANEAS) documentó a Fito-colmenas en su número 95 dentro de un artículo sobre el deterioro hídrico de la presa de Valle de Bravo y las tecnologías disponibles para revertirlo.",
       "ANEAS es el organismo que agrupa a los organismos operadores de agua potable, alcantarillado y saneamiento en México. Su revista es una de las publicaciones de referencia del sector hídrico nacional, con circulación entre gestores públicos, organismos de cuenca, tomadores de decisión en gobierno y especialistas técnicos.",
@@ -118,6 +122,7 @@ export const notas: Nota[] = [
     url: "https://www.milenio.com/politica/comunidad/presa-valle-bravo-nivel-repleta-aguas-negras",
     urlLabel: "Leer el reportaje completo en Milenio",
     gradient: gradients[5],
+    image: "/notas/nota-milenio.jpeg",
     body: [
       "El diario Milenio publicó un reportaje de largo aliento sobre el estado de la presa Miguel Alemán en Valle de Bravo, con acceso directo al equipo científico del Instituto de Ciencias del Mar y Limnología de la UNAM que monitorea el embalse desde hace más de dos décadas.",
       "El reportaje recoge el diagnóstico del doctor Jorge Ramírez Zierold, director científico y cofundador de Biolily e investigador del ICML-UNAM: la presa registró en ese momento uno de sus niveles históricos más bajos, con apenas un 32% de almacenamiento. La combinación de sequía y contaminación acumulada generó una situación de doble riesgo: baja disponibilidad de agua y alta concentración de contaminantes, entre ellos florecimientos recurrentes de cianobacterias con potencial de producir toxinas que afectan el hígado y el sistema nervioso central.",
@@ -135,6 +140,7 @@ export const notas: Nota[] = [
     url: "https://notipress.mx/estado-de-mexico/lirio-acuatico-posible-respuesta-limpiar-presa-valle-de-bravo-20604",
     urlLabel: "Leer la nota completa en Notipress",
     gradient: gradients[0],
+    image: "/notas/nota-notipress.jpeg",
     body: [
       "El portal de noticias Notipress publicó una nota sobre Fito-colmenas como alternativa para restaurar la presa Miguel Alemán en Valle de Bravo, ampliando la cobertura que TecScience había iniciado sobre Eduardo Caballero y la tecnología desarrollada por Biolily.",
       "La nota posiciona el problema desde la perspectiva del Estado de México: una presa estratégica que enfrenta simultáneamente la invasión de lirio acuático, niveles crecientes de contaminación por nitrógeno y fósforo, y un déficit de soluciones de largo plazo. El lirio acuático —catalogado por la UICN como una de las 100 especies exóticas invasoras más dañinas del mundo— es en Valle de Bravo, paradójicamente, tanto parte del problema como la herramienta central de la solución que Biolily propone.",
