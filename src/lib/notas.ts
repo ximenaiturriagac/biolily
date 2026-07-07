@@ -12,6 +12,7 @@ export interface Nota {
   body: string[];
   gradient: string;
   image?: string;
+  hidden?: boolean;
 }
 
 const gradients = [
@@ -105,6 +106,7 @@ export const notas: Nota[] = [
     url: "https://www.tvazteca.com/aztecanoticias/crisis-ambiental-en-valle-bravo-lago-enfrenta-contaminacion-y-sequia-severa",
     urlLabel: "Ver el reportaje completo en Azteca Noticias",
     gradient: gradients[4],
+    image: "/notas/nota-tv-azteca.png",
     body: [
       "Azteca Noticias dedicó un reportaje a la crisis ambiental de la presa Miguel Alemán en Valle de Bravo, uno de los embalses clave del sistema Cutzamala. La cobertura documenta el deterioro del cuerpo de agua —contaminación, descenso de niveles y avance del lirio acuático— y presenta a Fito-colmenas como la tecnología prevista para iniciar su restauración.",
       "El reportaje describe la situación del lago con precisión: sequía prolongada, ingreso constante de aguas negras por los ríos Tizates y Amanalco, y niveles de fósforo y nitrógeno muy por encima de las normas permitidas para cuerpos de agua de este tipo. Valle de Bravo no solo es el principal destino turístico del Estado de México, sino uno de los nodos de los que depende el abastecimiento de agua potable para el Valle de México.",
@@ -158,6 +160,7 @@ export const notas: Nota[] = [
     url: "https://open.spotify.com/episode/0T89v3gTOAFELlE069Lo4Y",
     urlLabel: "Escuchar el episodio completo en Spotify",
     gradient: gradients[1],
+    image: "/notas/nota-spotify.jpeg",
     body: [
       "En un episodio disponible en Spotify, dos especialistas en materia hídrica abordan en profundidad el proceso de fitorremediación que está detrás de Fito-colmenas: cómo funciona, por qué el lirio acuático es una herramienta eficaz para remover nutrientes de cuerpos de agua contaminados, y qué ventajas ofrece frente a los métodos convencionales de tratamiento.",
       "El formato largo del podcast permite explorar dimensiones que los medios de noticias no suelen desarrollar: la biología del lirio acuático y sus propiedades alelopáticas, el concepto de eutrofización y cómo la acumulación de fósforo y nitrógeno desencadena el deterioro progresivo de un cuerpo de agua, y la diferencia entre soluciones de control paliativo y una solución basada en la naturaleza que aprovecha los procesos del propio ecosistema para restaurarlo.",
@@ -166,6 +169,7 @@ export const notas: Nota[] = [
   },
   {
     slug: "unam-observatorio-valle-de-bravo-fitorremediacion",
+    hidden: true,
     source: "UNAM / Observatorio Valle de Bravo",
     category: "doc",
     title: "Colmenas de fitorremediación en el programa de monitoreo científico de la presa",

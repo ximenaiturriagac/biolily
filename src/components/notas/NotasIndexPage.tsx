@@ -177,8 +177,9 @@ export default function NotasIndexPage() {
   const { lang } = useLang();
   const t = translations[lang].notas as NotasT;
 
-  const featured = notas[0];
-  const rest = notas.slice(1);
+  const visible = notas.filter((n) => !n.hidden);
+  const featured = visible[0];
+  const rest = visible.slice(1);
 
   return (
     <>
