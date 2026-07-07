@@ -45,7 +45,7 @@ export default function NotaPage({ nota }: { nota: Nota }) {
                 {t.categories[nota.category]}
               </span>
             </div>
-            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-4">{nota.title}</h1>
+            <h1 className="font-display text-2xl md:text-4xl font-bold text-white leading-tight mb-4">{nota.title}</h1>
             <p className="text-white/50 text-sm">
               {t.sourceLabel}: <span className="text-white/80 font-medium">{nota.source}</span>
               <span className="mx-2 text-white/20">·</span>

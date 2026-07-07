@@ -75,7 +75,7 @@ function FeaturedCard({ nota, t }: { nota: Nota; t: NotasT }) {
               <CategoryPill category={nota.category} t={t} />
             </div>
             <p className="text-xs text-gray-400 mb-2 font-medium">{nota.source} · {nota.date}</p>
-            <h2 className="text-xl font-bold text-gray-900 leading-snug mb-3 group-hover:text-emerald-700 transition-colors">
+            <h2 className="font-display text-xl font-bold text-gray-900 leading-snug mb-3 group-hover:text-emerald-700 transition-colors">
               {nota.title}
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{nota.excerpt}</p>
@@ -100,7 +100,7 @@ function NoteCard({ nota, t }: { nota: Nota; t: NotasT }) {
           <CategoryPill category={nota.category} t={t} />
         </div>
         <p className="text-xs text-gray-400 mb-2">{nota.source} · {nota.date}</p>
-        <h3 className="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-emerald-700 transition-colors line-clamp-2">
+        <h3 className="font-display text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-emerald-700 transition-colors line-clamp-2">
           {nota.title}
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 flex-1">{nota.excerpt}</p>
@@ -143,7 +143,7 @@ function SocialBlock({ t }: { t: NotasT }) {
       <div className="grid md:grid-cols-2">
         <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10">
           <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">{t.socialEyebrow}</p>
-          <h2 className="text-xl md:text-3xl font-bold text-white mb-3">{t.socialTagline}</h2>
+          <h2 className="font-display text-xl md:text-3xl font-bold text-white mb-3">{t.socialTagline}</h2>
           <p className="text-white/60 text-sm leading-relaxed">{t.socialSub}</p>
         </div>
         <div className="px-6 py-6 md:px-10 md:py-10 flex flex-col justify-center gap-2.5">
@@ -187,7 +187,7 @@ export default function NotasIndexPage() {
         <div className="bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-4">{t.eyebrow}</p>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{t.heading}</h1>
+            <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">{t.heading}</h1>
             <p className="text-white/60 text-base md:text-lg max-w-2xl leading-relaxed">{t.desc}</p>
           </div>
         </div>
