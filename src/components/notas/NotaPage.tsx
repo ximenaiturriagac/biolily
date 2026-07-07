@@ -31,7 +31,7 @@ export default function NotaPage({ nota }: { nota: Nota }) {
   return (
     <>
       <article className="bg-white min-h-screen">
-        {/* Header banner — mismo verde que el inicio */}
+        {/* Header banner */}
         <div className="bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
           <div className="max-w-3xl mx-auto px-6 py-14">
             <Link
@@ -54,28 +54,8 @@ export default function NotaPage({ nota }: { nota: Nota }) {
           </div>
         </div>
 
-        {/* Hero image or gradient */}
-        {nota.image ? (
-          <div className="relative w-full h-52 md:h-72">
-            <Image
-              src={nota.image}
-              alt={nota.title}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-          </div>
-        ) : (
-          <div
-            className="w-full h-52 md:h-72"
-            style={{ background: nota.gradient }}
-            aria-hidden="true"
-          />
-        )}
-
         <div className="max-w-3xl mx-auto px-6 py-10">
-          {/* Top CTA banner — verde para que resalte */}
+          {/* Top CTA banner */}
           <a
             href={nota.url}
             target="_blank"
@@ -91,12 +71,37 @@ export default function NotaPage({ nota }: { nota: Nota }) {
             </svg>
           </a>
 
-          {/* Disclaimer — fondo gris claro para que sea legible */}
+          {/* Disclaimer */}
           <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 mb-8">
             <p className="text-xs text-gray-500 italic leading-relaxed">
               {t.disclaimer}
             </p>
           </div>
+
+          {/* Editorial image — centrada dentro del artículo */}
+          {nota.image && (
+            <div className="flex justify-center mb-8">
+              <figure className="w-full max-w-xl rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                <Image
+                  src={nota.image}
+                  alt={nota.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                  priority
+                />
+              </figure>
+            </div>
+          )}
+
+          {/* Gradient strip when no image */}
+          {!nota.image && (
+            <div
+              className="w-full h-2 rounded-full mb-8 opacity-60"
+              style={{ background: nota.gradient }}
+              aria-hidden="true"
+            />
+          )}
 
           {/* Body */}
           <div className="space-y-5">
