@@ -44,26 +44,28 @@ export default function Team() {
                 key={member.name}
                 className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-shadow"
               >
-                {/* Foto centrada y grande */}
-                <div className={`relative w-full bg-gradient-to-br ${gradient} flex justify-center pt-10 pb-10`}>
-                  <div className="w-48 h-48 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
-                    {photo ? (
-                      <Image
-                        src={photo}
-                        alt={member.name}
-                        width={192}
-                        height={192}
-                        className={`w-full h-full ${imgClass}`}
-                      />
-                    ) : (
-                      <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                        <span className="text-white font-bold text-4xl">{initials}</span>
-                      </div>
-                    )}
+                {/* Franja gradiente pequeña con foto a caballo */}
+                <div className={`relative h-28 bg-gradient-to-br ${gradient} flex justify-center`}>
+                  <div className="absolute bottom-0 translate-y-1/2">
+                    <div className="w-36 h-36 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                      {photo ? (
+                        <Image
+                          src={photo}
+                          alt={member.name}
+                          width={144}
+                          height={144}
+                          className={`w-full h-full ${imgClass}`}
+                        />
+                      ) : (
+                        <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+                          <span className="text-white font-bold text-4xl">{initials}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-6 pb-8 px-8">
+                <div className="pt-24 pb-8 px-8">
                   <h3 className="font-display text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">
