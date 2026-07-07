@@ -55,22 +55,6 @@ export default function NotaPage({ nota }: { nota: Nota }) {
         </div>
 
         <div className="max-w-3xl mx-auto px-6 py-10">
-          {/* Top CTA banner */}
-          <a
-            href={nota.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between gap-4 rounded-xl bg-gradient-to-r from-[#0d2235] to-[#1a3a2a] hover:opacity-90 transition-opacity px-5 py-4 mb-10"
-          >
-            <div>
-              <p className="text-xs text-white/50 mb-0.5">{t.readAt} {nota.source}</p>
-              <p className="text-sm font-semibold text-white">{nota.urlLabel}</p>
-            </div>
-            <svg className="w-5 h-5 text-white/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-
           {/* Disclaimer */}
           <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 mb-8">
             <p className="text-xs text-gray-500 italic leading-relaxed">
@@ -115,19 +99,34 @@ export default function NotaPage({ nota }: { nota: Nota }) {
             ))}
           </div>
 
+          {/* Sections with headings */}
+          {nota.sections && nota.sections.map((section, i) => (
+            <div key={i} className="mt-10">
+              <h2 className="font-display text-xl font-bold text-gray-900 mb-4">{section.heading}</h2>
+              <div className="space-y-4">
+                {section.paragraphs.map((para, j) => (
+                  <p key={j} className="text-gray-600 text-base leading-relaxed">{para}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+
           {/* Publicaciones científicas + apariciones (solo para notas con mediaList) */}
           {nota.mediaList && (
             <>
               <div className="mt-10 pt-8 border-t border-gray-100">
-                <h2 className="font-display text-lg font-bold text-gray-900 mb-3">Publicaciones científicas</h2>
+                <h2 className="font-display text-lg font-bold text-gray-900 mb-4">Publicaciones científicas</h2>
                 <a
                   href={nota.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+                  className="flex items-center justify-between gap-4 rounded-xl bg-gradient-to-r from-[#0d2235] to-[#1a3a2a] hover:opacity-90 transition-opacity px-5 py-4"
                 >
-                  Ver perfil en Google Scholar
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div>
+                    <p className="text-xs text-white/50 mb-0.5">{t.readAt} Google Scholar</p>
+                    <p className="text-sm font-semibold text-white">{nota.urlLabel}</p>
+                  </div>
+                  <svg className="w-5 h-5 text-white/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
@@ -136,9 +135,16 @@ export default function NotaPage({ nota }: { nota: Nota }) {
                 <h2 className="font-display text-lg font-bold text-gray-900 mb-5">Apariciones en medios seleccionadas</h2>
                 <ul className="space-y-2.5">
                   {nota.mediaList.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                    <li key={i} className="flex items-start gap-3 text-sm">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
-                      {item}
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-700 hover:text-emerald-600 hover:underline transition-colors"
+                      >
+                        {item.label}
+                      </a>
                     </li>
                   ))}
                 </ul>
