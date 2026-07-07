@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 import { notas, socialLinks, type Nota, type NotaCategory } from "@/lib/notas";
+import LinkedInBanner from "@/components/LinkedInBanner";
 
 type NotasT = {
   eyebrow: string;
@@ -133,12 +134,12 @@ function TikTokIcon() {
 
 function SocialBlock({ t }: { t: NotasT }) {
   return (
-    <div className="mt-20 rounded-2xl overflow-hidden bg-[#0b1a0b] border border-gray-200">
+    <div className="mt-20 rounded-3xl overflow-hidden bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
       <div className="grid md:grid-cols-2 gap-0">
         <div className="p-8 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10">
           <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">{t.socialEyebrow}</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{t.socialTagline}</h2>
-          <p className="text-white/50 text-sm leading-relaxed">{t.socialSub}</p>
+          <p className="text-white/60 text-sm leading-relaxed">{t.socialSub}</p>
         </div>
         <div className="p-8 md:p-10 flex flex-col justify-center gap-3">
           {socialLinks.map((link, i) => (
@@ -175,33 +176,37 @@ export default function NotasIndexPage() {
   const rest = notas.slice(1);
 
   return (
-    <section className="bg-white min-h-screen">
-      {/* Hero */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-4">{t.eyebrow}</p>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t.heading}</h1>
-          <p className="text-gray-500 text-base md:text-lg max-w-2xl leading-relaxed">{t.desc}</p>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 py-14">
-        {/* Featured */}
-        <div className="mb-14">
-          <FeaturedCard nota={featured} t={t} />
+    <>
+      <section className="bg-white min-h-screen">
+        {/* Hero banner — mismo verde que el inicio */}
+        <div className="bg-gradient-to-r from-[#0d2235] to-[#1a3a2a]">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+            <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-4">{t.eyebrow}</p>
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{t.heading}</h1>
+            <p className="text-white/60 text-base md:text-lg max-w-2xl leading-relaxed">{t.desc}</p>
+          </div>
         </div>
 
-        {/* Grid */}
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">{t.all}</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {rest.map((nota) => (
-            <NoteCard key={nota.slug} nota={nota} t={t} />
-          ))}
-        </div>
+        <div className="max-w-6xl mx-auto px-6 py-14">
+          {/* Featured */}
+          <div className="mb-14">
+            <FeaturedCard nota={featured} t={t} />
+          </div>
 
-        {/* Social */}
-        <SocialBlock t={t} />
-      </div>
-    </section>
+          {/* Grid */}
+          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">{t.all}</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {rest.map((nota) => (
+              <NoteCard key={nota.slug} nota={nota} t={t} />
+            ))}
+          </div>
+
+          {/* Social */}
+          <SocialBlock t={t} />
+        </div>
+      </section>
+
+      <LinkedInBanner />
+    </>
   );
 }
