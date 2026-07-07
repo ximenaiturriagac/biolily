@@ -46,12 +46,12 @@ function CategoryPill({ category, t }: { category: NotaCategory; t: NotasT }) {
 function NotaCover({ nota, className }: { nota: Nota; className: string }) {
   if (nota.image) {
     return (
-      <div className={`relative overflow-hidden ${className}`}>
+      <div className={`relative overflow-hidden ${className}`} style={{ background: nota.gradient }}>
         <Image
           src={nota.image}
           alt={nota.title}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
