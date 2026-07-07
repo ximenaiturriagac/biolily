@@ -176,7 +176,7 @@ export const notas: Nota[] = [
     category: "editorial",
     title: "Jorge Ramírez Zierold: 20 años estudiando el agua que México necesita recuperar",
     excerpt: "Doctor en ciencias por la UNAM e investigador del ICML, Jorge Ramírez Zierold lleva más de 20 años monitoreando la presa de Valle de Bravo. Su trayectoria científica es el respaldo técnico de Fito-colmenas.",
-    date: "2025",
+    date: "2026",
     url: "https://scholar.google.com/citations?hl=es&view_op=list_works&gmla=ACrTK9UUsXaWQN600S5UYQpa6LXspTaAdo3PgoiMQsD7wTTZnF5fdDEy_PEVzv0asdil3R7TYCtK7eNzITg1cK3ra0Yiptjj_w&user=Q8PAtAcAAAAJ",
     urlLabel: "Ver perfil en Google Scholar",
     gradient: gradients[3],
