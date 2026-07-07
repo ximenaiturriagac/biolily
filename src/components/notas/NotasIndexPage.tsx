@@ -139,30 +139,30 @@ function SocialIcon({ platform }: { platform: string }) {
 
 function SocialBlock({ t }: { t: NotasT }) {
   return (
-    <div className="mt-20 rounded-3xl overflow-hidden bg-gradient-to-r from-[#0d3550] to-[#0f4a40]">
-      <div className="grid md:grid-cols-2 gap-0">
-        <div className="p-8 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10">
+    <div className="mt-20 rounded-2xl overflow-hidden bg-gradient-to-r from-[#0d3550] to-[#0f4a40]">
+      <div className="grid md:grid-cols-2">
+        <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10">
           <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">{t.socialEyebrow}</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{t.socialTagline}</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-white mb-3">{t.socialTagline}</h2>
           <p className="text-white/60 text-sm leading-relaxed">{t.socialSub}</p>
         </div>
-        <div className="p-8 md:p-10 flex flex-col justify-center gap-3">
+        <div className="px-6 py-6 md:px-10 md:py-10 flex flex-col justify-center gap-2.5">
           {socialLinks.map((link, i) => (
             <a
               key={i}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-colors px-4 py-3"
+              className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-colors px-3 py-3"
             >
               <span className="flex-shrink-0">
                 <SocialIcon platform={link.platform} />
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-white/40 font-medium">{link.platform}</p>
-                <p className="text-sm text-white/80 group-hover:text-white transition-colors truncate">{link.label}</p>
+                <p className="text-xs text-white/40 font-medium leading-none mb-1">{link.platform}</p>
+                <p className="text-sm text-white/80 group-hover:text-white transition-colors leading-snug line-clamp-1">{link.label}</p>
               </div>
-              <svg className="w-4 h-4 text-white/30 group-hover:text-white/60 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-white/30 group-hover:text-white/60 transition-colors flex-shrink-0 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
