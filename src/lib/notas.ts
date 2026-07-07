@@ -232,7 +232,7 @@ export const notas: Nota[] = [
       { label: "Frecuencia CAD — Crisis Sistema Cutzamala 2024: Compartiendo Ideas (febrero 2024)", url: "https://www.youtube.com/watch?v=bdq-dHVFLLI" },
       { label: "Facebook / El Humedal — Diálogos por amor al Agua (marzo 2024)", url: "https://www.facebook.com/elhumedal/videos/406818562091905" },
       { label: "Podcast Por la Subcuenca — Crisis hídrica en las presas del Sistema Cutzamala (agosto 2023)", url: "https://podcasters.spotify.com/pod/show/observatoriovalle/episodes/Crisis-hdrica-en-las-presas-del-Sistema-Cutzamala---Problemtica-actual-y-retos-a-futuro-e28g068" },
-      { label: "Podcast Por la Subcuenca — Calidad del agua en la presa de Valle de Bravo (agosto 2023)", url: "https://podcasters.spotify.com/pod/show/observatoriovalle/episodes/Crisis-hdrica-en-las-presas-del-Sistema-Cutzamala---Problemtica-actual-y-retos-a-futuro-e28g068" },
+      { label: "Podcast Por la Subcuenca — Calidad del agua en la presa de Valle de Bravo (agosto 2023)", url: "https://creators.spotify.com/pod/profile/observatoriovalle/episodes/Calidad-del-Agua-en-la-Presa-de-Valle-de-Bravo--Problemtica-actual-y-retos-a-futuro-e2810pl" },
       { label: "Facebook — Retos a futuro en materia de agua en la subcuenca Valle de Bravo-Amanalco (agosto 2022)", url: "http://fb.watch/aXLRsMMiBe/" },
       { label: "Este País / El País — La sequía evidencia la mala gestión del agua (junio 2021)", url: "https://estepais.com/ambiente/si-la-lluvia-se-va/la-sequia-evidencia-la-mala-gestion-del-agua/" },
       { label: "YouTube — Crisis hídrica en el Cutzamala: causas y recomendaciones (abril 2021)", url: "https://www.youtube.com/watch?v=oAmKHkgkjUY&t=1s" },
