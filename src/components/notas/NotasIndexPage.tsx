@@ -64,27 +64,23 @@ function NotaCover({ nota, className }: { nota: Nota; className: string }) {
 
 function FeaturedCard({ nota, t }: { nota: Nota; t: NotasT }) {
   return (
-    <Link href={`/notas/${nota.slug}`} className="group block">
-      <div className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-gray-300 hover:shadow-md transition-all">
-        <NotaCover nota={nota} className="h-56 md:h-full min-h-[220px]" />
-        <div className="p-8 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs text-emerald-600 font-semibold uppercase tracking-wider">{t.featured}</span>
-              <span className="text-gray-300">·</span>
-              <CategoryPill category={nota.category} t={t} />
-            </div>
-            <p className="text-xs text-gray-400 mb-2 font-medium">{nota.source} · {nota.date}</p>
-            <h2 className="font-display text-xl font-bold text-gray-900 leading-snug mb-3 group-hover:text-emerald-700 transition-colors">
-              {nota.title}
-            </h2>
-            <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{nota.excerpt}</p>
-          </div>
-          <div className="mt-6">
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors">
-              {t.readNote} →
-            </span>
-          </div>
+    <Link href={`/notas/${nota.slug}`} className="group flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-gray-300 hover:shadow-md transition-all">
+      <NotaCover nota={nota} className="h-52 w-full" />
+      <div className="p-7 flex flex-col flex-1">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs text-emerald-600 font-semibold uppercase tracking-wider">{t.featured}</span>
+          <span className="text-gray-300">·</span>
+          <CategoryPill category={nota.category} t={t} />
+        </div>
+        <p className="text-xs text-gray-400 mb-2 font-medium">{nota.source} · {nota.date}</p>
+        <h2 className="font-display text-xl font-bold text-gray-900 leading-snug mb-3 group-hover:text-emerald-700 transition-colors">
+          {nota.title}
+        </h2>
+        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">{nota.excerpt}</p>
+        <div className="mt-5">
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors">
+            {t.readNote} →
+          </span>
         </div>
       </div>
     </Link>
@@ -177,9 +173,13 @@ export default function NotasIndexPage() {
   const { lang } = useLang();
   const t = translations[lang].notas as NotasT;
 
+  const featuredSlugs = [
+    "jorge-ramirez-zierold-trayectoria-cientifica",
+    "tecscience-lirio-acuatico-valle-de-bravo",
+  ];
   const visible = notas.filter((n) => !n.hidden);
-  const featured = visible[0];
-  const rest = visible.slice(1);
+  const featured = featuredSlugs.map((slug) => visible.find((n) => n.slug === slug)).filter(Boolean) as Nota[];
+  const rest = visible.filter((n) => !featuredSlugs.includes(n.slug));
 
   return (
     <>
@@ -193,8 +193,11 @@ export default function NotasIndexPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 py-14">
-          <div className="mb-14">
-            <FeaturedCard nota={featured} t={t} />
+          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5">{t.featured}</h2>
+          <div className="grid sm:grid-cols-2 gap-5 mb-14">
+            {featured.map((nota) => (
+              <FeaturedCard key={nota.slug} nota={nota} t={t} />
+            ))}
           </div>
 
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">{t.all}</h2>
