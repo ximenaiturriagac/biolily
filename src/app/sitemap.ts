@@ -1,8 +1,18 @@
 import { MetadataRoute } from "next";
+import { notas } from "@/lib/notas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.biolily.com.mx";
   const now = new Date();
+
+  const notaEntries: MetadataRoute.Sitemap = notas
+    .filter((n) => !n.hidden)
+    .map((n) => ({
+      url: `${base}/notas/${n.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
 
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -10,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/impacto`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/equipo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/contacto`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/notas`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${base}/notas`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...notaEntries,
   ];
 }
